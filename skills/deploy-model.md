@@ -576,6 +576,7 @@ spec:
             - "--threads"
             - "$(THREADS)"
             - "--flash-attn"
+            - "on"
             - "--mlock"
             - "--cache-type-k"
             - "q8_0"

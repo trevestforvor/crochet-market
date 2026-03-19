@@ -3,4 +3,4 @@ appVersion: 'HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive'
 description: Qwen3.5 35B-A3B Uncensored served via llama.cpp — optimized for Olares One
 name: llamacppqwen35a3buncensored
 type: application
-version: '1.0.1'
+version: '1.0.2'
