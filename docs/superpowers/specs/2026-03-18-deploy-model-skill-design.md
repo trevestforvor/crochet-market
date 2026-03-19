@@ -190,10 +190,11 @@ llamacppllama3170b/
 - Init container: `docker.io/alpine:3.20`
 
 **Additional llama.cpp args (hardcoded best practices):**
-- `--flash-attn on` (attention optimization — requires value: on/off/auto)
+- `-fa on` (flash attention — requires value: on/off/auto)
 - `--mlock` (prevent model swap to disk)
-- `--cache-type-k q8_0 --cache-type-v q8_0` (quantized KV cache)
-- `--batch 2048 --ubatch 1024` (batch sizes)
+- `-ctk q8_0 -ctv q8_0` (quantized KV cache)
+- `-b 2048 -ub 1024` (batch sizes)
+- Use short flags (`-m`, `-a`, `-c`, `-ngl`, `-t`, `-np`) for cross-version compatibility
 
 ## OlaresManifest.yaml Spec
 

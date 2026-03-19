@@ -825,7 +825,7 @@ version: '1.0.0'
 - Main container:
   - Image: `ghcr.io/ggml-org/llama.cpp:server-cuda-b8234`
   - Port: 8080
-  - Args from ConfigMap values: `--model /models/$(MODEL_FILE) --alias $(MODEL_ALIAS) --ctx-size $(CONTEXT_SIZE) --n-gpu-layers $(N_GPU_LAYERS) --threads $(THREADS) --flash-attn on --mlock --cache-type-k q8_0 --cache-type-v q8_0 --batch 2048 --ubatch 1024 --host 0.0.0.0 --port 8080`
+  - Args from ConfigMap values: `--model /models/$(MODEL_FILE) --alias $(MODEL_ALIAS) --ctx-size $(CONTEXT_SIZE) --n-gpu-layers $(N_GPU_LAYERS) --threads $(THREADS) -fa on --mlock -ctk q8_0 -ctv q8_0 -b 2048 -ub 1024 --host 0.0.0.0 --port 8080`
   - If concurrent users > 1: add `--parallel <N>`
   - Resources: requests `<requiredCpu>` / `<requiredMemory>`, limits `<limitedCpu>` / `<limitedMemory>`
   - GPU resource: `nvidia.com/gpu: 1` (if using GPU layers)
