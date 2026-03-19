@@ -1,0 +1,12 @@
+metadata:
+  title: Qwen3.5 35B-A3B 无审查版
+  description: 通过 llama.cpp 提供 Qwen3.5 35B MoE（3B 活跃参数）无审查模型 — 针对 Olares One 优化
+spec:
+  fullDescription: |
+    Qwen3.5-35B-A3B 无审查版（HauhauCS Aggressive）通过 llama.cpp 提供服务，针对 Olares One 硬件优化。
+
+    MoE 架构，128 个专家，每个 token 激活 8 个（约 3B 活跃参数）。
+    Q4_K_M 量化（21.2GB）。RTX 5090M（24GB 显存）全 GPU 卸载。
+    16K 上下文窗口。端口 8080 提供 OpenAI 兼容 API。
+
+    预期性能：约 200 tokens/秒。首次启动时自动下载模型（约 21.2GB）。

@@ -1,0 +1,52 @@
+olaresManifest.version: '0.10.0'
+olaresManifest.type: app
+metadata:
+  appid: llamacppqwen35a3buncensored
+  title: Qwen3.5 35B-A3B Uncensored
+  icon: ''
+  description: Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One
+  version: 1.0.0
+  versionName: '1.0.0'
+entrances:
+  - name: llamacppqwen35a3buncensored
+    port: 8080
+    title: Qwen3.5 35B-A3B Uncensored
+    authLevel: private
+spec:
+  versionName: '1.0.0'
+  fullDescription: |
+    Qwen3.5-35B-A3B Uncensored (HauhauCS Aggressive) served via llama.cpp, optimized for Olares One hardware.
+
+    MoE architecture with 128 experts, 8 active per token (~3B active parameters).
+    Q4_K_M quantization (21.2GB). Full GPU offload on RTX 5090M (24GB VRAM).
+    16K context window. OpenAI-compatible API on port 8080.
+
+    Expected performance: ~200 tokens/sec. Model downloads automatically on first launch (~21.2GB).
+  developer: HauhauCS
+  website: https://huggingface.co/HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive
+  sourceCode: https://github.com/trevestforvor/OlaresModels
+  submitter: trevestforvor
+  locale:
+    - en-US
+    - zh-CN
+  license:
+    - text: Apache-2.0
+  category: AI
+  requiredMemory: 1Gi
+  limitedMemory: 40Gi
+  requiredCpu: 500m
+  limitedCpu: 16
+  requiredGpu: 1Gi
+  limitedGpu: 24Gi
+  requiredDisk: 27Gi
+  limitedDisk: 40Gi
+  supportArch:
+    - amd64
+permission:
+  appData: true
+middleware: {}
+options:
+  dependencies:
+    - type: system
+      name: olares
+      version: '>=1.12.3-0'

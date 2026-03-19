@@ -1,0 +1,30 @@
+{
+  "apps": [
+    {
+      "name": "llamacppqwen35a3buncensored",
+      "chartName": "llamacppqwen35a3buncensored",
+      "version": "1.0.0",
+      "appVersion": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
+      "title": "Qwen3.5 35B-A3B Uncensored",
+      "description": "Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One",
+      "icon": "",
+      "category": "AI",
+      "versionName": "1.0.0",
+      "fullDescription": "Qwen3.5-35B-A3B Uncensored (HauhauCS Aggressive) served via llama.cpp, optimized for Olares One hardware.\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nQ4_K_M quantization (21.2GB). Full GPU offload on RTX 5090M (24GB VRAM).\n16K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~200 tokens/sec. Model downloads automatically on first launch (~21.2GB).\n",
+      "developer": "HauhauCS",
+      "license": [
+        {
+          "text": "Apache-2.0"
+        }
+      ],
+      "requiredGpu": "1Gi",
+      "limitedGpu": "24Gi",
+      "requiredMemory": "1Gi",
+      "limitedMemory": "40Gi",
+      "supportArch": [
+        "amd64"
+      ]
+    }
+  ],
+  "version": "1773940854166"
+}

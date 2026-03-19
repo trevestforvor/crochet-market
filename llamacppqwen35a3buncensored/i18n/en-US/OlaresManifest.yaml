@@ -1,0 +1,12 @@
+metadata:
+  title: Qwen3.5 35B-A3B Uncensored
+  description: Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One
+spec:
+  fullDescription: |
+    Qwen3.5-35B-A3B Uncensored (HauhauCS Aggressive) served via llama.cpp, optimized for Olares One hardware.
+
+    MoE architecture with 128 experts, 8 active per token (~3B active parameters).
+    Q4_K_M quantization (21.2GB). Full GPU offload on RTX 5090M (24GB VRAM).
+    16K context window. OpenAI-compatible API on port 8080.
+
+    Expected performance: ~200 tokens/sec. Model downloads automatically on first launch (~21.2GB).

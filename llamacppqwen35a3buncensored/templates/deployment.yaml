@@ -1,0 +1,133 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: llamacpp-env
+  namespace: {{ .Release.Namespace }}
+data:
+  MODEL_URL: "https://huggingface.co/HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive/resolve/main/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf"
+  MODEL_FILE: "Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive-Q4_K_M.gguf"
+  MODEL_ALIAS: "qwen3.5-35b-a3b-uncensored"
+  CONTEXT_SIZE: "16384"
+  N_GPU_LAYERS: "99"
+  THREADS: "16"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      initContainers:
+        - name: model-downloader
+          image: docker.io/alpine:3.20
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              if [ ! -f "/models/$(MODEL_FILE)" ]; then
+                echo "Downloading model..."
+                wget -q "$(MODEL_URL)" -O "/models/$(MODEL_FILE)"
+                echo "Download complete."
+              else
+                echo "Model already exists, skipping download."
+              fi
+          envFrom:
+            - configMapRef:
+                name: llamacpp-env
+          volumeMounts:
+            - name: model-storage
+              mountPath: /models
+      containers:
+        - name: llamacpp
+          image: ghcr.io/ggml-org/llama.cpp:server-cuda-b8234
+          ports:
+            - containerPort: 8080
+          args:
+            - "--model"
+            - "/models/$(MODEL_FILE)"
+            - "--alias"
+            - "$(MODEL_ALIAS)"
+            - "--ctx-size"
+            - "$(CONTEXT_SIZE)"
+            - "--n-gpu-layers"
+            - "$(N_GPU_LAYERS)"
+            - "--threads"
+            - "$(THREADS)"
+            - "--flash-attn"
+            - "--mlock"
+            - "--cache-type-k"
+            - "q8_0"
+            - "--cache-type-v"
+            - "q8_0"
+            - "--batch"
+            - "2048"
+            - "--ubatch"
+            - "1024"
+            - "--parallel"
+            - "2"
+            - "--host"
+            - "0.0.0.0"
+            - "--port"
+            - "8080"
+          envFrom:
+            - configMapRef:
+                name: llamacpp-env
+          resources:
+            requests:
+              cpu: "4"
+              memory: "24Gi"
+            limits:
+              cpu: "16"
+              memory: "40Gi"
+              nvidia.com/gpu: "1"
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            failureThreshold: 30
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            periodSeconds: 30
+            failureThreshold: 3
+          volumeMounts:
+            - name: model-storage
+              mountPath: /models
+            - name: cache
+              mountPath: /tmp/cache
+      volumes:
+        - name: model-storage
+          hostPath:
+            path: {{ .Values.userspace.appData }}/models
+            type: DirectoryOrCreate
+        - name: cache
+          emptyDir: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  type: ClusterIP
+  selector:
+    app: {{ .Release.Name }}
+  ports:
+    - port: 8080
+      targetPort: 8080
