@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.wrangler/
+src/catalog.json
+src/icons.json
+src/charts.json
+*.tgz
+.DS_Store
