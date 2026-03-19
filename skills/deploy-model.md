@@ -166,16 +166,18 @@ version: '1.0.0'
 olaresManifest.version: '0.10.0'
 olaresManifest.type: app
 metadata:
+  name: <appname>
   appid: <appname>
-  title: <Display Title>
-  icon: <icon URL from HuggingFace or empty string>
+  title: <Display Title — alphanumeric, hyphens, spaces only, max 30 chars, no dots>
+  icon: <icon URL from HuggingFace or model org avatar — MUST NOT be empty>
   description: <one-line model description>
   version: 1.0.0
   versionName: '1.0.0'
 entrances:
   - name: <appname>
+    host: <appname>
     port: 8080
-    title: <Display Title>
+    title: <Display Title — same rules as metadata.title>
     authLevel: private
 spec:
   versionName: '1.0.0'
@@ -191,10 +193,10 @@ spec:
   license:
     - text: <model license from model card>
   category: AI
-  requiredMemory: 1Gi
-  limitedMemory: <computed ceiling, e.g., 28Gi>
-  requiredCpu: 500m
-  limitedCpu: <computed ceiling, e.g., 18>
+  requiredMemory: <must be >= sum of container memory requests, e.g., 24Gi>
+  limitedMemory: <computed ceiling, e.g., 40Gi>
+  requiredCpu: <must be >= sum of container CPU requests, e.g., 4>
+  limitedCpu: <computed ceiling, e.g., 16>
   requiredGpu: 1Gi
   limitedGpu: <computed VRAM allocation, e.g., 24Gi>
   requiredDisk: <model weight size + 5GB buffer>
@@ -211,7 +213,7 @@ options:
       version: '>=1.12.3-0'
 ```
 
-Note: `required*` = low minimums for Kubernetes scheduler. `limited*` = actual resource ceilings.
+Note: `requiredMemory` and `requiredCpu` MUST be >= the sum of all container resource `requests` in the deployment template, or the Olares linter will reject the chart. `limited*` = actual resource ceilings.
 
 **`<appname>/.helmignore`**:
 ```
@@ -283,19 +285,19 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: <appname>
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ .Release.Name }}
+    app: <appname>
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: <appname>
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: <appname>
     spec:
       containers:
         - name: nginx
@@ -333,12 +335,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: vllmclient
+  name: <appname>
   namespace: {{ .Release.Namespace }}
 spec:
   type: ClusterIP
   selector:
-    app: {{ .Release.Name }}
+    app: <appname>
   ports:
     - port: 8080
       targetPort: 8080
@@ -522,21 +524,21 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}
+  name: <appname>
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ .Release.Name }}
+    app: <appname>
 spec:
   replicas: 1
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: {{ .Release.Name }}
+      app: <appname>
   template:
     metadata:
       labels:
-        app: {{ .Release.Name }}
+        app: <appname>
     spec:
       initContainers:
         - name: model-downloader
@@ -627,12 +629,12 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Release.Name }}
+  name: <appname>
   namespace: {{ .Release.Namespace }}
 spec:
   type: ClusterIP
   selector:
-    app: {{ .Release.Name }}
+    app: <appname>
   ports:
     - port: 8080
       targetPort: 8080
@@ -643,9 +645,14 @@ Replace all `<PLACEHOLDER>` values with computed values from Step 5. If concurre
 ## Step 8: Validate and Package
 
 0. **Lint validation** before packaging — verify:
-   - `appid` in OlaresManifest.yaml = folder name = `name` in Chart.yaml = deployment name = service name = entrance name
+   - `appid` in OlaresManifest.yaml = folder name = `name` in Chart.yaml = deployment name = service name = entrance name = entrance host
+   - `metadata.name` field exists in OlaresManifest.yaml (same value as appid)
    - All lowercase, no hyphens in appid
-   - Sum of container memory `requests` < `requiredMemory` in OlaresManifest
+   - `metadata.icon` is NOT empty — must be a valid URL
+   - `metadata.title` and `entrances[].title`: max 30 chars, only `[a-z0-9A-Z- ]` allowed (NO dots, underscores, or special chars)
+   - Sum of container CPU `requests` <= `requiredCpu` in OlaresManifest
+   - Sum of container memory `requests` <= `requiredMemory` in OlaresManifest
+   - Deployment/service names are hardcoded to `<appname>` (NOT `{{ .Release.Name }}`)
    - Volume paths use `{{ .Values.userspace.appData }}`
    - `i18n/en-US/OlaresManifest.yaml` and `i18n/zh-CN/OlaresManifest.yaml` both exist
 
