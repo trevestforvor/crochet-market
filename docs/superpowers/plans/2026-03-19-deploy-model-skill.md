@@ -766,7 +766,7 @@ owners:
 - Nginx ConfigMap: proxy to `download-svc.<appname>server-shared:8090`, 1800s timeout, WebSocket support, CORS headers
 - Deployment: `docker.io/beclab/aboveos-bitnami-openresty:1.25.3-2`, 500m CPU / 500Mi memory limits, readiness/liveness probes on `/ping`
 - Service: `vllmclient` on port 8080
-- Use `{{ .Release.Name }}` and `{{ .Release.Namespace }}` Helm templating
+- Hardcode `<appname>` for deployment/service/label names (Olares linter requires name = appid, NOT `{{ .Release.Name }}`). Use `{{ .Release.Namespace }}` for namespace only.
 
 **`<appname>/<appname>server/Chart.yaml`**:
 ```yaml
@@ -825,7 +825,7 @@ version: '1.0.0'
 - Main container:
   - Image: `ghcr.io/ggml-org/llama.cpp:server-cuda-b8234`
   - Port: 8080
-  - Args from ConfigMap values: `--model /models/$(MODEL_FILE) --alias $(MODEL_ALIAS) --ctx-size $(CONTEXT_SIZE) --n-gpu-layers $(N_GPU_LAYERS) --threads $(THREADS) --flash-attn --mlock --cache-type-k q8_0 --cache-type-v q8_0 --batch 2048 --ubatch 1024 --host 0.0.0.0 --port 8080`
+  - Args from ConfigMap values: `--model /models/$(MODEL_FILE) --alias $(MODEL_ALIAS) --ctx-size $(CONTEXT_SIZE) --n-gpu-layers $(N_GPU_LAYERS) --threads $(THREADS) --flash-attn on --mlock --cache-type-k q8_0 --cache-type-v q8_0 --batch 2048 --ubatch 1024 --host 0.0.0.0 --port 8080`
   - If concurrent users > 1: add `--parallel <N>`
   - Resources: requests `<requiredCpu>` / `<requiredMemory>`, limits `<limitedCpu>` / `<limitedMemory>`
   - GPU resource: `nvidia.com/gpu: 1` (if using GPU layers)
@@ -840,10 +840,15 @@ version: '1.0.0'
 
 0. **Lint validation** (before packaging):
    Verify these Olares linting rules:
-   - `appid` in OlaresManifest.yaml = folder name = `name` in Chart.yaml = deployment name in templates = service name = entrance name
+   - `appid` in OlaresManifest.yaml = folder name = `name` in Chart.yaml = deployment name in templates = service name = entrance name = entrance host
+   - `metadata.name` field exists in OlaresManifest.yaml (same value as appid)
    - All lowercase, no hyphens in appid
-   - Sum of container memory `requests` in deployment.yaml < `requiredMemory` in OlaresManifest.yaml
-   - Volume paths use `{{ .Values.userspace.appData }}` with semverCompare guard: `{{- if semverCompare ">=1.12.3-0" .Values.sysVersion }}`
+   - `metadata.icon` is NOT empty — must be a valid URL
+   - `metadata.title` and `entrances[].title`: max 30 chars, only `[a-z0-9A-Z- ]` allowed (NO dots, underscores, or special chars)
+   - Sum of container CPU `requests` <= `requiredCpu` in OlaresManifest
+   - Sum of container memory `requests` <= `requiredMemory` in OlaresManifest
+   - Deployment/service names are hardcoded to `<appname>` (NOT `{{ .Release.Name }}`)
+   - Volume paths use `{{ .Values.userspace.appData }}`
    - `i18n/en-US/OlaresManifest.yaml` and `i18n/zh-CN/OlaresManifest.yaml` both exist
    - If any check fails, fix before proceeding.
 

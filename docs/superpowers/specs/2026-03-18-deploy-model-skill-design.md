@@ -112,8 +112,11 @@ Generates the complete Olares app package in `Olares-Models/`.
 ## App Naming Convention
 
 - **appid/folder**: `backendmodelname` — all lowercase, no hyphens (e.g., `vllmqwen330ba3b`)
-  - Matches Olares linter rules: appid = folder = chart name = deployment = service = entrance host
-- **Display title**: Human-friendly in OlaresManifest i18n (e.g., "Qwen 3.5 30B-A3B (vLLM)")
+  - Matches Olares linter rules: appid = folder = chart name = deployment = service = entrance name = entrance host = metadata.name
+  - Deployment/service names must be hardcoded to appid (NOT `{{ .Release.Name }}`)
+- **Display title**: Human-friendly in OlaresManifest i18n — max 30 chars, only `[a-z0-9A-Z- ]` (NO dots)
+- **Icon**: metadata.icon MUST NOT be empty — use HuggingFace org avatar or model icon URL
+- **Resources**: `requiredCpu` >= sum of container CPU requests; `requiredMemory` >= sum of container memory requests
 
 ## Template Structures
 
@@ -187,7 +190,7 @@ llamacppllama3170b/
 - Init container: `docker.io/alpine:3.20`
 
 **Additional llama.cpp args (hardcoded best practices):**
-- `--flash-attn` (attention optimization)
+- `--flash-attn on` (attention optimization — requires value: on/off/auto)
 - `--mlock` (prevent model swap to disk)
 - `--cache-type-k q8_0 --cache-type-v q8_0` (quantized KV cache)
 - `--batch 2048 --ubatch 1024` (batch sizes)
