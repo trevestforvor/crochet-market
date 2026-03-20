@@ -1,0 +1,12 @@
+metadata:
+  title: Gemma 3 12B IT Q8
+  description: Gemma 3 12B IT Q8_0 稠密模型通过 llama.cpp 提供服务 — 针对 Olares One 优化
+spec:
+  fullDescription: |
+    Google Gemma 3 12B IT 通过 llama.cpp 提供服务，针对 Olares One 硬件优化。
+
+    12B 参数稠密多模态模型，具备强大的推理和多语言能力。
+    Q8_0 量化（12.5GB）。RTX 5090M（24GB 显存）全 GPU 卸载。
+    128K 原生上下文窗口，量化 KV 缓存。端口 8080 提供 OpenAI 兼容 API。
+
+    预期性能：约 80-130 tokens/秒。首次启动时自动下载模型（约 12.5GB）。

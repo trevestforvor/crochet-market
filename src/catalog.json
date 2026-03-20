@@ -1,6 +1,19 @@
 {
-  "hash": "ac75c736cdefe35c1d7004be912208ba",
+  "hash": "4e6d27eff4baf077611b952f091ce854",
   "summaries": {
+    "6e3681ab": {
+      "id": "6e3681ab",
+      "name": "llamacppgemma312b",
+      "version": "1.0.0",
+      "category": "AI",
+      "description": "Gemma 3 12B IT Q8_0 dense model via llama.cpp — optimized for Olares One",
+      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "screenshots": null,
+      "tags": null,
+      "metadata": null,
+      "source": 1,
+      "updated_at": "2026-03-20T18:13:38.852Z"
+    },
     "dfd72114": {
       "id": "dfd72114",
       "name": "llamacppqwen314b",
@@ -12,7 +25,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T18:01:51.252Z"
+      "updated_at": "2026-03-20T18:13:38.855Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -25,7 +38,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T18:01:51.254Z"
+      "updated_at": "2026-03-20T18:13:38.856Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -38,7 +51,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T18:01:51.255Z"
+      "updated_at": "2026-03-20T18:13:38.857Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -51,10 +64,126 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T18:01:51.257Z"
+      "updated_at": "2026-03-20T18:13:38.859Z"
     }
   },
   "details": {
+    "6e3681ab": {
+      "id": "6e3681ab",
+      "name": "llamacppgemma312b",
+      "cfgType": "app",
+      "chartName": "llamacppgemma312b-1.0.0.tgz",
+      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "description": "Gemma 3 12B IT Q8_0 dense model via llama.cpp — optimized for Olares One",
+      "appID": "6e3681ab",
+      "title": "Gemma 3 12B IT Q8",
+      "version": "1.0.0",
+      "categories": [
+        "AI"
+      ],
+      "versionName": "1.0.0",
+      "fullDescription": "Google Gemma 3 12B IT served via llama.cpp, optimized for Olares One hardware.\n\nDense 12B parameter multimodal model with strong reasoning and multilingual capabilities.\nQ8_0 quantization (12.5GB). Full GPU offload on RTX 5090M (24GB VRAM).\n128K native context window with quantized KV cache. OpenAI-compatible API on port 8080.\n\nExpected performance: ~80-130 tokens/sec. Model downloads automatically on first launch (~12.5GB).\n",
+      "upgradeDescription": "",
+      "promoteImage": null,
+      "promoteVideo": "",
+      "subCategory": "",
+      "locale": [
+        "en-US",
+        "zh-CN"
+      ],
+      "developer": "Google",
+      "requiredMemory": "25769803776",
+      "requiredDisk": "26843545600",
+      "supportClient": {},
+      "supportArch": [
+        "amd64"
+      ],
+      "requiredGPU": "1073741824",
+      "requiredCPU": "4.1",
+      "rating": 0,
+      "target": "",
+      "permission": {
+        "appData": true
+      },
+      "entrances": [
+        {
+          "name": "llamacppgemma312b",
+          "host": "llamacppgemma312b",
+          "port": 8080,
+          "title": "Gemma 3 12B IT Q8",
+          "icon": "",
+          "authLevel": "private",
+          "invisible": false,
+          "openMethod": "",
+          "disablePreload": false
+        }
+      ],
+      "middleware": {},
+      "options": {
+        "apiTimeout": 0,
+        "dependencies": [
+          {
+            "type": "system",
+            "name": "olares",
+            "version": ">=1.12.3-0"
+          }
+        ]
+      },
+      "submitter": "trevestforvor",
+      "doc": "",
+      "website": "https://huggingface.co/unsloth/gemma-3-12b-it-GGUF",
+      "featuredImage": "",
+      "sourceCode": "https://github.com/trevestforvor/OlaresModels",
+      "license": [
+        {
+          "text": "Gemma"
+        }
+      ],
+      "legal": null,
+      "i18n": {
+        "en-US": {
+          "metadata": {
+            "title": "Gemma 3 12B IT Q8",
+            "description": "Gemma 3 12B IT Q8_0 dense model via llama.cpp — optimized for Olares One"
+          },
+          "entrances": null,
+          "spec": {
+            "fullDescription": "Google Gemma 3 12B IT served via llama.cpp, optimized for Olares One hardware.\n\nDense 12B parameter multimodal model with strong reasoning and multilingual capabilities.\nQ8_0 quantization (12.5GB). Full GPU offload on RTX 5090M (24GB VRAM).\n128K native context window with quantized KV cache. OpenAI-compatible API on port 8080.\n\nExpected performance: ~80-130 tokens/sec. Model downloads automatically on first launch (~12.5GB).\n",
+            "upgradeDescription": ""
+          }
+        },
+        "zh-CN": {
+          "metadata": {
+            "title": "Gemma 3 12B IT Q8",
+            "description": "Gemma 3 12B IT Q8_0 稠密模型通过 llama.cpp 提供服务 — 针对 Olares One 优化"
+          },
+          "entrances": null,
+          "spec": {
+            "fullDescription": "Google Gemma 3 12B IT 通过 llama.cpp 提供服务，针对 Olares One 硬件优化。\n\n12B 参数稠密多模态模型，具备强大的推理和多语言能力。\nQ8_0 量化（12.5GB）。RTX 5090M（24GB 显存）全 GPU 卸载。\n128K 原生上下文窗口，量化 KV 缓存。端口 8080 提供 OpenAI 兼容 API。\n\n预期性能：约 80-130 tokens/秒。首次启动时自动下载模型（约 12.5GB）。\n",
+            "upgradeDescription": ""
+          }
+        }
+      },
+      "namespace": "",
+      "onlyAdmin": false,
+      "lastCommitHash": "",
+      "createTime": 0,
+      "updateTime": 0,
+      "count": null,
+      "versionHistory": [
+        {
+          "appName": "llamacppgemma312b",
+          "version": "1.0.0",
+          "versionName": "unsloth/gemma-3-12b-it-GGUF",
+          "mergedAt": "2026-03-20T18:13:38.853Z",
+          "upgradeDescription": ""
+        }
+      ],
+      "screenshots": null,
+      "tags": null,
+      "metadata": null,
+      "updated_at": "2026-03-20T18:13:38.853Z"
+    },
     "dfd72114": {
       "id": "dfd72114",
       "name": "llamacppqwen314b",
@@ -162,14 +291,14 @@
           "appName": "llamacppqwen314b",
           "version": "1.0.0",
           "versionName": "lm-kit/qwen-3-14b-instruct-gguf",
-          "mergedAt": "2026-03-20T18:01:51.253Z",
+          "mergedAt": "2026-03-20T18:13:38.855Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T18:01:51.253Z"
+      "updated_at": "2026-03-20T18:13:38.855Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -278,14 +407,14 @@
           "appName": "llamacppqwen35a3buncensored",
           "version": "1.0.13",
           "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-          "mergedAt": "2026-03-20T18:01:51.254Z",
+          "mergedAt": "2026-03-20T18:13:38.856Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T18:01:51.254Z"
+      "updated_at": "2026-03-20T18:13:38.856Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -394,14 +523,14 @@
           "appName": "llamacppqwen3coder30ba3b",
           "version": "1.0.8",
           "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-          "mergedAt": "2026-03-20T18:01:51.255Z",
+          "mergedAt": "2026-03-20T18:13:38.857Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T18:01:51.255Z"
+      "updated_at": "2026-03-20T18:13:38.857Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -510,17 +639,18 @@
           "appName": "vllmqwen3coder30ba3bfp4",
           "version": "1.0.1",
           "versionName": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
-          "mergedAt": "2026-03-20T18:01:51.257Z",
+          "mergedAt": "2026-03-20T18:13:38.859Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T18:01:51.257Z"
+      "updated_at": "2026-03-20T18:13:38.859Z"
     }
   },
   "latest": [
+    "llamacppgemma312b",
     "llamacppqwen314b",
     "llamacppqwen35a3buncensored",
     "llamacppqwen3coder30ba3b",

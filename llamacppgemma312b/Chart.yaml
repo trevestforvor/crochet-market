@@ -1,0 +1,6 @@
+apiVersion: v2
+appVersion: 'unsloth/gemma-3-12b-it-GGUF'
+description: Gemma 3 12B IT Q8_0 served via llama.cpp — optimized for Olares One
+name: llamacppgemma312b
+type: application
+version: '1.0.0'

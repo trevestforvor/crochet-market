@@ -1,0 +1,12 @@
+metadata:
+  title: Gemma 3 12B IT Q8
+  description: Gemma 3 12B IT Q8_0 dense model via llama.cpp — optimized for Olares One
+spec:
+  fullDescription: |
+    Google Gemma 3 12B IT served via llama.cpp, optimized for Olares One hardware.
+
+    Dense 12B parameter multimodal model with strong reasoning and multilingual capabilities.
+    Q8_0 quantization (12.5GB). Full GPU offload on RTX 5090M (24GB VRAM).
+    128K native context window with quantized KV cache. OpenAI-compatible API on port 8080.
+
+    Expected performance: ~80-130 tokens/sec. Model downloads automatically on first launch (~12.5GB).

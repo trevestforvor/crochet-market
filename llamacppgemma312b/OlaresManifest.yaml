@@ -1,0 +1,57 @@
+olaresManifest.version: '0.11.0'
+olaresManifest.type: app
+metadata:
+  name: llamacppgemma312b
+  appid: llamacppgemma312b
+  title: Gemma 3 12B IT Q8
+  icon: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
+  description: Gemma 3 12B IT Q8_0 dense model via llama.cpp — optimized for Olares One
+  version: 1.0.0
+  versionName: '1.0.0'
+  categories:
+    - AI
+entrances:
+  - name: llamacppgemma312b
+    host: llamacppgemma312b
+    port: 8080
+    title: Gemma 3 12B IT Q8
+    authLevel: private
+spec:
+  versionName: '1.0.0'
+  fullDescription: |
+    Google Gemma 3 12B IT served via llama.cpp, optimized for Olares One hardware.
+
+    Dense 12B parameter multimodal model with strong reasoning and multilingual capabilities.
+    Q8_0 quantization (12.5GB). Full GPU offload on RTX 5090M (24GB VRAM).
+    128K native context window with quantized KV cache. OpenAI-compatible API on port 8080.
+
+    Expected performance: ~80-130 tokens/sec. Model downloads automatically on first launch (~12.5GB).
+  developer: Google
+  website: https://huggingface.co/unsloth/gemma-3-12b-it-GGUF
+  sourceCode: https://github.com/trevestforvor/OlaresModels
+  submitter: trevestforvor
+  locale:
+    - en-US
+    - zh-CN
+  license:
+    - text: Gemma
+  category: AI
+  requiredMemory: 24Gi
+  limitedMemory: 40Gi
+  requiredCpu: 4100m
+  limitedCpu: 16000m
+  requiredGpu: 1Gi
+  limitedGpu: 24Gi
+  requiredDisk: 25Gi
+  limitedDisk: 50Gi
+  supportArch:
+    - amd64
+permission:
+  appData: true
+middleware: {}
+options:
+  apiTimeout: 0
+  dependencies:
+    - type: system
+      name: olares
+      version: '>=1.12.3-0'
