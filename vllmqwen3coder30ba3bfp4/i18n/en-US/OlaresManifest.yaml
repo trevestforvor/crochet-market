@@ -8,7 +8,7 @@ spec:
 
     MoE architecture with 128 experts, 8 active per token (~3B active parameters).
     NVFP4 quantization (18.1GB). Full GPU inference on RTX 5090M.
-    65K context window. OpenAI-compatible API on port 8000.
+    16K context window. OpenAI-compatible API on port 8000.
 
     Features:
     - Agentic coding capabilities with tool calling support

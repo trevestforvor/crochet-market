@@ -1,5 +1,5 @@
 {
-  "hash": "d91ef6ef21c3f453a42cf725d601bc8f",
+  "hash": "c628c21b8182e521821c71550842a535",
   "summaries": {
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -12,7 +12,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T07:22:20.435Z"
+      "updated_at": "2026-03-20T07:47:09.260Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -25,12 +25,12 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T07:22:20.438Z"
+      "updated_at": "2026-03-20T07:47:09.263Z"
     },
     "ae235064": {
       "id": "ae235064",
       "name": "vllmqwen3coder30ba3bfp4",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "AI",
       "description": "Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One",
       "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
@@ -38,7 +38,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T07:22:20.439Z"
+      "updated_at": "2026-03-20T07:47:09.264Z"
     }
   },
   "details": {
@@ -149,14 +149,14 @@
           "appName": "llamacppqwen35a3buncensored",
           "version": "1.0.12",
           "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-          "mergedAt": "2026-03-20T07:22:20.436Z",
+          "mergedAt": "2026-03-20T07:47:09.261Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T07:22:20.436Z"
+      "updated_at": "2026-03-20T07:47:09.261Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -265,30 +265,30 @@
           "appName": "llamacppqwen3coder30ba3b",
           "version": "1.0.7",
           "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-          "mergedAt": "2026-03-20T07:22:20.438Z",
+          "mergedAt": "2026-03-20T07:47:09.263Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T07:22:20.438Z"
+      "updated_at": "2026-03-20T07:47:09.263Z"
     },
     "ae235064": {
       "id": "ae235064",
       "name": "vllmqwen3coder30ba3bfp4",
       "cfgType": "app",
-      "chartName": "vllmqwen3coder30ba3bfp4-1.0.0.tgz",
+      "chartName": "vllmqwen3coder30ba3bfp4-1.0.1.tgz",
       "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
       "description": "Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One",
       "appID": "ae235064",
       "title": "Qwen3 Coder 30B-A3B FP4 vLLM",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "categories": [
         "AI"
       ],
-      "versionName": "1.0.0",
-      "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via vLLM with NVFP4 quantization (4-bit weights and activations),\noptimized for Olares One hardware (RTX 5090M 24GB VRAM).\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nNVFP4 quantization (18.1GB). Full GPU inference on RTX 5090M.\n65K context window. OpenAI-compatible API on port 8000.\n\nExpected performance: ~200+ tokens/sec. Model downloads automatically on first launch (~18.1GB).\n",
+      "versionName": "1.0.1",
+      "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via vLLM with NVFP4 quantization (4-bit weights and activations),\noptimized for Olares One hardware (RTX 5090M 24GB VRAM).\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nNVFP4 quantization (18.1GB). 2GB CPU offload for MoE workspace headroom.\n16K context window. OpenAI-compatible API on port 8000.\n\nExpected performance: ~200+ tokens/sec. Model downloads automatically on first launch (~18.1GB).\n",
       "upgradeDescription": "",
       "promoteImage": null,
       "promoteVideo": "",
@@ -354,7 +354,7 @@
           },
           "entrances": null,
           "spec": {
-            "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via vLLM with NVFP4 quantization (4-bit weights and activations),\noptimized for Olares One hardware (RTX 5090M 24GB VRAM).\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nNVFP4 quantization (18.1GB). Full GPU inference on RTX 5090M.\n65K context window. OpenAI-compatible API on port 8000.\n\nFeatures:\n- Agentic coding capabilities with tool calling support\n- Thinking/reasoning mode with structured output\n- OpenAI-compatible API endpoint\n- Automatic model download on first launch (~18.1GB)\n\nExpected performance: ~200+ tokens/sec.\n",
+            "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via vLLM with NVFP4 quantization (4-bit weights and activations),\noptimized for Olares One hardware (RTX 5090M 24GB VRAM).\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nNVFP4 quantization (18.1GB). Full GPU inference on RTX 5090M.\n16K context window. OpenAI-compatible API on port 8000.\n\nFeatures:\n- Agentic coding capabilities with tool calling support\n- Thinking/reasoning mode with structured output\n- OpenAI-compatible API endpoint\n- Automatic model download on first launch (~18.1GB)\n\nExpected performance: ~200+ tokens/sec.\n",
             "upgradeDescription": ""
           }
         },
@@ -365,7 +365,7 @@
           },
           "entrances": null,
           "spec": {
-            "fullDescription": "Qwen3-Coder-30B-A3B-Instruct 通过 vLLM 提供服务，采用 NVFP4 量化（4位权重和激活），\n针对 Olares One 硬件优化（RTX 5090M 24GB 显存）。\n\nMoE 架构，128 个专家，每个 token 激活 8 个（约 3B 活跃参数）。\nNVFP4 量化（18.1GB）。在 RTX 5090M 上全 GPU 推理。\n65K 上下文窗口。端口 8000 上提供 OpenAI 兼容 API。\n\n特性：\n- 代理编码能力，支持工具调用\n- 思维/推理模式，支持结构化输出\n- OpenAI 兼容 API 端点\n- 首次启动自动下载模型（约 18.1GB）\n\n预期性能：约 200+ tokens/秒。\n",
+            "fullDescription": "Qwen3-Coder-30B-A3B-Instruct 通过 vLLM 提供服务，采用 NVFP4 量化（4位权重和激活），\n针对 Olares One 硬件优化（RTX 5090M 24GB 显存）。\n\nMoE 架构，128 个专家，每个 token 激活 8 个（约 3B 活跃参数）。\nNVFP4 量化（18.1GB）。在 RTX 5090M 上全 GPU 推理。\n16K 上下文窗口。端口 8000 上提供 OpenAI 兼容 API。\n\n特性：\n- 代理编码能力，支持工具调用\n- 思维/推理模式，支持结构化输出\n- OpenAI 兼容 API 端点\n- 首次启动自动下载模型（约 18.1GB）\n\n预期性能：约 200+ tokens/秒。\n",
             "upgradeDescription": ""
           }
         }
@@ -379,16 +379,16 @@
       "versionHistory": [
         {
           "appName": "vllmqwen3coder30ba3bfp4",
-          "version": "1.0.0",
+          "version": "1.0.1",
           "versionName": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
-          "mergedAt": "2026-03-20T07:22:20.439Z",
+          "mergedAt": "2026-03-20T07:47:09.264Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T07:22:20.439Z"
+      "updated_at": "2026-03-20T07:47:09.264Z"
     }
   },
   "latest": [
