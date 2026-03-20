@@ -609,6 +609,7 @@ spec:
             limits:
               cpu: "<LIMITED_CPU>"
               memory: "<LIMITED_MEMORY>"
+              nvidia.com/gpu: "1"
             requests:
               cpu: "500m"
               memory: "2Gi"
@@ -656,7 +657,7 @@ spec:
       targetPort: 8080
 ```
 
-Replace all `<PLACEHOLDER>` values with computed values from Step 5. Always use `-np 1` for llama.cpp (single slot). GPU is injected via the `applications.app.bytetrade.io/gpu-inject: "true"` annotation. If not using GPU (full CPU mode), remove that annotation.
+Replace all `<PLACEHOLDER>` values with computed values from Step 5. Always use `-np 1` for llama.cpp (single slot). GPU requires both the `applications.app.bytetrade.io/gpu-inject: "true"` annotation AND `nvidia.com/gpu: "1"` in resource limits. If not using GPU (full CPU mode), remove both.
 
 ## Step 8: Validate and Package
 
