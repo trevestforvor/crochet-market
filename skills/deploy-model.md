@@ -105,11 +105,9 @@ Apply these rules in order:
 - If doesn't fit: binary search down until `weights + kv_cache(ctx) < 22GB`
 - Minimum: 2048 tokens
 
-**Concurrent users (vLLM)**:
-- `per_request_kv = kv_per_token_per_layer x num_layers x avg_context_per_request`
-- Assume avg_context_per_request = context_length / 2
-- `max_num_seqs = floor((22GB - model_weights) / per_request_kv)`
-- Minimum: 1, cap at 64
+**Concurrent users**:
+- **llama.cpp**: Always use `-np 1` (single slot). Parallel slots divide context across users, reducing per-user context and doubling KV cache VRAM. Single user is the right default for local inference.
+- **vLLM**: Set `--max-num-seqs 16`. vLLM handles concurrent requests efficiently with paged attention — no context splitting.
 
 **Speed estimate** — use this empirical table as the PRIMARY reference (formula `VRAM_bandwidth / model_weight_size` is a ceiling only):
 
@@ -409,9 +407,9 @@ spec:
               echo "Model ready. Starting vLLM..."
               {{- $gpuInfo := include "GPU.getGPUInfo" . | fromJson }}
               {{- if eq $gpuInfo.isSparkDGX "true" }}
-              exec vllm serve --model /models/<MODEL_ID> --gpu-memory-utilization 0.85 --max-model-len 8192 --max-num-seqs <MAX_NUM_SEQS> --port 8000
+              exec vllm serve --model /models/<MODEL_ID> --gpu-memory-utilization 0.85 --max-model-len 8192 --max-num-seqs 16 --port 8000
               {{- else }}
-              exec vllm serve --model /models/<MODEL_ID> --gpu-memory-utilization <GPU_MEM_UTIL> --max-model-len <MAX_MODEL_LEN> --max-num-seqs <MAX_NUM_SEQS> --port 8000
+              exec vllm serve --model /models/<MODEL_ID> --gpu-memory-utilization <GPU_MEM_UTIL> --max-model-len <MAX_MODEL_LEN> --max-num-seqs 16 --port 8000
               {{- end }}
           ports:
             - containerPort: 8000
@@ -586,6 +584,8 @@ spec:
             - "2048"
             - "-ub"
             - "1024"
+            - "-np"
+            - "1"
             - "--host"
             - "0.0.0.0"
             - "--port"
@@ -641,7 +641,7 @@ spec:
       targetPort: 8080
 ```
 
-Replace all `<PLACEHOLDER>` values with computed values from Step 5. If concurrent users > 1, add `--parallel <N>` to the args list. If not using GPU (full CPU mode), remove the `nvidia.com/gpu: "1"` resource limit.
+Replace all `<PLACEHOLDER>` values with computed values from Step 5. Always use `-np 1` for llama.cpp (single slot). If not using GPU (full CPU mode), remove the `nvidia.com/gpu: "1"` resource limit.
 
 ## Step 8: Validate and Package
 
