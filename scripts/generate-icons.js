@@ -5,7 +5,7 @@ const https = require('https');
 
 const ICONS_DIR = path.resolve(__dirname, '../icons');
 const SIZE = 256;
-const BADGE_H = 40;
+const BADGE_H = Math.round(SIZE / 6); // ~1/6 of icon size
 
 // Model definitions: appname -> { avatarUrl, backend, bgColor }
 const models = {
@@ -58,16 +58,23 @@ function fetchBuffer(url) {
   });
 }
 
-function createBadgeSvg(text, bgColor, textColor, width) {
-  const fontSize = 16;
-  const padding = 8;
-  const badgeWidth = width;
+function createBadgeSvg(text, bgColor, textColor) {
+  const fontSize = Math.round(BADGE_H * 0.5);
+  const hPad = Math.round(BADGE_H * 0.5);
   const badgeHeight = BADGE_H;
-  const radius = 8;
+  // Estimate text width: ~0.6em per char for bold Arial
+  const textWidth = Math.round(text.length * fontSize * 0.62);
+  const badgeWidth = textWidth + hPad * 2;
+  const radius = Math.round(badgeHeight / 2); // full pill shape
 
   return Buffer.from(`<svg width="${badgeWidth}" height="${badgeHeight}" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+        <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+      </filter>
+    </defs>
     <rect x="0" y="0" width="${badgeWidth}" height="${badgeHeight}"
-          rx="${radius}" ry="${radius}" fill="${bgColor}" opacity="0.9"/>
+          rx="${radius}" ry="${radius}" fill="${bgColor}" filter="url(#shadow)"/>
     <text x="${badgeWidth / 2}" y="${badgeHeight / 2 + fontSize * 0.35}"
           font-family="Arial, Helvetica, sans-serif" font-size="${fontSize}" font-weight="bold"
           fill="${textColor}" text-anchor="middle">${text}</text>
@@ -87,8 +94,7 @@ async function generateIcon(appName, config) {
     .toBuffer();
 
   // Create badge
-  const badgeWidth = config.backend === 'llama.cpp' ? 110 : 70;
-  const badgeSvg = createBadgeSvg(config.backend, config.badgeColor, config.badgeText, badgeWidth);
+  const badgeSvg = createBadgeSvg(config.backend, config.badgeColor, config.badgeText);
   const badge = await sharp(badgeSvg).png().toBuffer();
 
   // Composite: avatar + badge in bottom-right corner

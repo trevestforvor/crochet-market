@@ -1,5 +1,5 @@
 {
-  "hash": "b126230285835a7d93dc6862d344df2d",
+  "hash": "2b79c8200125a7093bcdd32a21e95991",
   "summaries": {
     "6e3681ab": {
       "id": "6e3681ab",
@@ -12,7 +12,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T20:17:01.518Z"
+      "updated_at": "2026-03-20T22:15:43.251Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -25,7 +25,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T20:17:01.520Z"
+      "updated_at": "2026-03-20T22:15:43.254Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -38,7 +38,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T20:17:01.521Z"
+      "updated_at": "2026-03-20T22:15:43.256Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -51,7 +51,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T20:17:01.523Z"
+      "updated_at": "2026-03-20T22:15:43.259Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -64,7 +64,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T20:17:01.524Z"
+      "updated_at": "2026-03-20T22:15:43.261Z"
     }
   },
   "details": {
@@ -175,14 +175,14 @@
           "appName": "llamacppgemma312b",
           "version": "1.0.1",
           "versionName": "unsloth/gemma-3-12b-it-GGUF",
-          "mergedAt": "2026-03-20T20:17:01.519Z",
+          "mergedAt": "2026-03-20T22:15:43.253Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T20:17:01.519Z"
+      "updated_at": "2026-03-20T22:15:43.253Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -291,14 +291,14 @@
           "appName": "llamacppqwen314b",
           "version": "1.0.1",
           "versionName": "lm-kit/qwen-3-14b-instruct-gguf",
-          "mergedAt": "2026-03-20T20:17:01.520Z",
+          "mergedAt": "2026-03-20T22:15:43.254Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T20:17:01.520Z"
+      "updated_at": "2026-03-20T22:15:43.254Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -407,14 +407,14 @@
           "appName": "llamacppqwen35a3buncensored",
           "version": "1.0.14",
           "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-          "mergedAt": "2026-03-20T20:17:01.521Z",
+          "mergedAt": "2026-03-20T22:15:43.257Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T20:17:01.521Z"
+      "updated_at": "2026-03-20T22:15:43.257Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -523,14 +523,14 @@
           "appName": "llamacppqwen3coder30ba3b",
           "version": "1.0.9",
           "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-          "mergedAt": "2026-03-20T20:17:01.523Z",
+          "mergedAt": "2026-03-20T22:15:43.259Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T20:17:01.523Z"
+      "updated_at": "2026-03-20T22:15:43.259Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -639,14 +639,14 @@
           "appName": "vllmqwen3coder30ba3bfp4",
           "version": "1.0.2",
           "versionName": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
-          "mergedAt": "2026-03-20T20:17:01.524Z",
+          "mergedAt": "2026-03-20T22:15:43.261Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T20:17:01.524Z"
+      "updated_at": "2026-03-20T22:15:43.261Z"
     }
   },
   "latest": [
