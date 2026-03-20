@@ -180,7 +180,7 @@ entrances:
     title: <Display Title — same rules as metadata.title>
     authLevel: private
 spec:
-  versionName: '1.0.0'
+  versionName: '1.0.0'   # MUST always match metadata.version and metadata.versionName — all three must be identical
   fullDescription: |
     <detailed description — model capabilities, hardware target, performance>
   developer: <from HuggingFace model card>
@@ -597,3 +597,4 @@ Model downloads on first launch (~<size>GB)
 - **Q3_K_L is the absolute floor** for acceptable quality on reasoning tasks
 - For multi-user: vLLM with AWQ. For single-user: llama.cpp
 - All appids: lowercase, no hyphens, backend prefix + model name mashed together
+- **Version sync**: `Chart.yaml version`, `metadata.version`, `metadata.versionName`, and `spec.versionName` in OlaresManifest.yaml MUST all be identical. Out-of-sync versions cause apps to not appear in the marketplace.
