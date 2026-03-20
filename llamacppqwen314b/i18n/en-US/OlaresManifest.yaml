@@ -1,0 +1,12 @@
+metadata:
+  title: Qwen3 14B Instruct Q6K
+  description: Qwen3 14B Instruct Q6_K dense model via llama.cpp — optimized for Olares One
+spec:
+  fullDescription: |
+    Qwen3-14B-Instruct served via llama.cpp, optimized for Olares One hardware.
+
+    Dense 14B parameter model with strong reasoning and instruction-following capabilities.
+    Q6_K quantization (12.1GB). Full GPU offload on RTX 5090M (24GB VRAM).
+    32K context window. OpenAI-compatible API on port 8080.
+
+    Expected performance: ~80-130 tokens/sec. Model downloads automatically on first launch (~12.1GB).

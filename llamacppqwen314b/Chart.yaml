@@ -1,0 +1,6 @@
+apiVersion: v2
+appVersion: 'lm-kit/qwen-3-14b-instruct-gguf'
+description: Qwen3 14B Instruct Q6_K served via llama.cpp — optimized for Olares One
+name: llamacppqwen314b
+type: application
+version: '1.0.0'

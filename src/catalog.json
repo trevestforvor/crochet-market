@@ -1,6 +1,19 @@
 {
-  "hash": "0aea3dc00cdbcec62e4b573a0773a2a1",
+  "hash": "ac75c736cdefe35c1d7004be912208ba",
   "summaries": {
+    "dfd72114": {
+      "id": "dfd72114",
+      "name": "llamacppqwen314b",
+      "version": "1.0.0",
+      "category": "AI",
+      "description": "Qwen3 14B Instruct Q6_K dense model via llama.cpp — optimized for Olares One",
+      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "screenshots": null,
+      "tags": null,
+      "metadata": null,
+      "source": 1,
+      "updated_at": "2026-03-20T18:01:51.252Z"
+    },
     "dbc88bc8": {
       "id": "dbc88bc8",
       "name": "llamacppqwen35a3buncensored",
@@ -12,7 +25,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T08:04:10.210Z"
+      "updated_at": "2026-03-20T18:01:51.254Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -25,7 +38,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T08:04:10.213Z"
+      "updated_at": "2026-03-20T18:01:51.255Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -38,10 +51,126 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T08:04:10.215Z"
+      "updated_at": "2026-03-20T18:01:51.257Z"
     }
   },
   "details": {
+    "dfd72114": {
+      "id": "dfd72114",
+      "name": "llamacppqwen314b",
+      "cfgType": "app",
+      "chartName": "llamacppqwen314b-1.0.0.tgz",
+      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "description": "Qwen3 14B Instruct Q6_K dense model via llama.cpp — optimized for Olares One",
+      "appID": "dfd72114",
+      "title": "Qwen3 14B Instruct Q6K",
+      "version": "1.0.0",
+      "categories": [
+        "AI"
+      ],
+      "versionName": "1.0.0",
+      "fullDescription": "Qwen3-14B-Instruct served via llama.cpp, optimized for Olares One hardware.\n\nDense 14B parameter model with strong reasoning and instruction-following capabilities.\nQ6_K quantization (12.1GB). Full GPU offload on RTX 5090M (24GB VRAM).\n32K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~80-130 tokens/sec. Model downloads automatically on first launch (~12.1GB).\n",
+      "upgradeDescription": "",
+      "promoteImage": null,
+      "promoteVideo": "",
+      "subCategory": "",
+      "locale": [
+        "en-US",
+        "zh-CN"
+      ],
+      "developer": "lm-kit",
+      "requiredMemory": "25769803776",
+      "requiredDisk": "26843545600",
+      "supportClient": {},
+      "supportArch": [
+        "amd64"
+      ],
+      "requiredGPU": "1073741824",
+      "requiredCPU": "4.1",
+      "rating": 0,
+      "target": "",
+      "permission": {
+        "appData": true
+      },
+      "entrances": [
+        {
+          "name": "llamacppqwen314b",
+          "host": "llamacppqwen314b",
+          "port": 8080,
+          "title": "Qwen3 14B Instruct Q6K",
+          "icon": "",
+          "authLevel": "private",
+          "invisible": false,
+          "openMethod": "",
+          "disablePreload": false
+        }
+      ],
+      "middleware": {},
+      "options": {
+        "apiTimeout": 0,
+        "dependencies": [
+          {
+            "type": "system",
+            "name": "olares",
+            "version": ">=1.12.3-0"
+          }
+        ]
+      },
+      "submitter": "trevestforvor",
+      "doc": "",
+      "website": "https://huggingface.co/lm-kit/qwen-3-14b-instruct-gguf",
+      "featuredImage": "",
+      "sourceCode": "https://github.com/trevestforvor/OlaresModels",
+      "license": [
+        {
+          "text": "Apache-2.0"
+        }
+      ],
+      "legal": null,
+      "i18n": {
+        "en-US": {
+          "metadata": {
+            "title": "Qwen3 14B Instruct Q6K",
+            "description": "Qwen3 14B Instruct Q6_K dense model via llama.cpp — optimized for Olares One"
+          },
+          "entrances": null,
+          "spec": {
+            "fullDescription": "Qwen3-14B-Instruct served via llama.cpp, optimized for Olares One hardware.\n\nDense 14B parameter model with strong reasoning and instruction-following capabilities.\nQ6_K quantization (12.1GB). Full GPU offload on RTX 5090M (24GB VRAM).\n32K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~80-130 tokens/sec. Model downloads automatically on first launch (~12.1GB).\n",
+            "upgradeDescription": ""
+          }
+        },
+        "zh-CN": {
+          "metadata": {
+            "title": "Qwen3 14B Instruct Q6K",
+            "description": "Qwen3 14B Instruct Q6_K 稠密模型通过 llama.cpp 提供服务 — 针对 Olares One 优化"
+          },
+          "entrances": null,
+          "spec": {
+            "fullDescription": "Qwen3-14B-Instruct 通过 llama.cpp 提供服务，针对 Olares One 硬件优化。\n\n14B 参数稠密模型，具备强大的推理和指令跟随能力。\nQ6_K 量化（12.1GB）。RTX 5090M（24GB 显存）全 GPU 卸载。\n32K 上下文窗口。端口 8080 提供 OpenAI 兼容 API。\n\n预期性能：约 80-130 tokens/秒。首次启动时自动下载模型（约 12.1GB）。\n",
+            "upgradeDescription": ""
+          }
+        }
+      },
+      "namespace": "",
+      "onlyAdmin": false,
+      "lastCommitHash": "",
+      "createTime": 0,
+      "updateTime": 0,
+      "count": null,
+      "versionHistory": [
+        {
+          "appName": "llamacppqwen314b",
+          "version": "1.0.0",
+          "versionName": "lm-kit/qwen-3-14b-instruct-gguf",
+          "mergedAt": "2026-03-20T18:01:51.253Z",
+          "upgradeDescription": ""
+        }
+      ],
+      "screenshots": null,
+      "tags": null,
+      "metadata": null,
+      "updated_at": "2026-03-20T18:01:51.253Z"
+    },
     "dbc88bc8": {
       "id": "dbc88bc8",
       "name": "llamacppqwen35a3buncensored",
@@ -149,14 +278,14 @@
           "appName": "llamacppqwen35a3buncensored",
           "version": "1.0.13",
           "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-          "mergedAt": "2026-03-20T08:04:10.211Z",
+          "mergedAt": "2026-03-20T18:01:51.254Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T08:04:10.211Z"
+      "updated_at": "2026-03-20T18:01:51.254Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -265,14 +394,14 @@
           "appName": "llamacppqwen3coder30ba3b",
           "version": "1.0.8",
           "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-          "mergedAt": "2026-03-20T08:04:10.213Z",
+          "mergedAt": "2026-03-20T18:01:51.255Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T08:04:10.213Z"
+      "updated_at": "2026-03-20T18:01:51.255Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -381,17 +510,18 @@
           "appName": "vllmqwen3coder30ba3bfp4",
           "version": "1.0.1",
           "versionName": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
-          "mergedAt": "2026-03-20T08:04:10.215Z",
+          "mergedAt": "2026-03-20T18:01:51.257Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T08:04:10.215Z"
+      "updated_at": "2026-03-20T18:01:51.257Z"
     }
   },
   "latest": [
+    "llamacppqwen314b",
     "llamacppqwen35a3buncensored",
     "llamacppqwen3coder30ba3b",
     "vllmqwen3coder30ba3bfp4"

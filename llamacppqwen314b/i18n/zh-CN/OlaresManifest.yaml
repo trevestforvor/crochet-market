@@ -1,0 +1,12 @@
+metadata:
+  title: Qwen3 14B Instruct Q6K
+  description: Qwen3 14B Instruct Q6_K 稠密模型通过 llama.cpp 提供服务 — 针对 Olares One 优化
+spec:
+  fullDescription: |
+    Qwen3-14B-Instruct 通过 llama.cpp 提供服务，针对 Olares One 硬件优化。
+
+    14B 参数稠密模型，具备强大的推理和指令跟随能力。
+    Q6_K 量化（12.1GB）。RTX 5090M（24GB 显存）全 GPU 卸载。
+    32K 上下文窗口。端口 8080 提供 OpenAI 兼容 API。
+
+    预期性能：约 80-130 tokens/秒。首次启动时自动下载模型（约 12.1GB）。
