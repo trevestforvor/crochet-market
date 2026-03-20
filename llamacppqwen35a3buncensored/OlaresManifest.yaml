@@ -6,8 +6,8 @@ metadata:
   title: Qwen35 35B-A3B Uncensored
   icon: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
   description: Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One
-  version: 1.0.5
-  versionName: '1.0.5'
+  version: 1.0.6
+  versionName: '1.0.6'
 entrances:
   - name: llamacppqwen35a3buncensored
     host: llamacppqwen35a3buncensored

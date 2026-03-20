@@ -3,4 +3,4 @@ appVersion: 'Qwen/Qwen3-Coder-30B-A3B-Instruct'
 description: Qwen3 Coder 30B-A3B Instruct served via llama.cpp — optimized for Olares One
 name: llamacppqwen3coder30ba3b
 type: application
-version: '1.0.1'
+version: '1.0.2'

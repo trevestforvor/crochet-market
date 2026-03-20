@@ -612,7 +612,7 @@ spec:
             httpGet:
               path: /health
               port: 8080
-            periodSeconds: 60
+            periodSeconds: 300
             timeoutSeconds: 10
             failureThreshold: 5
           volumeMounts:
