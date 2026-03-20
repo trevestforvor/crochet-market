@@ -167,7 +167,7 @@ metadata:
   name: <appname>
   appid: <appname>
   title: <Display Title — alphanumeric, hyphens, spaces only, max 30 chars, no dots>
-  icon: <icon URL from HuggingFace or model org avatar — MUST NOT be empty>
+  icon: https://olares-models.crochetme.workers.dev/icons/<appname>.png
   description: <one-line model description>
   version: 1.0.0
   versionName: '1.0.0'
@@ -561,7 +561,13 @@ Replace all `<PLACEHOLDER>` values with computed values from Step 5. GPU require
 
 2. **Helm package**: `helm package <appname>/ -d charts/`
 
-3. **Icon**: Fetch from HuggingFace if available. Otherwise inform user to add manually at `icons/<appname>.png` (256x256, <512KB).
+3. **Icon**: Run `node scripts/generate-icons.js` after adding the new model's entry to the `models` object in that script. Each entry needs:
+   - `avatarUrl`: the model org's HuggingFace avatar (find at `https://huggingface.co/<org>`, look for `cdn-avatars.huggingface.co` URL)
+   - `backend`: `'llama.cpp'`, `'vLLM'`, or `'Ollama'`
+   - `badgeColor`: `'#2d8cf0'` for llama.cpp, `'#7c3aed'` for vLLM, `'#000000'` for Ollama
+   - `badgeText`: `'#ffffff'`
+   The script composites the org avatar (256x256) with a backend badge in the bottom-right corner.
+   Set the icon URL in OlaresManifest.yaml to: `https://olares-models.crochetme.workers.dev/icons/<appname>.png`
 
 4. **Build catalog**: `npm run build:catalog`
 

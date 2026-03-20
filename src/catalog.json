@@ -1,5 +1,5 @@
 {
-  "hash": "4e6d27eff4baf077611b952f091ce854",
+  "hash": "6ecd2aba6a08b062548baf7863954534",
   "summaries": {
     "6e3681ab": {
       "id": "6e3681ab",
@@ -7,12 +7,12 @@
       "version": "1.0.0",
       "category": "AI",
       "description": "Gemma 3 12B IT Q8_0 dense model via llama.cpp — optimized for Olares One",
-      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "icon": "https://olares-models.crochetme.workers.dev/icons/llamacppgemma312b.png",
       "screenshots": null,
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T18:13:38.852Z"
+      "updated_at": "2026-03-20T20:15:29.224Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -20,51 +20,51 @@
       "version": "1.0.0",
       "category": "AI",
       "description": "Qwen3 14B Instruct Q6_K dense model via llama.cpp — optimized for Olares One",
-      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "icon": "https://olares-models.crochetme.workers.dev/icons/llamacppqwen314b.png",
       "screenshots": null,
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T18:13:38.855Z"
+      "updated_at": "2026-03-20T20:15:29.226Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
       "name": "llamacppqwen35a3buncensored",
-      "version": "1.0.13",
+      "version": "1.0.14",
       "category": "AI",
       "description": "Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One",
-      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "icon": "https://olares-models.crochetme.workers.dev/icons/llamacppqwen35a3buncensored.png",
       "screenshots": null,
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T18:13:38.856Z"
+      "updated_at": "2026-03-20T20:15:29.227Z"
     },
     "8c63f603": {
       "id": "8c63f603",
       "name": "llamacppqwen3coder30ba3b",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "category": "AI",
       "description": "Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One",
-      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "icon": "https://olares-models.crochetme.workers.dev/icons/llamacppqwen3coder30ba3b.png",
       "screenshots": null,
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T18:13:38.857Z"
+      "updated_at": "2026-03-20T20:15:29.228Z"
     },
     "ae235064": {
       "id": "ae235064",
       "name": "vllmqwen3coder30ba3bfp4",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "category": "AI",
       "description": "Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One",
-      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "icon": "https://olares-models.crochetme.workers.dev/icons/vllmqwen3coder30ba3bfp4.png",
       "screenshots": null,
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T18:13:38.859Z"
+      "updated_at": "2026-03-20T20:15:29.229Z"
     }
   },
   "details": {
@@ -73,7 +73,7 @@
       "name": "llamacppgemma312b",
       "cfgType": "app",
       "chartName": "llamacppgemma312b-1.0.0.tgz",
-      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "icon": "https://olares-models.crochetme.workers.dev/icons/llamacppgemma312b.png",
       "description": "Gemma 3 12B IT Q8_0 dense model via llama.cpp — optimized for Olares One",
       "appID": "6e3681ab",
       "title": "Gemma 3 12B IT Q8",
@@ -175,21 +175,21 @@
           "appName": "llamacppgemma312b",
           "version": "1.0.0",
           "versionName": "unsloth/gemma-3-12b-it-GGUF",
-          "mergedAt": "2026-03-20T18:13:38.853Z",
+          "mergedAt": "2026-03-20T20:15:29.225Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T18:13:38.853Z"
+      "updated_at": "2026-03-20T20:15:29.225Z"
     },
     "dfd72114": {
       "id": "dfd72114",
       "name": "llamacppqwen314b",
       "cfgType": "app",
       "chartName": "llamacppqwen314b-1.0.0.tgz",
-      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "icon": "https://olares-models.crochetme.workers.dev/icons/llamacppqwen314b.png",
       "description": "Qwen3 14B Instruct Q6_K dense model via llama.cpp — optimized for Olares One",
       "appID": "dfd72114",
       "title": "Qwen3 14B Instruct Q6K",
@@ -291,29 +291,29 @@
           "appName": "llamacppqwen314b",
           "version": "1.0.0",
           "versionName": "lm-kit/qwen-3-14b-instruct-gguf",
-          "mergedAt": "2026-03-20T18:13:38.855Z",
+          "mergedAt": "2026-03-20T20:15:29.226Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T18:13:38.855Z"
+      "updated_at": "2026-03-20T20:15:29.226Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
       "name": "llamacppqwen35a3buncensored",
       "cfgType": "app",
-      "chartName": "llamacppqwen35a3buncensored-1.0.13.tgz",
-      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "chartName": "llamacppqwen35a3buncensored-1.0.14.tgz",
+      "icon": "https://olares-models.crochetme.workers.dev/icons/llamacppqwen35a3buncensored.png",
       "description": "Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One",
       "appID": "dbc88bc8",
       "title": "Qwen35 35B-A3B Uncensored",
-      "version": "1.0.13",
+      "version": "1.0.14",
       "categories": [
         "AI"
       ],
-      "versionName": "1.0.13",
+      "versionName": "1.0.14",
       "fullDescription": "Qwen3.5-35B-A3B Uncensored (HauhauCS Aggressive) served via llama.cpp, optimized for Olares One hardware.\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nQ4_K_M quantization (21.2GB). Full GPU offload on RTX 5090M (24GB VRAM).\n16K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~200 tokens/sec. Model downloads automatically on first launch (~21.2GB).\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -405,31 +405,31 @@
       "versionHistory": [
         {
           "appName": "llamacppqwen35a3buncensored",
-          "version": "1.0.13",
+          "version": "1.0.14",
           "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-          "mergedAt": "2026-03-20T18:13:38.856Z",
+          "mergedAt": "2026-03-20T20:15:29.227Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T18:13:38.856Z"
+      "updated_at": "2026-03-20T20:15:29.227Z"
     },
     "8c63f603": {
       "id": "8c63f603",
       "name": "llamacppqwen3coder30ba3b",
       "cfgType": "app",
-      "chartName": "llamacppqwen3coder30ba3b-1.0.8.tgz",
-      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "chartName": "llamacppqwen3coder30ba3b-1.0.9.tgz",
+      "icon": "https://olares-models.crochetme.workers.dev/icons/llamacppqwen3coder30ba3b.png",
       "description": "Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One",
       "appID": "8c63f603",
       "title": "Qwen3 Coder 30B-A3B",
-      "version": "1.0.8",
+      "version": "1.0.9",
       "categories": [
         "AI"
       ],
-      "versionName": "1.0.8",
+      "versionName": "1.0.9",
       "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via llama.cpp, optimized for Olares One hardware.\n\nAgentic coding model with superior code generation, tool-calling, and repository-scale understanding.\nMoE architecture with 128 experts, 8 active per token (~3.3B active parameters).\nQ4_K_M quantization (18.6GB). Full GPU offload on RTX 5090M (24GB VRAM).\n64K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~200 tokens/sec. Model downloads automatically on first launch (~18.6GB).\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -521,31 +521,31 @@
       "versionHistory": [
         {
           "appName": "llamacppqwen3coder30ba3b",
-          "version": "1.0.8",
+          "version": "1.0.9",
           "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-          "mergedAt": "2026-03-20T18:13:38.857Z",
+          "mergedAt": "2026-03-20T20:15:29.228Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T18:13:38.857Z"
+      "updated_at": "2026-03-20T20:15:29.228Z"
     },
     "ae235064": {
       "id": "ae235064",
       "name": "vllmqwen3coder30ba3bfp4",
       "cfgType": "app",
-      "chartName": "vllmqwen3coder30ba3bfp4-1.0.1.tgz",
-      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "chartName": "vllmqwen3coder30ba3bfp4-1.0.2.tgz",
+      "icon": "https://olares-models.crochetme.workers.dev/icons/vllmqwen3coder30ba3bfp4.png",
       "description": "Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One",
       "appID": "ae235064",
       "title": "Qwen3 Coder 30B-A3B FP4 vLLM",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "categories": [
         "AI"
       ],
-      "versionName": "1.0.1",
+      "versionName": "1.0.2",
       "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via vLLM with NVFP4 quantization (4-bit weights and activations),\noptimized for Olares One hardware (RTX 5090M 24GB VRAM).\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nNVFP4 quantization (18.1GB). 2GB CPU offload for MoE workspace headroom.\n16K context window. OpenAI-compatible API on port 8000.\n\nExpected performance: ~200+ tokens/sec. Model downloads automatically on first launch (~18.1GB).\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -637,16 +637,16 @@
       "versionHistory": [
         {
           "appName": "vllmqwen3coder30ba3bfp4",
-          "version": "1.0.1",
+          "version": "1.0.2",
           "versionName": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
-          "mergedAt": "2026-03-20T18:13:38.859Z",
+          "mergedAt": "2026-03-20T20:15:29.229Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T18:13:38.859Z"
+      "updated_at": "2026-03-20T20:15:29.229Z"
     }
   },
   "latest": [

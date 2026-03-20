@@ -4,7 +4,7 @@ metadata:
   name: llamacppqwen314b
   appid: llamacppqwen314b
   title: Qwen3 14B Instruct Q6K
-  icon: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
+  icon: https://olares-models.crochetme.workers.dev/icons/llamacppqwen314b.png
   description: Qwen3 14B Instruct Q6_K dense model via llama.cpp — optimized for Olares One
   version: 1.0.0
   versionName: '1.0.0'
