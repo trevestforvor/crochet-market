@@ -6,8 +6,8 @@ metadata:
   title: Qwen3 Coder 30B-A3B
   icon: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
   description: Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One
-  version: 1.0.0
-  versionName: '1.0.0'
+  version: 1.0.1
+  versionName: '1.0.1'
 entrances:
   - name: llamacppqwen3coder30ba3b
     host: llamacppqwen3coder30ba3b

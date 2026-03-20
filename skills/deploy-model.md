@@ -612,8 +612,9 @@ spec:
             httpGet:
               path: /health
               port: 8080
-            periodSeconds: 30
-            failureThreshold: 3
+            periodSeconds: 60
+            timeoutSeconds: 10
+            failureThreshold: 5
           volumeMounts:
             - name: model-storage
               mountPath: /models
