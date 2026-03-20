@@ -1,0 +1,13 @@
+metadata:
+  title: Qwen3 Coder 30B-A3B
+  description: Qwen3 Coder 30B-A3B Instruct 智能编程模型通过 llama.cpp 提供服务 — 针对 Olares One 优化
+spec:
+  fullDescription: |
+    Qwen3-Coder-30B-A3B-Instruct 通过 llama.cpp 提供服务，针对 Olares One 硬件优化。
+
+    智能编程模型，具备卓越的代码生成、工具调用和仓库级代码理解能力。
+    MoE 架构，128 个专家，每个 token 激活 8 个（约 3.3B 活跃参数）。
+    Q4_K_M 量化（18.6GB）。RTX 5090M（24GB 显存）全 GPU 卸载。
+    64K 上下文窗口。端口 8080 提供 OpenAI 兼容 API。
+
+    预期性能：约 200 tokens/秒。首次启动时自动下载模型（约 18.6GB）。

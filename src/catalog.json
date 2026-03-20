@@ -24,7 +24,32 @@
       "supportArch": [
         "amd64"
       ]
+    },
+    {
+      "name": "llamacppqwen3coder30ba3b",
+      "chartName": "llamacppqwen3coder30ba3b",
+      "version": "1.0.0",
+      "appVersion": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "title": "Qwen3 Coder 30B-A3B",
+      "description": "Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One",
+      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "category": "AI",
+      "versionName": "1.0.0",
+      "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via llama.cpp, optimized for Olares One hardware.\n\nAgentic coding model with superior code generation, tool-calling, and repository-scale understanding.\nMoE architecture with 128 experts, 8 active per token (~3.3B active parameters).\nQ4_K_M quantization (18.6GB). Full GPU offload on RTX 5090M (24GB VRAM).\n64K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~200 tokens/sec. Model downloads automatically on first launch (~18.6GB).\n",
+      "developer": "Qwen",
+      "license": [
+        {
+          "text": "Apache-2.0"
+        }
+      ],
+      "requiredGpu": "1Gi",
+      "limitedGpu": "24Gi",
+      "requiredMemory": "24Gi",
+      "limitedMemory": "40Gi",
+      "supportArch": [
+        "amd64"
+      ]
     }
   ],
-  "version": "1773965414495"
+  "version": "1773966479493"
 }

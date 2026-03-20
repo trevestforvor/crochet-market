@@ -1,0 +1,13 @@
+metadata:
+  title: Qwen3 Coder 30B-A3B
+  description: Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One
+spec:
+  fullDescription: |
+    Qwen3-Coder-30B-A3B-Instruct served via llama.cpp, optimized for Olares One hardware.
+
+    Agentic coding model with superior code generation, tool-calling, and repository-scale understanding.
+    MoE architecture with 128 experts, 8 active per token (~3.3B active parameters).
+    Q4_K_M quantization (18.6GB). Full GPU offload on RTX 5090M (24GB VRAM).
+    64K context window. OpenAI-compatible API on port 8080.
+
+    Expected performance: ~200 tokens/sec. Model downloads automatically on first launch (~18.6GB).
