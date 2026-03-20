@@ -1,4 +1,4 @@
-olaresManifest.version: '0.10.0'
+olaresManifest.version: '0.11.0'
 olaresManifest.type: app
 metadata:
   name: llamacppqwen3coder30ba3b
@@ -6,8 +6,10 @@ metadata:
   title: Qwen3 Coder 30B-A3B
   icon: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
   description: Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One
-  version: 1.0.3
-  versionName: '1.0.3'
+  version: 1.0.5
+  versionName: '1.0.5'
+  categories:
+    - AI
 entrances:
   - name: llamacppqwen3coder30ba3b
     host: llamacppqwen3coder30ba3b
@@ -36,19 +38,20 @@ spec:
     - text: Apache-2.0
   category: AI
   requiredMemory: 4Gi
-  limitedMemory: 40Gi
+  limitedMemory: 16Gi
   requiredCpu: 1000m
-  limitedCpu: 16
+  limitedCpu: 8000m
   requiredGpu: 1Gi
-  limitedGpu: 24Gi
-  requiredDisk: 24Gi
-  limitedDisk: 35Gi
+  limitedGpu: 16Gi
+  requiredDisk: 25Gi
+  limitedDisk: 50Gi
   supportArch:
     - amd64
 permission:
   appData: true
 middleware: {}
 options:
+  apiTimeout: 0
   dependencies:
     - type: system
       name: olares

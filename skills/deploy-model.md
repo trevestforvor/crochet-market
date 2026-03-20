@@ -161,7 +161,7 @@ version: '1.0.0'
 
 **`<appname>/OlaresManifest.yaml`**: Generate with these fields:
 ```yaml
-olaresManifest.version: '0.10.0'
+olaresManifest.version: '0.11.0'
 olaresManifest.type: app
 metadata:
   name: <appname>
@@ -171,6 +171,8 @@ metadata:
   description: <one-line model description>
   version: 1.0.0
   versionName: '1.0.0'
+  categories:
+    - AI
 entrances:
   - name: <appname>
     host: <appname>
@@ -192,19 +194,20 @@ spec:
     - text: <model license from model card>
   category: AI
   requiredMemory: <must be >= sum of container memory requests, e.g., 4Gi>
-  limitedMemory: <computed ceiling, e.g., 40Gi>
+  limitedMemory: 16Gi
   requiredCpu: <must be >= sum of container CPU requests, e.g., 1000m>
-  limitedCpu: <computed ceiling, e.g., 16>
+  limitedCpu: 8000m
   requiredGpu: 1Gi
-  limitedGpu: <computed VRAM allocation, e.g., 24Gi>
-  requiredDisk: <model weight size + 5GB buffer>
-  limitedDisk: <model weight size + 15GB buffer>
+  limitedGpu: 16Gi
+  requiredDisk: 25Gi
+  limitedDisk: 50Gi
   supportArch:
     - amd64
 permission:
   appData: true
 middleware: {}
 options:
+  apiTimeout: 0
   dependencies:
     - type: system
       name: olares
@@ -427,7 +430,6 @@ spec:
             limits:
               cpu: "<LIMITED_CPU>"
               memory: "<LIMITED_MEMORY>"
-              nvidia.com/gpu: "1"
           startupProbe:
             httpGet:
               path: /health
@@ -510,7 +512,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: llamacpp-env
-  namespace: {{ .Release.Namespace }}
+  namespace: "{{ .Release.Namespace }}"
 data:
   MODEL_URL: "<DIRECT_GGUF_DOWNLOAD_URL>"
   MODEL_FILE: "<FILENAME>.gguf"
@@ -522,39 +524,44 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: <appname>
-  namespace: {{ .Release.Namespace }}
+  creationTimestamp: null
   labels:
     io.kompose.service: <appname>
+  name: <appname>
+  namespace: "{{ .Release.Namespace }}"
   annotations:
     applications.app.bytetrade.io/gpu-inject: "true"
 spec:
   replicas: 1
-  strategy:
-    type: Recreate
   selector:
     matchLabels:
       io.kompose.service: <appname>
+  strategy:
+    type: Recreate
   template:
     metadata:
+      creationTimestamp: null
       labels:
+        io.kompose.network/chrome-default: "true"
         io.kompose.service: <appname>
     spec:
       initContainers:
         - name: model-downloader
-          image: docker.io/alpine:3.20
-          command: ["/bin/sh", "-c"]
-          args:
+          image: "docker.io/alpine:3.20"
+          command:
+            - sh
+            - '-c'
             - |
               MODEL_PATH="/models/${MODEL_FILE}"
               if [ -f "$MODEL_PATH" ]; then
                 echo "Model already downloaded: $MODEL_PATH"
                 ls -lh "$MODEL_PATH"
               else
-                echo "Downloading model..."
-                wget -O "/models/${MODEL_FILE}.tmp" "$(MODEL_URL)"
-                mv "/models/${MODEL_FILE}.tmp" "/models/$(MODEL_FILE)"
+                echo "Downloading model from $MODEL_URL ..."
+                wget -O "$MODEL_PATH.tmp" "$MODEL_URL"
+                mv "$MODEL_PATH.tmp" "$MODEL_PATH"
                 echo "Download complete."
+                ls -lh "$MODEL_PATH"
               fi
           envFrom:
             - configMapRef:
@@ -567,52 +574,40 @@ spec:
               cpu: 100m
               memory: 128Mi
           volumeMounts:
-            - name: model-storage
-              mountPath: /models
+            - mountPath: "/models"
+              name: models
       containers:
-        - name: llamacpp
-          image: ghcr.io/ggml-org/llama.cpp:server-cuda
-          ports:
-            - containerPort: 8080
+        - name: llamacpp-server
+          image: "ghcr.io/ggml-org/llama.cpp:server-cuda"
           args:
-            - "-m"
-            - "/models/$(MODEL_FILE)"
-            - "-a"
-            - "$(MODEL_ALIAS)"
-            - "-c"
-            - "$(CONTEXT_SIZE)"
-            - "-ngl"
-            - "$(N_GPU_LAYERS)"
-            - "-t"
-            - "$(THREADS)"
-            - "-fa"
-            - "on"
-            - "--mlock"
-            - "-ctk"
-            - "q8_0"
-            - "-ctv"
-            - "q8_0"
-            - "-b"
-            - "2048"
-            - "-ub"
-            - "1024"
-            - "-np"
-            - "1"
             - "--host"
             - "0.0.0.0"
             - "--port"
             - "8080"
+            - "--model"
+            - "/models/$(MODEL_FILE)"
+            - "--alias"
+            - "$(MODEL_ALIAS)"
+            - "--ctx-size"
+            - "$(CONTEXT_SIZE)"
+            - "--n-gpu-layers"
+            - "$(N_GPU_LAYERS)"
+            - "--threads"
+            - "$(THREADS)"
           envFrom:
             - configMapRef:
                 name: llamacpp-env
-          resources:
-            limits:
-              cpu: "<LIMITED_CPU>"
-              memory: "<LIMITED_MEMORY>"
-              nvidia.com/gpu: "1"
-            requests:
-              cpu: "500m"
-              memory: "2Gi"
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 60
+            timeoutSeconds: 10
+            periodSeconds: 30
+            failureThreshold: 5
           startupProbe:
             httpGet:
               path: /health
@@ -622,42 +617,44 @@ spec:
             timeoutSeconds: 10
             periodSeconds: 10
             failureThreshold: 120
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-              scheme: HTTP
-            periodSeconds: 300
-            timeoutSeconds: 10
-            failureThreshold: 5
+          resources:
+            limits:
+              cpu: "6"
+              memory: 16Gi
+            requests:
+              cpu: 500m
+              memory: 2Gi
           volumeMounts:
-            - name: model-storage
-              mountPath: /models
-            - name: cache
-              mountPath: /tmp/cache
+            - mountPath: "/models"
+              name: models
       volumes:
-        - name: model-storage
+        - name: models
           hostPath:
-            path: {{ .Values.userspace.appData }}/models
+            path: "{{ .Values.userspace.appData }}/models"
             type: DirectoryOrCreate
-        - name: cache
-          emptyDir: {}
+      restartPolicy: Always
+status: {}
 ---
 apiVersion: v1
 kind: Service
 metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: <appname>
   name: <appname>
-  namespace: {{ .Release.Namespace }}
+  namespace: "{{ .Release.Namespace }}"
 spec:
-  type: ClusterIP
+  ports:
+    - name: "llamacpp"
+      port: 8080
+      targetPort: 8080
   selector:
     io.kompose.service: <appname>
-  ports:
-    - port: 8080
-      targetPort: 8080
+status:
+  loadBalancer: {}
 ```
 
-Replace all `<PLACEHOLDER>` values with computed values from Step 5. Always use `-np 1` for llama.cpp (single slot). GPU requires both the `applications.app.bytetrade.io/gpu-inject: "true"` annotation AND `nvidia.com/gpu: "1"` in resource limits. If not using GPU (full CPU mode), remove both.
+Replace all `<PLACEHOLDER>` values with computed values from Step 5. GPU is handled ONLY by the `applications.app.bytetrade.io/gpu-inject: "true"` annotation on the Deployment metadata — do NOT add `nvidia.com/gpu` to resource limits, as that interferes with HAMI's GPU scheduler and causes crash loops. If not using GPU (full CPU mode), remove the annotation.
 
 ## Step 8: Validate and Package
 

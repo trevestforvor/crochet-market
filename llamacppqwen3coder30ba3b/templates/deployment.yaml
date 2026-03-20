@@ -3,7 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: llamacpp-env
-  namespace: {{ .Release.Namespace }}
+  namespace: "{{ .Release.Namespace }}"
 data:
   MODEL_URL: "https://huggingface.co/unsloth/Qwen3-Coder-30B-A3B-Instruct-GGUF/resolve/main/Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf"
   MODEL_FILE: "Qwen3-Coder-30B-A3B-Instruct-Q4_K_M.gguf"
@@ -15,39 +15,44 @@ data:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: llamacppqwen3coder30ba3b
-  namespace: {{ .Release.Namespace }}
+  creationTimestamp: null
   labels:
     io.kompose.service: llamacppqwen3coder30ba3b
+  name: llamacppqwen3coder30ba3b
+  namespace: "{{ .Release.Namespace }}"
   annotations:
     applications.app.bytetrade.io/gpu-inject: "true"
 spec:
   replicas: 1
-  strategy:
-    type: Recreate
   selector:
     matchLabels:
       io.kompose.service: llamacppqwen3coder30ba3b
+  strategy:
+    type: Recreate
   template:
     metadata:
+      creationTimestamp: null
       labels:
+        io.kompose.network/chrome-default: "true"
         io.kompose.service: llamacppqwen3coder30ba3b
     spec:
       initContainers:
         - name: model-downloader
-          image: docker.io/alpine:3.20
-          command: ["/bin/sh", "-c"]
-          args:
+          image: "docker.io/alpine:3.20"
+          command:
+            - sh
+            - '-c'
             - |
               MODEL_PATH="/models/${MODEL_FILE}"
               if [ -f "$MODEL_PATH" ]; then
                 echo "Model already downloaded: $MODEL_PATH"
                 ls -lh "$MODEL_PATH"
               else
-                echo "Downloading model..."
-                wget -O "/models/${MODEL_FILE}.tmp" "$(MODEL_URL)"
-                mv "/models/${MODEL_FILE}.tmp" "/models/$(MODEL_FILE)"
+                echo "Downloading model from $MODEL_URL ..."
+                wget -O "$MODEL_PATH.tmp" "$MODEL_URL"
+                mv "$MODEL_PATH.tmp" "$MODEL_PATH"
                 echo "Download complete."
+                ls -lh "$MODEL_PATH"
               fi
           envFrom:
             - configMapRef:
@@ -60,52 +65,40 @@ spec:
               cpu: 100m
               memory: 128Mi
           volumeMounts:
-            - name: model-storage
-              mountPath: /models
+            - mountPath: "/models"
+              name: models
       containers:
-        - name: llamacpp
-          image: ghcr.io/ggml-org/llama.cpp:server-cuda
-          ports:
-            - containerPort: 8080
+        - name: llamacpp-server
+          image: "ghcr.io/ggml-org/llama.cpp:server-cuda"
           args:
-            - "-m"
-            - "/models/$(MODEL_FILE)"
-            - "-a"
-            - "$(MODEL_ALIAS)"
-            - "-c"
-            - "$(CONTEXT_SIZE)"
-            - "-ngl"
-            - "$(N_GPU_LAYERS)"
-            - "-t"
-            - "$(THREADS)"
-            - "-fa"
-            - "on"
-            - "--mlock"
-            - "-ctk"
-            - "q8_0"
-            - "-ctv"
-            - "q8_0"
-            - "-b"
-            - "2048"
-            - "-ub"
-            - "1024"
-            - "-np"
-            - "1"
             - "--host"
             - "0.0.0.0"
             - "--port"
             - "8080"
+            - "--model"
+            - "/models/$(MODEL_FILE)"
+            - "--alias"
+            - "$(MODEL_ALIAS)"
+            - "--ctx-size"
+            - "$(CONTEXT_SIZE)"
+            - "--n-gpu-layers"
+            - "$(N_GPU_LAYERS)"
+            - "--threads"
+            - "$(THREADS)"
           envFrom:
             - configMapRef:
                 name: llamacpp-env
-          resources:
-            limits:
-              cpu: "16"
-              memory: "40Gi"
-              nvidia.com/gpu: "1"
-            requests:
-              cpu: "500m"
-              memory: "2Gi"
+          ports:
+            - containerPort: 8080
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+              scheme: HTTP
+            initialDelaySeconds: 60
+            timeoutSeconds: 10
+            periodSeconds: 30
+            failureThreshold: 5
           startupProbe:
             httpGet:
               path: /health
@@ -115,36 +108,38 @@ spec:
             timeoutSeconds: 10
             periodSeconds: 10
             failureThreshold: 120
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-              scheme: HTTP
-            periodSeconds: 300
-            timeoutSeconds: 10
-            failureThreshold: 5
+          resources:
+            limits:
+              cpu: "6"
+              memory: 16Gi
+            requests:
+              cpu: 500m
+              memory: 2Gi
           volumeMounts:
-            - name: model-storage
-              mountPath: /models
-            - name: cache
-              mountPath: /tmp/cache
+            - mountPath: "/models"
+              name: models
       volumes:
-        - name: model-storage
+        - name: models
           hostPath:
-            path: {{ .Values.userspace.appData }}/models
+            path: "{{ .Values.userspace.appData }}/models"
             type: DirectoryOrCreate
-        - name: cache
-          emptyDir: {}
+      restartPolicy: Always
+status: {}
 ---
 apiVersion: v1
 kind: Service
 metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: llamacppqwen3coder30ba3b
   name: llamacppqwen3coder30ba3b
-  namespace: {{ .Release.Namespace }}
+  namespace: "{{ .Release.Namespace }}"
 spec:
-  type: ClusterIP
+  ports:
+    - name: "llamacpp"
+      port: 8080
+      targetPort: 8080
   selector:
     io.kompose.service: llamacppqwen3coder30ba3b
-  ports:
-    - port: 8080
-      targetPort: 8080
+status:
+  loadBalancer: {}
