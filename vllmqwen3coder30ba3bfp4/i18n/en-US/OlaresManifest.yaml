@@ -1,0 +1,19 @@
+metadata:
+  title: Qwen3 Coder 30B-A3B FP4 vLLM
+  description: Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One
+spec:
+  fullDescription: |
+    Qwen3-Coder-30B-A3B-Instruct served via vLLM with NVFP4 quantization (4-bit weights and activations),
+    optimized for Olares One hardware (RTX 5090M 24GB VRAM).
+
+    MoE architecture with 128 experts, 8 active per token (~3B active parameters).
+    NVFP4 quantization (18.1GB). Full GPU inference on RTX 5090M.
+    65K context window. OpenAI-compatible API on port 8000.
+
+    Features:
+    - Agentic coding capabilities with tool calling support
+    - Thinking/reasoning mode with structured output
+    - OpenAI-compatible API endpoint
+    - Automatic model download on first launch (~18.1GB)
+
+    Expected performance: ~200+ tokens/sec.
