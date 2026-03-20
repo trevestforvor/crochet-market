@@ -147,7 +147,7 @@ Verify the name doesn't already exist as a directory in the repo. If it does, as
 
 ## Step 7: Generate App Files
 
-### For vLLM backend — generate two-tier chart:
+### For vLLM backend — generate single chart:
 
 **`<appname>/Chart.yaml`**:
 ```yaml
@@ -176,7 +176,7 @@ metadata:
 entrances:
   - name: <appname>
     host: <appname>
-    port: 8080
+    port: <8000 for vLLM, 8080 for llama.cpp>
     title: <Display Title — same rules as metadata.title>
     authLevel: private
 spec:
@@ -216,6 +216,144 @@ options:
 
 Note: `requiredMemory` and `requiredCpu` MUST be >= the sum of all container resource `requests` in the deployment template, or the Olares linter will reject the chart. `limited*` = actual resource ceilings.
 
+**`<appname>/templates/deployment.yaml`**: vLLM deployment:
+
+```yaml
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: vllm-env
+  namespace: "{{ .Release.Namespace }}"
+data:
+  MODEL_NAME: "<HUGGINGFACE_MODEL_ID>"
+  MODEL_ALIAS: "<MODEL_ALIAS>"
+  MAX_MODEL_LEN: "<COMPUTED_CONTEXT>"
+  GPU_MEMORY_UTILIZATION: "<GPU_MEM_UTIL>"
+  MAX_NUM_SEQS: "16"
+  MAX_NUM_BATCHED_TOKENS: "<COMPUTED_BATCHED_TOKENS>"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: <appname>
+  name: <appname>
+  namespace: "{{ .Release.Namespace }}"
+  annotations:
+    applications.app.bytetrade.io/gpu-inject: "true"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: <appname>
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.network/chrome-default: "true"
+        io.kompose.service: <appname>
+    spec:
+      runtimeClassName: nvidia
+      containers:
+        - name: vllm-server
+          image: "vllm/vllm-openai:cu130-nightly"
+          command:
+            - vllm
+            - serve
+          args:
+            - "$(MODEL_NAME)"
+            - "--served-model-name"
+            - "$(MODEL_ALIAS)"
+            - "--host"
+            - "0.0.0.0"
+            - "--port"
+            - "8000"
+            - "--max-model-len"
+            - "$(MAX_MODEL_LEN)"
+            - "--gpu-memory-utilization"
+            - "$(GPU_MEMORY_UTILIZATION)"
+            - "--max-num-seqs"
+            - "$(MAX_NUM_SEQS)"
+            - "--max-num-batched-tokens"
+            - "$(MAX_NUM_BATCHED_TOKENS)"
+            - "--dtype"
+            - "auto"
+            - "--trust-remote-code"
+            - "--download-dir"
+            - "/models"
+            - "--enable-prefix-caching"
+          env:
+            - name: HF_HOME
+              value: "/models/huggingface"
+            - name: VLLM_ATTENTION_BACKEND
+              value: "FLASH_ATTN"
+          envFrom:
+            - configMapRef:
+                name: vllm-env
+          ports:
+            - containerPort: 8000
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8000
+              scheme: HTTP
+            initialDelaySeconds: 120
+            periodSeconds: 30
+            timeoutSeconds: 10
+            failureThreshold: 5
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 8000
+              scheme: HTTP
+            initialDelaySeconds: 60
+            periodSeconds: 15
+            timeoutSeconds: 10
+            failureThreshold: 120
+          resources:
+            limits:
+              cpu: "16"
+              memory: "40Gi"
+              nvidia.com/gpu: "1"
+            requests:
+              cpu: "4"
+              memory: "24Gi"
+          volumeMounts:
+            - mountPath: "/models"
+              name: models
+      volumes:
+        - name: models
+          hostPath:
+            path: "{{ .Values.userspace.appData }}/models"
+            type: DirectoryOrCreate
+      restartPolicy: Always
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: <appname>
+  name: <appname>
+  namespace: "{{ .Release.Namespace }}"
+spec:
+  ports:
+    - name: "vllm"
+      port: 8000
+      targetPort: 8000
+  selector:
+    io.kompose.service: <appname>
+status:
+  loadBalancer: {}
+```
+
+Replace all `<PLACEHOLDER>` values with the computed values from Step 5. GPU requires BOTH the `applications.app.bytetrade.io/gpu-inject: "true"` annotation AND `nvidia.com/gpu: "1"` in resource limits. The `runtimeClassName: nvidia` is required for vLLM. vLLM downloads models automatically via `--download-dir`, so no init container is needed. If the model supports reasoning/thinking, add `--reasoning-parser <parser>` (e.g., `qwen3` for Qwen models).
+
 **`<appname>/.helmignore`**:
 ```
 .DS_Store
@@ -247,262 +385,9 @@ owners:
 
 **`<appname>/i18n/zh-CN/OlaresManifest.yaml`**: Translate the en-US version to Chinese.
 
-**`<appname>/templates/keep`**: Empty file (git placeholder for top-level templates dir).
-
-**`<appname>/<appname>/templates/clientproxy.yaml`**: Nginx reverse proxy:
-
-```yaml
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: nginx-config
-  namespace: {{ .Release.Namespace }}
-data:
-  nginx.conf: |
-    server {
-        listen 8080;
-        location / {
-            proxy_pass http://download-svc.{{ .Release.Name }}server-shared:8090;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_read_timeout 1800s;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection "upgrade";
-            add_header 'Access-Control-Allow-Origin' '*' always;
-            add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS' always;
-            add_header 'Access-Control-Allow-Headers' 'Content-Type, Authorization' always;
-            if ($request_method = 'OPTIONS') {
-                return 204;
-            }
-        }
-        location /ping {
-            return 200 'pong';
-            add_header Content-Type text/plain;
-        }
-    }
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: <appname>
-  namespace: {{ .Release.Namespace }}
-  labels:
-    app: <appname>
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: <appname>
-  template:
-    metadata:
-      labels:
-        app: <appname>
-    spec:
-      containers:
-        - name: nginx
-          image: docker.io/beclab/aboveos-bitnami-openresty:1.25.3-2
-          ports:
-            - containerPort: 8080
-          resources:
-            requests:
-              cpu: 100m
-              memory: 128Mi
-            limits:
-              cpu: 500m
-              memory: 500Mi
-          readinessProbe:
-            httpGet:
-              path: /ping
-              port: 8080
-            initialDelaySeconds: 5
-            periodSeconds: 5
-          livenessProbe:
-            httpGet:
-              path: /ping
-              port: 8080
-            initialDelaySeconds: 10
-            periodSeconds: 10
-          volumeMounts:
-            - name: nginx-config
-              mountPath: /etc/nginx/conf.d/default.conf
-              subPath: nginx.conf
-      volumes:
-        - name: nginx-config
-          configMap:
-            name: nginx-config
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: <appname>
-  namespace: {{ .Release.Namespace }}
-spec:
-  type: ClusterIP
-  selector:
-    app: <appname>
-  ports:
-    - port: 8080
-      targetPort: 8080
-```
-
-**`<appname>/<appname>server/Chart.yaml`**:
-```yaml
-apiVersion: v2
-appVersion: '<huggingface-model-id>'
-description: '<model display name> server'
-name: <appname>server
-type: application
-version: '1.0.0'
-```
-
-**`<appname>/<appname>server/templates/_helpers.tpl`**:
-```
-{{- define "GPU.getGPUInfo" -}}
-{{- $gpuModel := "" -}}
-{{- $gpuModelName := "" -}}
-{{- $isSparkDGX := "false" -}}
-{{- range .Values.nodes }}
-  {{- range .gpu }}
-    {{- $gpuModel = .Model -}}
-    {{- $gpuModelName = .ModelName -}}
-    {{- if eq (upper .Model) "GB10" }}
-      {{- $isSparkDGX = "true" -}}
-    {{- end }}
-  {{- end }}
-{{- end }}
-{{- dict "gpuModel" $gpuModel "gpuModelName" $gpuModelName "isSparkDGX" $isSparkDGX | toJson -}}
-{{- end -}}
-```
-
-**`<appname>/<appname>server/templates/deployment.yaml`**: vLLM deployment:
-
-```yaml
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: {{ .Release.Name }}server
-  namespace: {{ .Release.Namespace }}
-  labels:
-    app: {{ .Release.Name }}server
-spec:
-  replicas: 1
-  strategy:
-    type: Recreate
-  selector:
-    matchLabels:
-      app: {{ .Release.Name }}server
-  template:
-    metadata:
-      labels:
-        app: {{ .Release.Name }}server
-    spec:
-      containers:
-        - name: vllm
-          image: vllm/vllm-openai:v0.17.1-cu130
-          command: ["/bin/bash", "-c"]
-          args:
-            - |
-              echo "Waiting for model download to complete..."
-              while [ ! -f /models/.download_complete ]; do sleep 10; done
-              echo "Model ready. Starting vLLM..."
-              {{- $gpuInfo := include "GPU.getGPUInfo" . | fromJson }}
-              {{- if eq $gpuInfo.isSparkDGX "true" }}
-              exec vllm serve --model /models/<MODEL_ID> --gpu-memory-utilization 0.85 --max-model-len 8192 --max-num-seqs 16 --port 8000
-              {{- else }}
-              exec vllm serve --model /models/<MODEL_ID> --gpu-memory-utilization <GPU_MEM_UTIL> --max-model-len <MAX_MODEL_LEN> --max-num-seqs 16 --port 8000
-              {{- end }}
-          ports:
-            - containerPort: 8000
-          env:
-            - name: HF_TOKEN
-              value: ""
-            - name: VLLM_WORKER_MULTIPROC_METHOD
-              value: "spawn"
-            - name: TZ
-              value: "UTC"
-          resources:
-            requests:
-              cpu: "1"
-              memory: 11Gi
-            limits:
-              cpu: "<LIMITED_CPU>"
-              memory: "<LIMITED_MEMORY>"
-          startupProbe:
-            httpGet:
-              path: /health
-              port: 8000
-            initialDelaySeconds: 300
-            periodSeconds: 15
-            failureThreshold: 40
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 8000
-            periodSeconds: 60
-            failureThreshold: 3
-          volumeMounts:
-            - name: model-storage
-              mountPath: /models
-        - name: download-model
-          image: docker.io/beclab/harveyff-hf-downloader:v0.1.0
-          ports:
-            - containerPort: 8090
-          env:
-            - name: MODEL_ID
-              value: "<MODEL_ID>"
-            - name: HF_HOME
-              value: "/models"
-          resources:
-            requests:
-              cpu: 100m
-              memory: 500Mi
-            limits:
-              cpu: "1"
-              memory: 1Gi
-          startupProbe:
-            httpGet:
-              path: /ping
-              port: 8090
-            initialDelaySeconds: 10
-            periodSeconds: 10
-            failureThreshold: 30
-          livenessProbe:
-            httpGet:
-              path: /ping
-              port: 8090
-            periodSeconds: 60
-            failureThreshold: 10
-          volumeMounts:
-            - name: model-storage
-              mountPath: /models
-      volumes:
-        - name: model-storage
-          hostPath:
-            path: {{ .Values.userspace.appData }}/models
-            type: DirectoryOrCreate
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: download-svc
-  namespace: {{ .Release.Namespace }}
-spec:
-  type: ClusterIP
-  selector:
-    app: {{ .Release.Name }}server
-  ports:
-    - port: 8090
-      targetPort: 8090
-```
-
-Replace all `<PLACEHOLDER>` values with the computed values from Step 5.
-
 ### For llama.cpp backend — generate single chart:
 
-Same top-level files (Chart.yaml, OlaresManifest.yaml, .helmignore, values.yaml, owners, i18n/) as vLLM but with port 8080 direct in entrances.
+Same top-level files (Chart.yaml, OlaresManifest.yaml, .helmignore, values.yaml, owners, i18n/) as vLLM but with port 8080 in entrances.
 
 **`<appname>/templates/deployment.yaml`**: llama.cpp deployment:
 
