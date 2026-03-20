@@ -191,9 +191,9 @@ spec:
   license:
     - text: <model license from model card>
   category: AI
-  requiredMemory: <must be >= sum of container memory requests, e.g., 24Gi>
+  requiredMemory: <must be >= sum of container memory requests, e.g., 4Gi>
   limitedMemory: <computed ceiling, e.g., 40Gi>
-  requiredCpu: <must be >= sum of container CPU requests, e.g., 4>
+  requiredCpu: <must be >= sum of container CPU requests, e.g., 1000m>
   limitedCpu: <computed ceiling, e.g., 16>
   requiredGpu: 1Gi
   limitedGpu: <computed VRAM allocation, e.g., 24Gi>
@@ -525,18 +525,20 @@ metadata:
   name: <appname>
   namespace: {{ .Release.Namespace }}
   labels:
-    app: <appname>
+    io.kompose.service: <appname>
+  annotations:
+    applications.app.bytetrade.io/gpu-inject: "true"
 spec:
   replicas: 1
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: <appname>
+      io.kompose.service: <appname>
   template:
     metadata:
       labels:
-        app: <appname>
+        io.kompose.service: <appname>
     spec:
       initContainers:
         - name: model-downloader
@@ -544,22 +546,32 @@ spec:
           command: ["/bin/sh", "-c"]
           args:
             - |
-              if [ ! -f "/models/$(MODEL_FILE)" ]; then
-                echo "Downloading model..."
-                wget -q "$(MODEL_URL)" -O "/models/$(MODEL_FILE)"
-                echo "Download complete."
+              MODEL_PATH="/models/${MODEL_FILE}"
+              if [ -f "$MODEL_PATH" ]; then
+                echo "Model already downloaded: $MODEL_PATH"
+                ls -lh "$MODEL_PATH"
               else
-                echo "Model already exists, skipping download."
+                echo "Downloading model..."
+                wget -O "/models/${MODEL_FILE}.tmp" "$(MODEL_URL)"
+                mv "/models/${MODEL_FILE}.tmp" "/models/$(MODEL_FILE)"
+                echo "Download complete."
               fi
           envFrom:
             - configMapRef:
                 name: llamacpp-env
+          resources:
+            limits:
+              cpu: "2"
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
           volumeMounts:
             - name: model-storage
               mountPath: /models
       containers:
         - name: llamacpp
-          image: ghcr.io/ggml-org/llama.cpp:server-cuda-b8234
+          image: ghcr.io/ggml-org/llama.cpp:server-cuda
           ports:
             - containerPort: 8080
           args:
@@ -594,24 +606,26 @@ spec:
             - configMapRef:
                 name: llamacpp-env
           resources:
-            requests:
-              cpu: "<REQUIRED_CPU>"
-              memory: "<REQUIRED_MEMORY>"
             limits:
               cpu: "<LIMITED_CPU>"
               memory: "<LIMITED_MEMORY>"
-              nvidia.com/gpu: "1"
+            requests:
+              cpu: "500m"
+              memory: "2Gi"
           startupProbe:
             httpGet:
               path: /health
               port: 8080
-            initialDelaySeconds: 60
+              scheme: HTTP
+            initialDelaySeconds: 30
+            timeoutSeconds: 10
             periodSeconds: 10
-            failureThreshold: 30
+            failureThreshold: 120
           livenessProbe:
             httpGet:
               path: /health
               port: 8080
+              scheme: HTTP
             periodSeconds: 300
             timeoutSeconds: 10
             failureThreshold: 5
@@ -636,13 +650,13 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: <appname>
+    io.kompose.service: <appname>
   ports:
     - port: 8080
       targetPort: 8080
 ```
 
-Replace all `<PLACEHOLDER>` values with computed values from Step 5. Always use `-np 1` for llama.cpp (single slot). If not using GPU (full CPU mode), remove the `nvidia.com/gpu: "1"` resource limit.
+Replace all `<PLACEHOLDER>` values with computed values from Step 5. Always use `-np 1` for llama.cpp (single slot). GPU is injected via the `applications.app.bytetrade.io/gpu-inject: "true"` annotation. If not using GPU (full CPU mode), remove that annotation.
 
 ## Step 8: Validate and Package
 

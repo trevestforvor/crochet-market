@@ -18,18 +18,20 @@ metadata:
   name: llamacppqwen3coder30ba3b
   namespace: {{ .Release.Namespace }}
   labels:
-    app: llamacppqwen3coder30ba3b
+    io.kompose.service: llamacppqwen3coder30ba3b
+  annotations:
+    applications.app.bytetrade.io/gpu-inject: "true"
 spec:
   replicas: 1
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: llamacppqwen3coder30ba3b
+      io.kompose.service: llamacppqwen3coder30ba3b
   template:
     metadata:
       labels:
-        app: llamacppqwen3coder30ba3b
+        io.kompose.service: llamacppqwen3coder30ba3b
     spec:
       initContainers:
         - name: model-downloader
@@ -37,22 +39,32 @@ spec:
           command: ["/bin/sh", "-c"]
           args:
             - |
-              if [ ! -f "/models/$(MODEL_FILE)" ]; then
-                echo "Downloading model..."
-                wget -q "$(MODEL_URL)" -O "/models/$(MODEL_FILE)"
-                echo "Download complete."
+              MODEL_PATH="/models/${MODEL_FILE}"
+              if [ -f "$MODEL_PATH" ]; then
+                echo "Model already downloaded: $MODEL_PATH"
+                ls -lh "$MODEL_PATH"
               else
-                echo "Model already exists, skipping download."
+                echo "Downloading model..."
+                wget -O "/models/${MODEL_FILE}.tmp" "$(MODEL_URL)"
+                mv "/models/${MODEL_FILE}.tmp" "/models/$(MODEL_FILE)"
+                echo "Download complete."
               fi
           envFrom:
             - configMapRef:
                 name: llamacpp-env
+          resources:
+            limits:
+              cpu: "2"
+              memory: 512Mi
+            requests:
+              cpu: 100m
+              memory: 128Mi
           volumeMounts:
             - name: model-storage
               mountPath: /models
       containers:
         - name: llamacpp
-          image: ghcr.io/ggml-org/llama.cpp:server-cuda-b8234
+          image: ghcr.io/ggml-org/llama.cpp:server-cuda
           ports:
             - containerPort: 8080
           args:
@@ -87,24 +99,26 @@ spec:
             - configMapRef:
                 name: llamacpp-env
           resources:
-            requests:
-              cpu: "4"
-              memory: "24Gi"
             limits:
               cpu: "16"
               memory: "40Gi"
-              nvidia.com/gpu: "1"
+            requests:
+              cpu: "500m"
+              memory: "2Gi"
           startupProbe:
             httpGet:
               path: /health
               port: 8080
-            initialDelaySeconds: 60
+              scheme: HTTP
+            initialDelaySeconds: 30
+            timeoutSeconds: 10
             periodSeconds: 10
-            failureThreshold: 30
+            failureThreshold: 120
           livenessProbe:
             httpGet:
               path: /health
               port: 8080
+              scheme: HTTP
             periodSeconds: 300
             timeoutSeconds: 10
             failureThreshold: 5
@@ -129,7 +143,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    app: llamacppqwen3coder30ba3b
+    io.kompose.service: llamacppqwen3coder30ba3b
   ports:
     - port: 8080
       targetPort: 8080

@@ -3,7 +3,7 @@
     {
       "name": "llamacppqwen35a3buncensored",
       "chartName": "llamacppqwen35a3buncensored",
-      "version": "1.0.6",
+      "version": "1.0.7",
       "appVersion": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
       "title": "Qwen3.5 35B-A3B Uncensored",
       "description": "Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One",
@@ -19,7 +19,7 @@
       ],
       "requiredGpu": "1Gi",
       "limitedGpu": "24Gi",
-      "requiredMemory": "24Gi",
+      "requiredMemory": "4Gi",
       "limitedMemory": "40Gi",
       "supportArch": [
         "amd64"
@@ -28,7 +28,7 @@
     {
       "name": "llamacppqwen3coder30ba3b",
       "chartName": "llamacppqwen3coder30ba3b",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "appVersion": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
       "title": "Qwen3 Coder 30B-A3B",
       "description": "Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One",
@@ -44,12 +44,12 @@
       ],
       "requiredGpu": "1Gi",
       "limitedGpu": "24Gi",
-      "requiredMemory": "24Gi",
+      "requiredMemory": "4Gi",
       "limitedMemory": "40Gi",
       "supportArch": [
         "amd64"
       ]
     }
   ],
-  "version": "1773966811933"
+  "version": "1773968179578"
 }
