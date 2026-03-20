@@ -6,8 +6,8 @@ metadata:
   title: Qwen35 35B-A3B Uncensored
   icon: https://huggingface.co/front/assets/huggingface_logo-noborder.svg
   description: Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One
-  version: 1.0.11
-  versionName: '1.0.11'
+  version: 1.0.12
+  versionName: '1.0.12'
   categories:
     - AI
 entrances:
@@ -36,10 +36,10 @@ spec:
   license:
     - text: Apache-2.0
   category: AI
-  requiredMemory: 4Gi
-  limitedMemory: 16Gi
-  requiredCpu: 1000m
-  limitedCpu: 8000m
+  requiredMemory: 24Gi
+  limitedMemory: 40Gi
+  requiredCpu: 4000m
+  limitedCpu: 16000m
   requiredGpu: 1Gi
   limitedGpu: 16Gi
   requiredDisk: 25Gi

@@ -20,6 +20,8 @@ metadata:
     io.kompose.service: llamacppqwen35a3buncensored
   name: llamacppqwen35a3buncensored
   namespace: "{{ .Release.Namespace }}"
+  annotations:
+    applications.app.bytetrade.io/gpu-inject: "true"
 spec:
   replicas: 1
   selector:
@@ -67,7 +69,7 @@ spec:
               name: models
       containers:
         - name: llamacpp-server
-          image: "ghcr.io/ggml-org/llama.cpp:server-cuda"
+          image: "ghcr.io/ggml-org/llama.cpp:server-cuda13-b8369"
           args:
             - "--host"
             - "0.0.0.0"
@@ -108,12 +110,13 @@ spec:
             failureThreshold: 120
           resources:
             limits:
-              cpu: "6"
-              memory: 16Gi
+              cpu: "16"
+              memory: "40Gi"
               nvidia.com/gpu: "1"
             requests:
-              cpu: 500m
-              memory: 2Gi
+              cpu: "4"
+              memory: "24Gi"
+              nvidia.com/gpu: "1"
           volumeMounts:
             - mountPath: "/models"
               name: models
