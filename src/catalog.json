@@ -1,55 +1,269 @@
 {
-  "apps": [
-    {
+  "hash": "afa0eef35135fab50033a495b2f3d2ac",
+  "summaries": {
+    "dbc88bc8": {
+      "id": "dbc88bc8",
       "name": "llamacppqwen35a3buncensored",
-      "chartName": "llamacppqwen35a3buncensored",
       "version": "1.0.12",
-      "appVersion": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-      "title": "Qwen3.5 35B-A3B Uncensored",
+      "category": "AI",
       "description": "Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One",
       "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
-      "category": "AI",
-      "versionName": "1.0.0",
-      "fullDescription": "Qwen3.5-35B-A3B Uncensored (HauhauCS Aggressive) served via llama.cpp, optimized for Olares One hardware.\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nQ4_K_M quantization (21.2GB). Full GPU offload on RTX 5090M (24GB VRAM).\n16K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~200 tokens/sec. Model downloads automatically on first launch (~21.2GB).\n",
-      "developer": "HauhauCS",
-      "license": [
-        {
-          "text": "Apache-2.0"
-        }
-      ],
-      "requiredGpu": "1Gi",
-      "limitedGpu": "16Gi",
-      "requiredMemory": "24Gi",
-      "limitedMemory": "40Gi",
-      "supportArch": [
-        "amd64"
-      ]
+      "screenshots": null,
+      "tags": null,
+      "metadata": null,
+      "source": 1,
+      "updated_at": "2026-03-20T07:15:13.743Z"
     },
-    {
+    "8c63f603": {
+      "id": "8c63f603",
       "name": "llamacppqwen3coder30ba3b",
-      "chartName": "llamacppqwen3coder30ba3b",
       "version": "1.0.7",
-      "appVersion": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-      "title": "Qwen3 Coder 30B-A3B",
+      "category": "AI",
       "description": "Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One",
       "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
-      "category": "AI",
+      "screenshots": null,
+      "tags": null,
+      "metadata": null,
+      "source": 1,
+      "updated_at": "2026-03-20T07:15:13.746Z"
+    }
+  },
+  "details": {
+    "dbc88bc8": {
+      "id": "dbc88bc8",
+      "name": "llamacppqwen35a3buncensored",
+      "cfgType": "app",
+      "chartName": "llamacppqwen35a3buncensored-1.0.12.tgz",
+      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "description": "Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One",
+      "appID": "dbc88bc8",
+      "title": "Qwen35 35B-A3B Uncensored",
+      "version": "1.0.12",
+      "categories": [
+        "AI"
+      ],
       "versionName": "1.0.0",
-      "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via llama.cpp, optimized for Olares One hardware.\n\nAgentic coding model with superior code generation, tool-calling, and repository-scale understanding.\nMoE architecture with 128 experts, 8 active per token (~3.3B active parameters).\nQ4_K_M quantization (18.6GB). Full GPU offload on RTX 5090M (24GB VRAM).\n64K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~200 tokens/sec. Model downloads automatically on first launch (~18.6GB).\n",
-      "developer": "Qwen",
+      "fullDescription": "Qwen3.5-35B-A3B Uncensored (HauhauCS Aggressive) served via llama.cpp, optimized for Olares One hardware.\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nQ4_K_M quantization (21.2GB). Full GPU offload on RTX 5090M (24GB VRAM).\n16K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~200 tokens/sec. Model downloads automatically on first launch (~21.2GB).\n",
+      "upgradeDescription": "",
+      "promoteImage": null,
+      "promoteVideo": "",
+      "subCategory": "",
+      "locale": [
+        "en-US",
+        "zh-CN"
+      ],
+      "developer": "HauhauCS",
+      "requiredMemory": "25769803776",
+      "requiredDisk": "26843545600",
+      "supportClient": {},
+      "supportArch": [
+        "amd64"
+      ],
+      "requiredGPU": "1073741824",
+      "requiredCPU": "4",
+      "rating": 0,
+      "target": "",
+      "permission": {
+        "appData": true
+      },
+      "entrances": [
+        {
+          "name": "llamacppqwen35a3buncensored",
+          "host": "llamacppqwen35a3buncensored",
+          "port": 8080,
+          "title": "Qwen35 35B-A3B Uncensored",
+          "icon": "",
+          "authLevel": "private",
+          "invisible": false,
+          "openMethod": "",
+          "disablePreload": false
+        }
+      ],
+      "middleware": {},
+      "options": {
+        "apiTimeout": 0,
+        "dependencies": [
+          {
+            "type": "system",
+            "name": "olares",
+            "version": ">=1.12.3-0"
+          }
+        ]
+      },
+      "submitter": "trevestforvor",
+      "doc": "",
+      "website": "https://huggingface.co/HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
+      "featuredImage": "",
+      "sourceCode": "https://github.com/trevestforvor/OlaresModels",
       "license": [
         {
           "text": "Apache-2.0"
         }
       ],
-      "requiredGpu": "1Gi",
-      "limitedGpu": "16Gi",
-      "requiredMemory": "24Gi",
-      "limitedMemory": "40Gi",
+      "legal": null,
+      "i18n": {
+        "en-US": {
+          "metadata": {
+            "title": "Qwen3.5 35B-A3B Uncensored",
+            "description": "Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One"
+          },
+          "entrances": null,
+          "spec": {
+            "fullDescription": "Qwen3.5-35B-A3B Uncensored (HauhauCS Aggressive) served via llama.cpp, optimized for Olares One hardware.\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nQ4_K_M quantization (21.2GB). Full GPU offload on RTX 5090M (24GB VRAM).\n16K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~200 tokens/sec. Model downloads automatically on first launch (~21.2GB).\n",
+            "upgradeDescription": ""
+          }
+        },
+        "zh-CN": {
+          "metadata": {
+            "title": "Qwen3.5 35B-A3B 无审查版",
+            "description": "通过 llama.cpp 提供 Qwen3.5 35B MoE（3B 活跃参数）无审查模型 — 针对 Olares One 优化"
+          },
+          "entrances": null,
+          "spec": {
+            "fullDescription": "Qwen3.5-35B-A3B 无审查版（HauhauCS Aggressive）通过 llama.cpp 提供服务，针对 Olares One 硬件优化。\n\nMoE 架构，128 个专家，每个 token 激活 8 个（约 3B 活跃参数）。\nQ4_K_M 量化（21.2GB）。RTX 5090M（24GB 显存）全 GPU 卸载。\n16K 上下文窗口。端口 8080 提供 OpenAI 兼容 API。\n\n预期性能：约 200 tokens/秒。首次启动时自动下载模型（约 21.2GB）。\n",
+            "upgradeDescription": ""
+          }
+        }
+      },
+      "namespace": "",
+      "onlyAdmin": false,
+      "lastCommitHash": "",
+      "createTime": 0,
+      "updateTime": 0,
+      "count": null,
+      "versionHistory": [
+        {
+          "appName": "llamacppqwen35a3buncensored",
+          "version": "1.0.12",
+          "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
+          "mergedAt": "2026-03-20T07:15:13.744Z",
+          "upgradeDescription": ""
+        }
+      ],
+      "screenshots": null,
+      "tags": null,
+      "metadata": null,
+      "updated_at": "2026-03-20T07:15:13.744Z"
+    },
+    "8c63f603": {
+      "id": "8c63f603",
+      "name": "llamacppqwen3coder30ba3b",
+      "cfgType": "app",
+      "chartName": "llamacppqwen3coder30ba3b-1.0.7.tgz",
+      "icon": "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
+      "description": "Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One",
+      "appID": "8c63f603",
+      "title": "Qwen3 Coder 30B-A3B",
+      "version": "1.0.7",
+      "categories": [
+        "AI"
+      ],
+      "versionName": "1.0.0",
+      "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via llama.cpp, optimized for Olares One hardware.\n\nAgentic coding model with superior code generation, tool-calling, and repository-scale understanding.\nMoE architecture with 128 experts, 8 active per token (~3.3B active parameters).\nQ4_K_M quantization (18.6GB). Full GPU offload on RTX 5090M (24GB VRAM).\n64K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~200 tokens/sec. Model downloads automatically on first launch (~18.6GB).\n",
+      "upgradeDescription": "",
+      "promoteImage": null,
+      "promoteVideo": "",
+      "subCategory": "",
+      "locale": [
+        "en-US",
+        "zh-CN"
+      ],
+      "developer": "Qwen",
+      "requiredMemory": "25769803776",
+      "requiredDisk": "26843545600",
+      "supportClient": {},
       "supportArch": [
         "amd64"
-      ]
+      ],
+      "requiredGPU": "1073741824",
+      "requiredCPU": "4",
+      "rating": 0,
+      "target": "",
+      "permission": {
+        "appData": true
+      },
+      "entrances": [
+        {
+          "name": "llamacppqwen3coder30ba3b",
+          "host": "llamacppqwen3coder30ba3b",
+          "port": 8080,
+          "title": "Qwen3 Coder 30B-A3B",
+          "icon": "",
+          "authLevel": "private",
+          "invisible": false,
+          "openMethod": "",
+          "disablePreload": false
+        }
+      ],
+      "middleware": {},
+      "options": {
+        "apiTimeout": 0,
+        "dependencies": [
+          {
+            "type": "system",
+            "name": "olares",
+            "version": ">=1.12.3-0"
+          }
+        ]
+      },
+      "submitter": "trevestforvor",
+      "doc": "",
+      "website": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "featuredImage": "",
+      "sourceCode": "https://github.com/trevestforvor/OlaresModels",
+      "license": [
+        {
+          "text": "Apache-2.0"
+        }
+      ],
+      "legal": null,
+      "i18n": {
+        "en-US": {
+          "metadata": {
+            "title": "Qwen3 Coder 30B-A3B",
+            "description": "Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One"
+          },
+          "entrances": null,
+          "spec": {
+            "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via llama.cpp, optimized for Olares One hardware.\n\nAgentic coding model with superior code generation, tool-calling, and repository-scale understanding.\nMoE architecture with 128 experts, 8 active per token (~3.3B active parameters).\nQ4_K_M quantization (18.6GB). Full GPU offload on RTX 5090M (24GB VRAM).\n64K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~200 tokens/sec. Model downloads automatically on first launch (~18.6GB).\n",
+            "upgradeDescription": ""
+          }
+        },
+        "zh-CN": {
+          "metadata": {
+            "title": "Qwen3 Coder 30B-A3B",
+            "description": "Qwen3 Coder 30B-A3B Instruct 智能编程模型通过 llama.cpp 提供服务 — 针对 Olares One 优化"
+          },
+          "entrances": null,
+          "spec": {
+            "fullDescription": "Qwen3-Coder-30B-A3B-Instruct 通过 llama.cpp 提供服务，针对 Olares One 硬件优化。\n\n智能编程模型，具备卓越的代码生成、工具调用和仓库级代码理解能力。\nMoE 架构，128 个专家，每个 token 激活 8 个（约 3.3B 活跃参数）。\nQ4_K_M 量化（18.6GB）。RTX 5090M（24GB 显存）全 GPU 卸载。\n64K 上下文窗口。端口 8080 提供 OpenAI 兼容 API。\n\n预期性能：约 200 tokens/秒。首次启动时自动下载模型（约 18.6GB）。\n",
+            "upgradeDescription": ""
+          }
+        }
+      },
+      "namespace": "",
+      "onlyAdmin": false,
+      "lastCommitHash": "",
+      "createTime": 0,
+      "updateTime": 0,
+      "count": null,
+      "versionHistory": [
+        {
+          "appName": "llamacppqwen3coder30ba3b",
+          "version": "1.0.7",
+          "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+          "mergedAt": "2026-03-20T07:15:13.746Z",
+          "upgradeDescription": ""
+        }
+      ],
+      "screenshots": null,
+      "tags": null,
+      "metadata": null,
+      "updated_at": "2026-03-20T07:15:13.746Z"
     }
-  ],
-  "version": "1773988765827"
+  },
+  "latest": [
+    "llamacppqwen35a3buncensored",
+    "llamacppqwen3coder30ba3b"
+  ]
 }

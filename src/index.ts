@@ -2,116 +2,168 @@ import catalog from './catalog.json';
 import icons from './icons.json';
 import charts from './charts.json';
 
+interface Env {}
+
 const CORS_HEADERS = {
+  'Content-Type': 'application/json',
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Access-Control-Allow-Headers': 'Content-Type',
+  'Access-Control-Allow-Headers': 'Content-Type, Authorization',
 };
 
-function jsonResponse(data: unknown, status = 200): Response {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: { 'Content-Type': 'application/json', ...CORS_HEADERS },
+function json(data: unknown, status = 200): Response {
+  return new Response(JSON.stringify(data), { status, headers: CORS_HEADERS });
+}
+
+// GET /api/v1/appstore/hash?version=X
+function handleHash(url: URL): Response {
+  const version = url.searchParams.get('version') || '1.12.3';
+  return json({
+    hash: catalog.hash,
+    last_updated: new Date().toISOString(),
+    version,
   });
 }
 
-function handleHash(): Response {
-  return jsonResponse({
-    hash: catalog.version,
-    version: catalog.version,
-  });
-}
-
-function handleInfo(): Response {
-  const apps = (catalog as any).apps.map((app: any) => ({
-    name: app.name,
-    chartName: app.chartName,
-    version: app.version,
-    title: app.title,
-    description: app.description,
-    icon: app.icon,
-    category: app.category,
-    versionName: app.versionName,
-    developer: app.developer,
-    requiredGpu: app.requiredGpu,
-    limitedGpu: app.limitedGpu,
-    requiredMemory: app.requiredMemory,
-    limitedMemory: app.limitedMemory,
-    supportArch: app.supportArch,
-  }));
-
-  return jsonResponse({
-    apps,
-    recommendApps: apps.map((a: any) => a.name),
-    categories: ['AI'],
-    tags: ['LLM', 'vLLM', 'llama.cpp', 'inference'],
-    totalCount: apps.length,
-  });
-}
-
-async function handleDetail(request: Request): Promise<Response> {
-  const body = await request.json() as { names?: string[] };
-  const names = body.names || [];
-  const results = (catalog as any).apps.filter((app: any) => names.includes(app.name));
-  return jsonResponse({ apps: results });
-}
-
-function handleChart(appName: string): Response {
-  const chartData = (charts as Record<string, string>)[appName];
-  if (!chartData) {
-    return new Response('Chart not found', { status: 404, headers: CORS_HEADERS });
-  }
-  const buffer = Uint8Array.from(atob(chartData), c => c.charCodeAt(0));
-  return new Response(buffer, {
-    headers: {
-      'Content-Type': 'application/gzip',
-      'Content-Disposition': `attachment; filename="${appName}.tgz"`,
-      ...CORS_HEADERS,
+// GET /api/v1/appstore/info?version=X
+function handleInfo(url: URL): Response {
+  const version = url.searchParams.get('version') || '1.12.3';
+  const now = new Date().toISOString();
+  return json({
+    version,
+    hash: catalog.hash,
+    last_updated: now,
+    data: {
+      apps: catalog.summaries,
+      recommends: {},
+      pages: {
+        AI: {
+          category: 'AI',
+          content: JSON.stringify([{ type: 'Default Topic', id: 'Newest' }]),
+          source: 0,
+          updated_at: now,
+        },
+      },
+      topics: {},
+      topic_lists: {},
+      tops: [],
+      latest: catalog.latest,
+      tags: {
+        AI: {
+          name: 'AI',
+          title: { 'en-US': 'AI', 'zh-CN': 'AI' },
+          icon: 'https://app.cdn.olares.com/icons/market/sidebar/neurology.svg',
+          sort: 7,
+          source: 0,
+          updated_at: now,
+        },
+      },
+    },
+    stats: {
+      appstore_data: {
+        apps: Object.keys(catalog.summaries).length,
+        pages: 0,
+        recommends: 0,
+        tags: 0,
+        topic_lists: 0,
+        topics: 0,
+      },
+      last_updated: now,
     },
   });
 }
 
-function handleIcon(iconName: string): Response {
-  const name = iconName.replace(/\.png$/, '');
-  const iconData = (icons as Record<string, string>)[name];
-  if (!iconData) {
-    return new Response('Icon not found', { status: 404, headers: CORS_HEADERS });
+// POST /api/v1/applications/info
+async function handleDetail(request: Request): Promise<Response> {
+  const body = (await request.json()) as { app_ids: string[]; version: string };
+  const version = body.version || '1.12.3';
+  const apps: Record<string, unknown> = {};
+  const notFound: string[] = [];
+
+  const details = catalog.details as Record<string, unknown>;
+
+  for (const id of body.app_ids || []) {
+    if (details[id]) {
+      apps[id] = details[id];
+    } else {
+      notFound.push(id);
+    }
   }
-  const buffer = Uint8Array.from(atob(iconData), c => c.charCodeAt(0));
-  return new Response(buffer, {
-    headers: { 'Content-Type': 'image/png', ...CORS_HEADERS },
+
+  return json({
+    apps,
+    version,
+    ...(notFound.length > 0 ? { not_found: notFound } : {}),
   });
 }
 
 export default {
-  async fetch(request: Request): Promise<Response> {
-    const url = new URL(request.url);
-    const { pathname } = url;
-
+  async fetch(request: Request, _env: Env): Promise<Response> {
+    // CORS preflight
     if (request.method === 'OPTIONS') {
       return new Response(null, { headers: CORS_HEADERS });
     }
 
-    // Health check
-    if (pathname === '/' || pathname === '/health') {
-      return jsonResponse({ status: 'ok', apps: (catalog as any).apps.length });
+    const url = new URL(request.url);
+    const path = url.pathname;
+
+    if (path === '/api/v1/appstore/hash' && request.method === 'GET') {
+      return handleHash(url);
     }
 
-    // Market Source API
-    if (pathname === '/api/v1/appstore/hash') return handleHash();
-    if (pathname === '/api/v1/appstore/info') return handleInfo();
-    if (pathname === '/api/v1/applications/info' && request.method === 'POST') {
+    if (path === '/api/v1/appstore/info' && request.method === 'GET') {
+      return handleInfo(url);
+    }
+
+    if (path === '/api/v1/applications/info' && request.method === 'POST') {
       return handleDetail(request);
     }
 
-    // Chart download: /api/v1/applications/{name}/chart
-    const chartMatch = pathname.match(/^\/api\/v1\/applications\/([^/]+)\/chart$/);
-    if (chartMatch) return handleChart(chartMatch[1]);
+    // Serve charts: /api/v1/applications/{app_name}/chart?fileName=xxx.tgz
+    const chartMatch = path.match(/^\/api\/v1\/applications\/(.+)\/chart$/);
+    if (chartMatch && request.method === 'GET') {
+      const fileName = url.searchParams.get('fileName') || chartMatch[1];
+      const data = (charts as Record<string, string>)[fileName];
+      if (data) {
+        const binary = Uint8Array.from(atob(data), c => c.charCodeAt(0));
+        return new Response(binary, {
+          headers: {
+            'Content-Type': 'application/gzip',
+            'Content-Disposition': `attachment; filename="${fileName}"`,
+            'Cache-Control': 'public, max-age=86400',
+            'Access-Control-Allow-Origin': '*',
+          },
+        });
+      }
+      return json({ error: 'Chart not found' }, 404);
+    }
 
-    // Icon download: /icons/{name}
-    const iconMatch = pathname.match(/^\/icons\/([^/]+)$/);
-    if (iconMatch) return handleIcon(iconMatch[1]);
+    // Serve icons
+    if (path.startsWith('/icons/') && request.method === 'GET') {
+      const name = path.slice('/icons/'.length).replace(/\.png$/, '');
+      const data = (icons as Record<string, string>)[name];
+      if (data) {
+        const binary = Uint8Array.from(atob(data), c => c.charCodeAt(0));
+        return new Response(binary, {
+          headers: {
+            'Content-Type': 'image/png',
+            'Cache-Control': 'public, max-age=86400',
+            'Access-Control-Allow-Origin': '*',
+          },
+        });
+      }
+      return json({ error: 'Icon not found' }, 404);
+    }
 
-    return new Response('Not found', { status: 404, headers: CORS_HEADERS });
+    // Health check
+    if (path === '/' || path === '/health') {
+      return json({
+        name: 'olares-models',
+        status: 'ok',
+        apps: Object.keys(catalog.summaries).length,
+      });
+    }
+
+    return json({ error: 'Not Found' }, 404);
   },
-};
+} satisfies ExportedHandler<Env>;
