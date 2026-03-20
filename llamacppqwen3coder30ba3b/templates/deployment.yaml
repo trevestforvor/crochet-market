@@ -20,8 +20,6 @@ metadata:
     io.kompose.service: llamacppqwen3coder30ba3b
   name: llamacppqwen3coder30ba3b
   namespace: "{{ .Release.Namespace }}"
-  annotations:
-    applications.app.bytetrade.io/gpu-inject: "true"
 spec:
   replicas: 1
   selector:
@@ -112,6 +110,7 @@ spec:
             limits:
               cpu: "6"
               memory: 16Gi
+              nvidia.com/gpu: "1"
             requests:
               cpu: 500m
               memory: 2Gi

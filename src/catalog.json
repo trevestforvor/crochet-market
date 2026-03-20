@@ -3,7 +3,7 @@
     {
       "name": "llamacppqwen35a3buncensored",
       "chartName": "llamacppqwen35a3buncensored",
-      "version": "1.0.10",
+      "version": "1.0.11",
       "appVersion": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
       "title": "Qwen3.5 35B-A3B Uncensored",
       "description": "Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One",
@@ -28,7 +28,7 @@
     {
       "name": "llamacppqwen3coder30ba3b",
       "chartName": "llamacppqwen3coder30ba3b",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "appVersion": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
       "title": "Qwen3 Coder 30B-A3B",
       "description": "Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One",
@@ -51,5 +51,5 @@
       ]
     }
   ],
-  "version": "1773979785692"
+  "version": "1773986494327"
 }
