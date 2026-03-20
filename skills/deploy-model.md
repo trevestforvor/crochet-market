@@ -193,12 +193,12 @@ spec:
   license:
     - text: <model license from model card>
   category: AI
-  requiredMemory: <must be >= sum of container memory requests, e.g., 4Gi>
-  limitedMemory: 16Gi
-  requiredCpu: <must be >= sum of container CPU requests, e.g., 1000m>
-  limitedCpu: 8000m
+  requiredMemory: <must be >= sum of container memory requests, e.g., 24Gi>
+  limitedMemory: 40Gi
+  requiredCpu: <must be >= sum of container CPU requests, e.g., 4000m>
+  limitedCpu: 16000m
   requiredGpu: 1Gi
-  limitedGpu: 16Gi
+  limitedGpu: 24Gi
   requiredDisk: 25Gi
   limitedDisk: 50Gi
   supportArch:
@@ -578,7 +578,7 @@ spec:
               name: models
       containers:
         - name: llamacpp-server
-          image: "ghcr.io/ggml-org/llama.cpp:server-cuda"
+          image: "ghcr.io/ggml-org/llama.cpp:server-cuda13-b8369"
           args:
             - "--host"
             - "0.0.0.0"
@@ -619,11 +619,13 @@ spec:
             failureThreshold: 120
           resources:
             limits:
-              cpu: "6"
-              memory: 16Gi
+              cpu: "16"
+              memory: "40Gi"
+              nvidia.com/gpu: "1"
             requests:
-              cpu: 500m
-              memory: 2Gi
+              cpu: "4"
+              memory: "24Gi"
+              nvidia.com/gpu: "1"
           volumeMounts:
             - mountPath: "/models"
               name: models
@@ -654,7 +656,7 @@ status:
   loadBalancer: {}
 ```
 
-Replace all `<PLACEHOLDER>` values with computed values from Step 5. GPU is handled ONLY by the `applications.app.bytetrade.io/gpu-inject: "true"` annotation on the Deployment metadata — do NOT add `nvidia.com/gpu` to resource limits, as that interferes with HAMI's GPU scheduler and causes crash loops. If not using GPU (full CPU mode), remove the annotation.
+Replace all `<PLACEHOLDER>` values with computed values from Step 5. GPU requires BOTH the `applications.app.bytetrade.io/gpu-inject: "true"` annotation on the Deployment metadata AND `nvidia.com/gpu: "1"` in both resource limits and requests. If not using GPU (full CPU mode), remove the annotation and the nvidia.com/gpu entries.
 
 ## Step 8: Validate and Package
 
