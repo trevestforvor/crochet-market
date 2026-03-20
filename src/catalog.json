@@ -3,7 +3,7 @@
     {
       "name": "llamacppqwen35a3buncensored",
       "chartName": "llamacppqwen35a3buncensored",
-      "version": "1.0.7",
+      "version": "1.0.8",
       "appVersion": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
       "title": "Qwen3.5 35B-A3B Uncensored",
       "description": "Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One",
@@ -51,5 +51,5 @@
       ]
     }
   ],
-  "version": "1773973593770"
+  "version": "1773974086524"
 }
