@@ -1,0 +1,15 @@
+metadata:
+  title: Obsidisync
+  description: Obsidian 保险库 WebDAV 同步桥接
+spec:
+  fullDescription: |
+    Obsidisync 通过 WebDAV 协议暴露您在 Olares 上的 Obsidian 保险库，
+    让您可以使用 Obsidian 的 Remotely Save 插件在桌面端、移动端以及
+    Claude 等自动化工具之间同步笔记。
+
+    功能特性：
+    - 将 Home/Obsidian/ 下的所有保险库作为 WebDAV 目录提供
+    - Bearer token 身份验证确保安全访问
+    - 兼容 Obsidian Remotely Save 插件
+    - 兼容任何 WebDAV 客户端或 curl
+    - 轻量级 Go 服务器（约 20MB 容器镜像）

@@ -1,0 +1,63 @@
+olaresManifest.version: '0.11.0'
+olaresManifest.type: app
+metadata:
+  name: obsidisync
+  appid: obsidisync
+  title: Obsidisync
+  icon: https://raw.githubusercontent.com/treve/obsidisync/main/icon.png
+  description: WebDAV bridge for Obsidian vault sync
+  version: 0.1.0
+  versionName: '0.1.0'
+  categories:
+    - Productivity
+entrances:
+  - name: obsidisync
+    host: obsidisync
+    port: 8080
+    title: Obsidisync
+    authLevel: public
+spec:
+  versionName: '0.1.0'
+  fullDescription: |
+    Obsidisync exposes your Olares Obsidian vaults over WebDAV so you can sync
+    them with Obsidian's Remotely Save plugin across desktop, mobile, and
+    automation tools like Claude.
+
+    Features:
+    - Serves all vaults under Home/Obsidian/ as WebDAV directories
+    - Bearer token authentication for secure access
+    - Works with Obsidian Remotely Save plugin
+    - Compatible with any WebDAV client or curl
+    - Lightweight Go server (~20MB container image)
+  developer: treve
+  website: https://github.com/treve/obsidisync
+  sourceCode: https://github.com/treve/obsidisync
+  submitter: treve
+  locale:
+    - en-US
+    - zh-CN
+  license:
+    - text: MIT
+  category: Productivity
+  requiredMemory: 64Mi
+  limitedMemory: 256Mi
+  requiredCpu: 100m
+  limitedCpu: 500m
+  requiredGpu: 0
+  limitedGpu: 0
+  requiredDisk: 256Mi
+  limitedDisk: 1Gi
+  supportArch:
+    - amd64
+permission:
+  appData: true
+  appCache: true
+  userData:
+    - Home
+middleware: {}
+options:
+  apiTimeout: 0
+  dependencies:
+    - type: system
+      name: olares
+      version: '>=1.12.3-0'

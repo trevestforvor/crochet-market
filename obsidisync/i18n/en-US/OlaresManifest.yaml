@@ -1,0 +1,15 @@
+metadata:
+  title: Obsidisync
+  description: WebDAV bridge for Obsidian vault sync
+spec:
+  fullDescription: |
+    Obsidisync exposes your Olares Obsidian vaults over WebDAV so you can sync
+    them with Obsidian's Remotely Save plugin across desktop, mobile, and
+    automation tools like Claude.
+
+    Features:
+    - Serves all vaults under Home/Obsidian/ as WebDAV directories
+    - Bearer token authentication for secure access
+    - Works with Obsidian Remotely Save plugin
+    - Compatible with any WebDAV client or curl
+    - Lightweight Go server (~20MB container image)
