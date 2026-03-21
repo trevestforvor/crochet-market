@@ -67,8 +67,11 @@ spec:
             - "--enforce-eager"
             - "--cpu-offload-gb"
             - "2"
-            - "--reasoning-parser"
-            - "qwen3"
+            - "--chat-template"
+            - "/etc/vllm/qwen3_coder_nonthinking.jinja"
+            - "--enable-auto-tool-choice"
+            - "--tool-call-parser"
+            - "hermes"
           env:
             - name: HF_HOME
               value: "/models/huggingface"
@@ -108,11 +111,17 @@ spec:
           volumeMounts:
             - mountPath: "/models"
               name: models
+            - mountPath: "/etc/vllm"
+              name: chat-template
+              readOnly: true
       volumes:
         - name: models
           hostPath:
             path: "{{ .Values.userspace.appData }}/models"
             type: DirectoryOrCreate
+        - name: chat-template
+          configMap:
+            name: vllm-chat-template
       restartPolicy: Always
 status: {}
 ---
