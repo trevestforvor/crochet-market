@@ -1,5 +1,5 @@
 {
-  "hash": "2b79c8200125a7093bcdd32a21e95991",
+  "hash": "2eb3a6e0f0345f2f2542bde047d38642",
   "summaries": {
     "6e3681ab": {
       "id": "6e3681ab",
@@ -12,7 +12,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T22:15:43.251Z"
+      "updated_at": "2026-03-21T05:58:25.175Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -25,7 +25,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T22:15:43.254Z"
+      "updated_at": "2026-03-21T05:58:25.176Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -38,7 +38,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T22:15:43.256Z"
+      "updated_at": "2026-03-21T05:58:25.178Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -51,12 +51,12 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T22:15:43.259Z"
+      "updated_at": "2026-03-21T05:58:25.179Z"
     },
     "ae235064": {
       "id": "ae235064",
       "name": "vllmqwen3coder30ba3bfp4",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "category": "AI",
       "description": "Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One",
       "icon": "https://olares-models.crochetme.workers.dev/icons/vllmqwen3coder30ba3bfp4.png",
@@ -64,7 +64,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-20T22:15:43.261Z"
+      "updated_at": "2026-03-21T05:58:25.180Z"
     }
   },
   "details": {
@@ -175,14 +175,14 @@
           "appName": "llamacppgemma312b",
           "version": "1.0.1",
           "versionName": "unsloth/gemma-3-12b-it-GGUF",
-          "mergedAt": "2026-03-20T22:15:43.253Z",
+          "mergedAt": "2026-03-21T05:58:25.175Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T22:15:43.253Z"
+      "updated_at": "2026-03-21T05:58:25.175Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -291,14 +291,14 @@
           "appName": "llamacppqwen314b",
           "version": "1.0.1",
           "versionName": "lm-kit/qwen-3-14b-instruct-gguf",
-          "mergedAt": "2026-03-20T22:15:43.254Z",
+          "mergedAt": "2026-03-21T05:58:25.176Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T22:15:43.254Z"
+      "updated_at": "2026-03-21T05:58:25.176Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -407,14 +407,14 @@
           "appName": "llamacppqwen35a3buncensored",
           "version": "1.0.14",
           "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-          "mergedAt": "2026-03-20T22:15:43.257Z",
+          "mergedAt": "2026-03-21T05:58:25.178Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T22:15:43.257Z"
+      "updated_at": "2026-03-21T05:58:25.178Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -523,29 +523,29 @@
           "appName": "llamacppqwen3coder30ba3b",
           "version": "1.0.9",
           "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-          "mergedAt": "2026-03-20T22:15:43.259Z",
+          "mergedAt": "2026-03-21T05:58:25.179Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T22:15:43.259Z"
+      "updated_at": "2026-03-21T05:58:25.179Z"
     },
     "ae235064": {
       "id": "ae235064",
       "name": "vllmqwen3coder30ba3bfp4",
       "cfgType": "app",
-      "chartName": "vllmqwen3coder30ba3bfp4-1.0.2.tgz",
+      "chartName": "vllmqwen3coder30ba3bfp4-1.0.3.tgz",
       "icon": "https://olares-models.crochetme.workers.dev/icons/vllmqwen3coder30ba3bfp4.png",
       "description": "Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One",
       "appID": "ae235064",
       "title": "Qwen3 Coder 30B-A3B FP4 vLLM",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "categories": [
         "AI"
       ],
-      "versionName": "1.0.2",
+      "versionName": "1.0.3",
       "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via vLLM with NVFP4 quantization (4-bit weights and activations),\noptimized for Olares One hardware (RTX 5090M 24GB VRAM).\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nNVFP4 quantization (18.1GB). 2GB CPU offload for MoE workspace headroom.\n16K context window. OpenAI-compatible API on port 8000.\n\nExpected performance: ~200+ tokens/sec. Model downloads automatically on first launch (~18.1GB).\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -637,16 +637,16 @@
       "versionHistory": [
         {
           "appName": "vllmqwen3coder30ba3bfp4",
-          "version": "1.0.2",
+          "version": "1.0.3",
           "versionName": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
-          "mergedAt": "2026-03-20T22:15:43.261Z",
+          "mergedAt": "2026-03-21T05:58:25.180Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-20T22:15:43.261Z"
+      "updated_at": "2026-03-21T05:58:25.180Z"
     }
   },
   "latest": [

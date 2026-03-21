@@ -6,8 +6,8 @@ metadata:
   title: Qwen3 Coder 30B-A3B FP4 vLLM
   icon: https://olares-models.crochetme.workers.dev/icons/vllmqwen3coder30ba3bfp4.png
   description: Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One
-  version: 1.0.2
-  versionName: '1.0.2'
+  version: 1.0.3
+  versionName: '1.0.3'
   categories:
     - AI
 entrances:
@@ -17,7 +17,7 @@ entrances:
     title: Qwen3 Coder 30B-A3B FP4 vLLM
     authLevel: private
 spec:
-  versionName: '1.0.2'
+  versionName: '1.0.3'
   fullDescription: |
     Qwen3-Coder-30B-A3B-Instruct served via vLLM with NVFP4 quantization (4-bit weights and activations),
     optimized for Olares One hardware (RTX 5090M 24GB VRAM).
