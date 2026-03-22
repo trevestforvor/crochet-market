@@ -7,4 +7,4 @@ userspace:
   userData: ""
 image:
   repository: "ghcr.io/trevestforvor/obsidisync"
-  tag: "0.1.0"
+  tag: "0.1.1"
