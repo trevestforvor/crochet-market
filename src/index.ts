@@ -37,6 +37,12 @@ function handleInfo(url: URL): Response {
       apps: catalog.summaries,
       recommends: {},
       pages: {
+        All: {
+          category: 'All',
+          content: JSON.stringify([{ type: 'Default Topic', id: 'Newest' }]),
+          source: 0,
+          updated_at: now,
+        },
         AI: {
           category: 'AI',
           content: JSON.stringify([{ type: 'Default Topic', id: 'Newest' }]),
@@ -61,6 +67,14 @@ function handleInfo(url: URL): Response {
       tops: [],
       latest: catalog.latest,
       tags: {
+        All: {
+          name: 'All',
+          title: { 'en-US': 'All', 'zh-CN': '全部' },
+          icon: 'https://app.cdn.olares.com/icons/market/sidebar/dashboard.svg',
+          sort: 1,
+          source: 0,
+          updated_at: now,
+        },
         AI: {
           name: 'AI',
           title: { 'en-US': 'AI', 'zh-CN': 'AI' },
@@ -72,7 +86,7 @@ function handleInfo(url: URL): Response {
         'Developer Tools': {
           name: 'Developer Tools',
           title: { 'en-US': 'Developer Tools', 'zh-CN': '开发工具' },
-          icon: 'https://app.cdn.olares.com/icons/market/sidebar/code.svg',
+          icon: 'https://app.cdn.olares.com/icons/market/sidebar/terminal.svg',
           sort: 8,
           source: 0,
           updated_at: now,
@@ -80,7 +94,7 @@ function handleInfo(url: URL): Response {
         Productivity: {
           name: 'Productivity',
           title: { 'en-US': 'Productivity', 'zh-CN': '效率工具' },
-          icon: 'https://app.cdn.olares.com/icons/market/sidebar/productivity.svg',
+          icon: 'https://app.cdn.olares.com/icons/market/sidebar/utilities.svg',
           sort: 9,
           source: 0,
           updated_at: now,
