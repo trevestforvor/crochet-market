@@ -1,5 +1,5 @@
 {
-  "hash": "66e6885cb475afae0dd0addd814c7252",
+  "hash": "2ac6d0a2ca27e2979e95cb49f664cf42",
   "summaries": {
     "6e3681ab": {
       "id": "6e3681ab",
@@ -12,7 +12,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T10:26:10.865Z"
+      "updated_at": "2026-03-22T17:38:12.446Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -25,7 +25,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T10:26:10.867Z"
+      "updated_at": "2026-03-22T17:38:12.449Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -38,7 +38,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T10:26:10.869Z"
+      "updated_at": "2026-03-22T17:38:12.450Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -51,7 +51,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T10:26:10.870Z"
+      "updated_at": "2026-03-22T17:38:12.451Z"
     },
     "3d1b0d00": {
       "id": "3d1b0d00",
@@ -64,12 +64,12 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T10:26:10.871Z"
+      "updated_at": "2026-03-22T17:38:12.453Z"
     },
     "6eef1e18": {
       "id": "6eef1e18",
       "name": "simpleterm",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "Developer Tools",
       "description": "VS Code in the browser — full IDE with integrated terminal, extensions, and file explorer",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/simpleterm.png",
@@ -77,7 +77,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T10:26:10.873Z"
+      "updated_at": "2026-03-22T17:38:12.454Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -90,7 +90,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T10:26:10.874Z"
+      "updated_at": "2026-03-22T17:38:12.455Z"
     }
   },
   "details": {
@@ -201,14 +201,14 @@
           "appName": "llamacppgemma312b",
           "version": "1.1.0",
           "versionName": "unsloth/gemma-3-12b-it-GGUF",
-          "mergedAt": "2026-03-22T10:26:10.866Z",
+          "mergedAt": "2026-03-22T17:38:12.447Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T10:26:10.866Z"
+      "updated_at": "2026-03-22T17:38:12.447Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -317,14 +317,14 @@
           "appName": "llamacppqwen314b",
           "version": "1.1.0",
           "versionName": "lm-kit/qwen-3-14b-instruct-gguf",
-          "mergedAt": "2026-03-22T10:26:10.868Z",
+          "mergedAt": "2026-03-22T17:38:12.449Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T10:26:10.868Z"
+      "updated_at": "2026-03-22T17:38:12.449Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -433,14 +433,14 @@
           "appName": "llamacppqwen35a3buncensored",
           "version": "1.1.0",
           "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-          "mergedAt": "2026-03-22T10:26:10.869Z",
+          "mergedAt": "2026-03-22T17:38:12.450Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T10:26:10.869Z"
+      "updated_at": "2026-03-22T17:38:12.450Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -549,14 +549,14 @@
           "appName": "llamacppqwen3coder30ba3b",
           "version": "1.1.0",
           "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-          "mergedAt": "2026-03-22T10:26:10.870Z",
+          "mergedAt": "2026-03-22T17:38:12.451Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T10:26:10.870Z"
+      "updated_at": "2026-03-22T17:38:12.452Z"
     },
     "3d1b0d00": {
       "id": "3d1b0d00",
@@ -669,30 +669,30 @@
           "appName": "obsidisync",
           "version": "1.1.0",
           "versionName": "0.1.3",
-          "mergedAt": "2026-03-22T10:26:10.871Z",
+          "mergedAt": "2026-03-22T17:38:12.453Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T10:26:10.871Z"
+      "updated_at": "2026-03-22T17:38:12.453Z"
     },
     "6eef1e18": {
       "id": "6eef1e18",
       "name": "simpleterm",
       "cfgType": "app",
-      "chartName": "simpleterm-1.0.0.tgz",
+      "chartName": "simpleterm-1.0.1.tgz",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/simpleterm.png",
       "description": "VS Code in the browser — full IDE with integrated terminal, extensions, and file explorer",
       "appID": "6eef1e18",
       "title": "Simple Terminal",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "categories": [
         "Developer Tools",
         "Productivity"
       ],
-      "versionName": "1.0.0",
+      "versionName": "1.0.1",
       "fullDescription": "VS Code running in your browser on Olares, powered by code-server.\n\nA full-featured development environment accessible from any device.\nIncludes integrated terminal, file explorer, extensions support,\nand everything you expect from VS Code.\n\nFeatures:\n- Full VS Code IDE in the browser\n- Integrated terminal with shell access\n- Extension support via OpenVSX registry\n- File explorer and editor\n- Persistent workspace — settings and files survive restarts\n- No authentication required — Olares entrance handles access control\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -791,16 +791,16 @@
       "versionHistory": [
         {
           "appName": "simpleterm",
-          "version": "1.0.0",
+          "version": "1.0.1",
           "versionName": "4.99.4",
-          "mergedAt": "2026-03-22T10:26:10.873Z",
+          "mergedAt": "2026-03-22T17:38:12.454Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T10:26:10.873Z"
+      "updated_at": "2026-03-22T17:38:12.454Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -909,14 +909,14 @@
           "appName": "vllmqwen3coder30ba3bfp4",
           "version": "1.1.3",
           "versionName": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
-          "mergedAt": "2026-03-22T10:26:10.874Z",
+          "mergedAt": "2026-03-22T17:38:12.455Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T10:26:10.874Z"
+      "updated_at": "2026-03-22T17:38:12.455Z"
     }
   },
   "latest": [

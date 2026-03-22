@@ -19,16 +19,33 @@ spec:
         io.kompose.network/chrome-default: "true"
         io.kompose.service: simpleterm
     spec:
+      initContainers:
+        - name: init-home
+          image: "docker.io/beclab/aboveos-busybox:1.37.0"
+          command:
+            - sh
+            - '-c'
+            - |
+              mkdir -p /home/coder/.config /home/coder/.local
+              chown -R 1000:1000 /home/coder
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+            - name: app-data
+              mountPath: /home/coder
       containers:
         - name: code-server
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - /usr/bin/entrypoint.sh
           args:
-            - --auth
-            - none
             - --bind-addr
             - "0.0.0.0:8080"
+            - --auth
+            - none
             - --disable-telemetry
+            - /home/coder
           ports:
             - name: http
               containerPort: 8080

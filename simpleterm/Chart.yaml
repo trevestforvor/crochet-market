@@ -2,5 +2,5 @@ apiVersion: v2
 name: simpleterm
 description: VS Code in the browser for Olares — powered by code-server
 type: application
-version: '1.0.0'
+version: '1.0.1'
 appVersion: '4.99.4'

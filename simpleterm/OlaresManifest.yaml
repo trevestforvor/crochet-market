@@ -6,8 +6,8 @@ metadata:
   title: Simple Terminal
   icon: https://crochet-market.crochetme.workers.dev/icons/simpleterm.png
   description: VS Code in the browser — full IDE with integrated terminal, extensions, and file explorer
-  version: 1.0.0
-  versionName: '1.0.0'
+  version: 1.0.1
+  versionName: '1.0.1'
   categories:
     - Developer Tools
     - Productivity
@@ -20,7 +20,7 @@ entrances:
     openMethod: window
     authLevel: internal
 spec:
-  versionName: '1.0.0'
+  versionName: '1.0.1'
   fullDescription: |
     VS Code running in your browser on Olares, powered by code-server.
 
