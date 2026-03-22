@@ -9,6 +9,7 @@ metadata:
   version: 1.0.1
   versionName: '1.0.1'
   categories:
+    - All
     - Developer Tools
     - Productivity
 entrances:

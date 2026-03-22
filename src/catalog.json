@@ -1,96 +1,96 @@
 {
-  "hash": "2ac6d0a2ca27e2979e95cb49f664cf42",
+  "hash": "e2a33a9b80d7a7d97690a1c1642612a6",
   "summaries": {
     "6e3681ab": {
       "id": "6e3681ab",
       "name": "llamacppgemma312b",
       "version": "1.1.0",
-      "category": "AI",
+      "category": "All",
       "description": "Gemma 3 12B IT Q8_0 dense model via llama.cpp — optimized for Olares One",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/llamacppgemma312b.png",
       "screenshots": null,
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T17:38:12.446Z"
+      "updated_at": "2026-03-22T17:43:02.524Z"
     },
     "dfd72114": {
       "id": "dfd72114",
       "name": "llamacppqwen314b",
       "version": "1.1.0",
-      "category": "AI",
+      "category": "All",
       "description": "Qwen3 14B Instruct Q6_K dense model via llama.cpp — optimized for Olares One",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/llamacppqwen314b.png",
       "screenshots": null,
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T17:38:12.449Z"
+      "updated_at": "2026-03-22T17:43:02.526Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
       "name": "llamacppqwen35a3buncensored",
       "version": "1.1.0",
-      "category": "AI",
+      "category": "All",
       "description": "Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/llamacppqwen35a3buncensored.png",
       "screenshots": null,
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T17:38:12.450Z"
+      "updated_at": "2026-03-22T17:43:02.527Z"
     },
     "8c63f603": {
       "id": "8c63f603",
       "name": "llamacppqwen3coder30ba3b",
       "version": "1.1.0",
-      "category": "AI",
+      "category": "All",
       "description": "Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/llamacppqwen3coder30ba3b.png",
       "screenshots": null,
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T17:38:12.451Z"
+      "updated_at": "2026-03-22T17:43:02.528Z"
     },
     "3d1b0d00": {
       "id": "3d1b0d00",
       "name": "obsidisync",
       "version": "1.1.0",
-      "category": "Productivity",
+      "category": "All",
       "description": "WebDAV bridge for Obsidian vault sync",
       "icon": "https://raw.githubusercontent.com/trevestforvor/obsidisync/main/icon.png",
       "screenshots": null,
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T17:38:12.453Z"
+      "updated_at": "2026-03-22T17:43:02.530Z"
     },
     "6eef1e18": {
       "id": "6eef1e18",
       "name": "simpleterm",
       "version": "1.0.1",
-      "category": "Developer Tools",
+      "category": "All",
       "description": "VS Code in the browser — full IDE with integrated terminal, extensions, and file explorer",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/simpleterm.png",
       "screenshots": null,
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T17:38:12.454Z"
+      "updated_at": "2026-03-22T17:43:02.531Z"
     },
     "ae235064": {
       "id": "ae235064",
       "name": "vllmqwen3coder30ba3bfp4",
       "version": "1.1.3",
-      "category": "AI",
+      "category": "All",
       "description": "Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/vllmqwen3coder30ba3bfp4.png",
       "screenshots": null,
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T17:38:12.455Z"
+      "updated_at": "2026-03-22T17:43:02.532Z"
     }
   },
   "details": {
@@ -105,6 +105,7 @@
       "title": "Gemma 3 12B IT Q8",
       "version": "1.1.0",
       "categories": [
+        "All",
         "AI"
       ],
       "versionName": "1.1.0",
@@ -201,14 +202,14 @@
           "appName": "llamacppgemma312b",
           "version": "1.1.0",
           "versionName": "unsloth/gemma-3-12b-it-GGUF",
-          "mergedAt": "2026-03-22T17:38:12.447Z",
+          "mergedAt": "2026-03-22T17:43:02.524Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T17:38:12.447Z"
+      "updated_at": "2026-03-22T17:43:02.524Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -221,6 +222,7 @@
       "title": "Qwen3 14B Instruct Q6K",
       "version": "1.1.0",
       "categories": [
+        "All",
         "AI"
       ],
       "versionName": "1.1.0",
@@ -317,14 +319,14 @@
           "appName": "llamacppqwen314b",
           "version": "1.1.0",
           "versionName": "lm-kit/qwen-3-14b-instruct-gguf",
-          "mergedAt": "2026-03-22T17:38:12.449Z",
+          "mergedAt": "2026-03-22T17:43:02.526Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T17:38:12.449Z"
+      "updated_at": "2026-03-22T17:43:02.526Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -337,6 +339,7 @@
       "title": "Qwen35 35B-A3B Uncensored",
       "version": "1.1.0",
       "categories": [
+        "All",
         "AI"
       ],
       "versionName": "1.1.0",
@@ -433,14 +436,14 @@
           "appName": "llamacppqwen35a3buncensored",
           "version": "1.1.0",
           "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-          "mergedAt": "2026-03-22T17:38:12.450Z",
+          "mergedAt": "2026-03-22T17:43:02.527Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T17:38:12.450Z"
+      "updated_at": "2026-03-22T17:43:02.527Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -453,6 +456,7 @@
       "title": "Qwen3 Coder 30B-A3B",
       "version": "1.1.0",
       "categories": [
+        "All",
         "AI"
       ],
       "versionName": "1.1.0",
@@ -549,14 +553,14 @@
           "appName": "llamacppqwen3coder30ba3b",
           "version": "1.1.0",
           "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-          "mergedAt": "2026-03-22T17:38:12.451Z",
+          "mergedAt": "2026-03-22T17:43:02.528Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T17:38:12.452Z"
+      "updated_at": "2026-03-22T17:43:02.528Z"
     },
     "3d1b0d00": {
       "id": "3d1b0d00",
@@ -569,6 +573,7 @@
       "title": "Obsidisync",
       "version": "1.1.0",
       "categories": [
+        "All",
         "Productivity"
       ],
       "versionName": "1.1.0",
@@ -669,14 +674,14 @@
           "appName": "obsidisync",
           "version": "1.1.0",
           "versionName": "0.1.3",
-          "mergedAt": "2026-03-22T17:38:12.453Z",
+          "mergedAt": "2026-03-22T17:43:02.530Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T17:38:12.453Z"
+      "updated_at": "2026-03-22T17:43:02.530Z"
     },
     "6eef1e18": {
       "id": "6eef1e18",
@@ -689,6 +694,7 @@
       "title": "Simple Terminal",
       "version": "1.0.1",
       "categories": [
+        "All",
         "Developer Tools",
         "Productivity"
       ],
@@ -793,14 +799,14 @@
           "appName": "simpleterm",
           "version": "1.0.1",
           "versionName": "4.99.4",
-          "mergedAt": "2026-03-22T17:38:12.454Z",
+          "mergedAt": "2026-03-22T17:43:02.531Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T17:38:12.454Z"
+      "updated_at": "2026-03-22T17:43:02.531Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -813,6 +819,7 @@
       "title": "Qwen3 Coder 30B-A3B FP4 vLLM",
       "version": "1.1.3",
       "categories": [
+        "All",
         "AI"
       ],
       "versionName": "1.1.3",
@@ -909,14 +916,14 @@
           "appName": "vllmqwen3coder30ba3bfp4",
           "version": "1.1.3",
           "versionName": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
-          "mergedAt": "2026-03-22T17:38:12.455Z",
+          "mergedAt": "2026-03-22T17:43:02.532Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T17:38:12.455Z"
+      "updated_at": "2026-03-22T17:43:02.532Z"
     }
   },
   "latest": [
