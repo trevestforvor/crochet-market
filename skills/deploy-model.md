@@ -167,7 +167,7 @@ metadata:
   name: <appname>
   appid: <appname>
   title: <Display Title — alphanumeric, hyphens, spaces only, max 30 chars, no dots>
-  icon: https://olares-models.crochetme.workers.dev/icons/<appname>.png
+  icon: https://crochet-market.crochetme.workers.dev/icons/<appname>.png
   description: <one-line model description>
   version: 1.0.0
   versionName: '1.0.0'
@@ -567,7 +567,7 @@ Replace all `<PLACEHOLDER>` values with computed values from Step 5. GPU require
    - `badgeColor`: `'#2d8cf0'` for llama.cpp, `'#7c3aed'` for vLLM, `'#000000'` for Ollama
    - `badgeText`: `'#ffffff'`
    The script composites the org avatar (256x256) with a backend badge in the bottom-right corner.
-   Set the icon URL in OlaresManifest.yaml to: `https://olares-models.crochetme.workers.dev/icons/<appname>.png`
+   Set the icon URL in OlaresManifest.yaml to: `https://crochet-market.crochetme.workers.dev/icons/<appname>.png`
 
 4. **Build catalog**: `npm run build:catalog`
 

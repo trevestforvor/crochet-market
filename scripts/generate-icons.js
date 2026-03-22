@@ -5,7 +5,7 @@ const https = require('https');
 
 const ICONS_DIR = path.resolve(__dirname, '../icons');
 const SIZE = 256;
-const BADGE_H = Math.round(SIZE / 6); // ~1/6 of icon size
+const BADGE_H = Math.round(SIZE / 4); // ~1/4 height → visually ~1/6 of icon area
 
 // Model definitions: appname -> { avatarUrl, backend, bgColor }
 const models = {

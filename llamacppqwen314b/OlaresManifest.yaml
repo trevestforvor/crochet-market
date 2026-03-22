@@ -4,10 +4,10 @@ metadata:
   name: llamacppqwen314b
   appid: llamacppqwen314b
   title: Qwen3 14B Instruct Q6K
-  icon: https://olares-models.crochetme.workers.dev/icons/llamacppqwen314b.png
+  icon: https://crochet-market.crochetme.workers.dev/icons/llamacppqwen314b.png
   description: Qwen3 14B Instruct Q6_K dense model via llama.cpp — optimized for Olares One
-  version: 1.0.1
-  versionName: '1.0.1'
+  version: 1.0.2
+  versionName: '1.0.2'
   categories:
     - AI
 entrances:
@@ -17,7 +17,7 @@ entrances:
     title: Qwen3 14B Instruct Q6K
     authLevel: private
 spec:
-  versionName: '1.0.1'
+  versionName: '1.0.2'
   fullDescription: |
     Qwen3-14B-Instruct served via llama.cpp, optimized for Olares One hardware.
 

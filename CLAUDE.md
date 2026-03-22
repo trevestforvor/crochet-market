@@ -103,7 +103,7 @@ When bumping a version, you MUST update ALL FOUR of these to the same value:
 ### Icon Generation
 - Add new model entry to `scripts/generate-icons.js` before running it
 - Badge colors: `#2d8cf0` for llama.cpp, `#7c3aed` for vLLM, `#000000` for Ollama
-- Icon URL format: `https://olares-models.crochetme.workers.dev/icons/<appname>.png`
+- Icon URL format: `https://crochet-market.crochetme.workers.dev/icons/<appname>.png`
 
 ## Build Pipeline
 

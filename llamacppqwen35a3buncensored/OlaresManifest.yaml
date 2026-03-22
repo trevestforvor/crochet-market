@@ -4,10 +4,10 @@ metadata:
   name: llamacppqwen35a3buncensored
   appid: llamacppqwen35a3buncensored
   title: Qwen35 35B-A3B Uncensored
-  icon: https://olares-models.crochetme.workers.dev/icons/llamacppqwen35a3buncensored.png
+  icon: https://crochet-market.crochetme.workers.dev/icons/llamacppqwen35a3buncensored.png
   description: Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One
-  version: 1.0.14
-  versionName: '1.0.14'
+  version: 1.0.15
+  versionName: '1.0.15'
   categories:
     - AI
 entrances:
@@ -17,7 +17,7 @@ entrances:
     title: Qwen35 35B-A3B Uncensored
     authLevel: private
 spec:
-  versionName: '1.0.14'
+  versionName: '1.0.15'
   fullDescription: |
     Qwen3.5-35B-A3B Uncensored (HauhauCS Aggressive) served via llama.cpp, optimized for Olares One hardware.
 

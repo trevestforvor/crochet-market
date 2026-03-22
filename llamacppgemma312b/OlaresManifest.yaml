@@ -4,10 +4,10 @@ metadata:
   name: llamacppgemma312b
   appid: llamacppgemma312b
   title: Gemma 3 12B IT Q8
-  icon: https://olares-models.crochetme.workers.dev/icons/llamacppgemma312b.png
+  icon: https://crochet-market.crochetme.workers.dev/icons/llamacppgemma312b.png
   description: Gemma 3 12B IT Q8_0 dense model via llama.cpp — optimized for Olares One
-  version: 1.0.1
-  versionName: '1.0.1'
+  version: 1.0.2
+  versionName: '1.0.2'
   categories:
     - AI
 entrances:
@@ -17,7 +17,7 @@ entrances:
     title: Gemma 3 12B IT Q8
     authLevel: private
 spec:
-  versionName: '1.0.1'
+  versionName: '1.0.2'
   fullDescription: |
     Google Gemma 3 12B IT served via llama.cpp, optimized for Olares One hardware.
 
