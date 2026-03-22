@@ -7,10 +7,10 @@ metadata:
 data:
   MODEL_NAME: "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4"
   MODEL_ALIAS: "qwen3-coder-30b-a3b-fp4"
-  MAX_MODEL_LEN: "65536"
+  MAX_MODEL_LEN: "32768"
   GPU_MEMORY_UTILIZATION: "0.95"
   MAX_NUM_SEQS: "8"
-  MAX_NUM_BATCHED_TOKENS: "65536"
+  MAX_NUM_BATCHED_TOKENS: "32768"
 ---
 apiVersion: apps/v1
 kind: Deployment

@@ -6,8 +6,8 @@ metadata:
   title: Qwen3 Coder 30B-A3B FP4 vLLM
   icon: https://crochet-market.crochetme.workers.dev/icons/vllmqwen3coder30ba3bfp4.png
   description: Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One
-  version: 1.1.3
-  versionName: '1.1.3'
+  version: 1.1.4
+  versionName: '1.1.4'
   categories:
     - All
     - AI
@@ -18,14 +18,14 @@ entrances:
     title: Qwen3 Coder 30B-A3B FP4 vLLM
     authLevel: private
 spec:
-  versionName: '1.1.3'
+  versionName: '1.1.4'
   fullDescription: |
     Qwen3-Coder-30B-A3B-Instruct served via vLLM with NVFP4 quantization (4-bit weights and activations),
     optimized for Olares One hardware (RTX 5090M 24GB VRAM).
 
     MoE architecture with 128 experts, 8 active per token (~3B active parameters).
     NVFP4 quantization (18.1GB). 2GB CPU offload for MoE workspace headroom.
-    64K context window. OpenAI-compatible API on port 8000.
+    32K context window. OpenAI-compatible API on port 8000.
 
     Expected performance: ~200+ tokens/sec. Model downloads automatically on first launch (~18.1GB).
   developer: NVFP4
