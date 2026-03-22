@@ -28,7 +28,7 @@ spec:
     Expected performance: ~80-130 tokens/sec. Model downloads automatically on first launch (~12.1GB).
   developer: lm-kit
   website: https://huggingface.co/lm-kit/qwen-3-14b-instruct-gguf
-  sourceCode: https://github.com/trevestforvor/OlaresModels
+  sourceCode: https://github.com/trevestforvor/crochet-market
   submitter: trevestforvor
   locale:
     - en-US

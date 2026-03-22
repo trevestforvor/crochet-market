@@ -29,7 +29,7 @@ spec:
     Expected performance: ~200 tokens/sec. Model downloads automatically on first launch (~18.6GB).
   developer: Qwen
   website: https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct
-  sourceCode: https://github.com/trevestforvor/OlaresModels
+  sourceCode: https://github.com/trevestforvor/crochet-market
   submitter: trevestforvor
   locale:
     - en-US

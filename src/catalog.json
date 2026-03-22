@@ -1,5 +1,5 @@
 {
-  "hash": "85f0d9e9b1673bfdb40c017762e267e2",
+  "hash": "b016459a693d3f4c2a94facbf2ff8c0a",
   "summaries": {
     "13cf3392": {
       "id": "13cf3392",
@@ -12,7 +12,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T05:29:18.720Z"
+      "updated_at": "2026-03-22T07:05:52.292Z"
     },
     "6e3681ab": {
       "id": "6e3681ab",
@@ -25,7 +25,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T05:29:18.723Z"
+      "updated_at": "2026-03-22T07:05:52.295Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -38,7 +38,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T05:29:18.724Z"
+      "updated_at": "2026-03-22T07:05:52.296Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -51,7 +51,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T05:29:18.725Z"
+      "updated_at": "2026-03-22T07:05:52.298Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -64,7 +64,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T05:29:18.726Z"
+      "updated_at": "2026-03-22T07:05:52.299Z"
     },
     "3d1b0d00": {
       "id": "3d1b0d00",
@@ -77,12 +77,12 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T05:29:18.728Z"
+      "updated_at": "2026-03-22T07:05:52.301Z"
     },
     "ae235064": {
       "id": "ae235064",
       "name": "vllmqwen3coder30ba3bfp4",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "category": "AI",
       "description": "Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/vllmqwen3coder30ba3bfp4.png",
@@ -90,7 +90,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T05:29:18.729Z"
+      "updated_at": "2026-03-22T07:05:52.302Z"
     }
   },
   "details": {
@@ -209,14 +209,14 @@
           "appName": "claudecode",
           "version": "1.1.0",
           "versionName": "1.1.0",
-          "mergedAt": "2026-03-22T05:29:18.721Z",
+          "mergedAt": "2026-03-22T07:05:52.293Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T05:29:18.721Z"
+      "updated_at": "2026-03-22T07:05:52.293Z"
     },
     "6e3681ab": {
       "id": "6e3681ab",
@@ -283,7 +283,7 @@
       "doc": "",
       "website": "https://huggingface.co/unsloth/gemma-3-12b-it-GGUF",
       "featuredImage": "",
-      "sourceCode": "https://github.com/trevestforvor/OlaresModels",
+      "sourceCode": "https://github.com/trevestforvor/crochet-market",
       "license": [
         {
           "text": "Gemma"
@@ -325,14 +325,14 @@
           "appName": "llamacppgemma312b",
           "version": "1.1.0",
           "versionName": "unsloth/gemma-3-12b-it-GGUF",
-          "mergedAt": "2026-03-22T05:29:18.723Z",
+          "mergedAt": "2026-03-22T07:05:52.295Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T05:29:18.723Z"
+      "updated_at": "2026-03-22T07:05:52.295Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -399,7 +399,7 @@
       "doc": "",
       "website": "https://huggingface.co/lm-kit/qwen-3-14b-instruct-gguf",
       "featuredImage": "",
-      "sourceCode": "https://github.com/trevestforvor/OlaresModels",
+      "sourceCode": "https://github.com/trevestforvor/crochet-market",
       "license": [
         {
           "text": "Apache-2.0"
@@ -441,14 +441,14 @@
           "appName": "llamacppqwen314b",
           "version": "1.1.0",
           "versionName": "lm-kit/qwen-3-14b-instruct-gguf",
-          "mergedAt": "2026-03-22T05:29:18.724Z",
+          "mergedAt": "2026-03-22T07:05:52.296Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T05:29:18.724Z"
+      "updated_at": "2026-03-22T07:05:52.296Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -515,7 +515,7 @@
       "doc": "",
       "website": "https://huggingface.co/HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
       "featuredImage": "",
-      "sourceCode": "https://github.com/trevestforvor/OlaresModels",
+      "sourceCode": "https://github.com/trevestforvor/crochet-market",
       "license": [
         {
           "text": "Apache-2.0"
@@ -557,14 +557,14 @@
           "appName": "llamacppqwen35a3buncensored",
           "version": "1.1.0",
           "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-          "mergedAt": "2026-03-22T05:29:18.725Z",
+          "mergedAt": "2026-03-22T07:05:52.298Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T05:29:18.725Z"
+      "updated_at": "2026-03-22T07:05:52.298Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -631,7 +631,7 @@
       "doc": "",
       "website": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
       "featuredImage": "",
-      "sourceCode": "https://github.com/trevestforvor/OlaresModels",
+      "sourceCode": "https://github.com/trevestforvor/crochet-market",
       "license": [
         {
           "text": "Apache-2.0"
@@ -673,14 +673,14 @@
           "appName": "llamacppqwen3coder30ba3b",
           "version": "1.1.0",
           "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-          "mergedAt": "2026-03-22T05:29:18.726Z",
+          "mergedAt": "2026-03-22T07:05:52.299Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T05:29:18.726Z"
+      "updated_at": "2026-03-22T07:05:52.299Z"
     },
     "3d1b0d00": {
       "id": "3d1b0d00",
@@ -793,29 +793,29 @@
           "appName": "obsidisync",
           "version": "1.1.0",
           "versionName": "0.1.3",
-          "mergedAt": "2026-03-22T05:29:18.728Z",
+          "mergedAt": "2026-03-22T07:05:52.301Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T05:29:18.728Z"
+      "updated_at": "2026-03-22T07:05:52.301Z"
     },
     "ae235064": {
       "id": "ae235064",
       "name": "vllmqwen3coder30ba3bfp4",
       "cfgType": "app",
-      "chartName": "vllmqwen3coder30ba3bfp4-1.1.0.tgz",
+      "chartName": "vllmqwen3coder30ba3bfp4-1.1.1.tgz",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/vllmqwen3coder30ba3bfp4.png",
       "description": "Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One",
       "appID": "ae235064",
       "title": "Qwen3 Coder 30B-A3B FP4 vLLM",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "categories": [
         "AI"
       ],
-      "versionName": "1.1.0",
+      "versionName": "1.1.1",
       "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via vLLM with NVFP4 quantization (4-bit weights and activations),\noptimized for Olares One hardware (RTX 5090M 24GB VRAM).\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nNVFP4 quantization (18.1GB). 2GB CPU offload for MoE workspace headroom.\n16K context window. OpenAI-compatible API on port 8000.\n\nExpected performance: ~200+ tokens/sec. Model downloads automatically on first launch (~18.1GB).\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -867,7 +867,7 @@
       "doc": "",
       "website": "https://huggingface.co/NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
       "featuredImage": "",
-      "sourceCode": "https://github.com/trevestforvor/OlaresModels",
+      "sourceCode": "https://github.com/trevestforvor/crochet-market",
       "license": [
         {
           "text": "Apache-2.0"
@@ -907,16 +907,16 @@
       "versionHistory": [
         {
           "appName": "vllmqwen3coder30ba3bfp4",
-          "version": "1.1.0",
+          "version": "1.1.1",
           "versionName": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
-          "mergedAt": "2026-03-22T05:29:18.729Z",
+          "mergedAt": "2026-03-22T07:05:52.302Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T05:29:18.729Z"
+      "updated_at": "2026-03-22T07:05:52.302Z"
     }
   },
   "latest": [

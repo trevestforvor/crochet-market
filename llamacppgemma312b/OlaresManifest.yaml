@@ -28,7 +28,7 @@ spec:
     Expected performance: ~80-130 tokens/sec. Model downloads automatically on first launch (~12.5GB).
   developer: Google
   website: https://huggingface.co/unsloth/gemma-3-12b-it-GGUF
-  sourceCode: https://github.com/trevestforvor/OlaresModels
+  sourceCode: https://github.com/trevestforvor/crochet-market
   submitter: trevestforvor
   locale:
     - en-US

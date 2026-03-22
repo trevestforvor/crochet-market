@@ -185,7 +185,7 @@ spec:
     <detailed description — model capabilities, hardware target, performance>
   developer: <from HuggingFace model card>
   website: <HuggingFace model page URL>
-  sourceCode: https://github.com/trevestforvor/OlaresModels
+  sourceCode: https://github.com/trevestforvor/crochet-market
   submitter: trevestforvor
   locale:
     - en-US
