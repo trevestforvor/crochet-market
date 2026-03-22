@@ -3,4 +3,4 @@ appVersion: 'NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4'
 description: Qwen3 Coder 30B-A3B FP4 served via vLLM — optimized for Olares One
 name: vllmqwen3coder30ba3bfp4
 type: application
-version: '1.1.1'
+version: '1.1.2'
