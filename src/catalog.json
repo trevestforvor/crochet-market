@@ -1,10 +1,10 @@
 {
-  "hash": "b016459a693d3f4c2a94facbf2ff8c0a",
+  "hash": "f37aa1321e21cfa15f29fbeda2102a4a",
   "summaries": {
     "13cf3392": {
       "id": "13cf3392",
       "name": "claudecode",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "category": "Developer Tools",
       "description": "Claude Code terminal for Olares. Claude starts on launch and manages its own auth.",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/claudecode.png",
@@ -12,7 +12,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T07:05:52.292Z"
+      "updated_at": "2026-03-22T07:16:42.300Z"
     },
     "6e3681ab": {
       "id": "6e3681ab",
@@ -25,7 +25,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T07:05:52.295Z"
+      "updated_at": "2026-03-22T07:16:42.303Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -38,7 +38,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T07:05:52.296Z"
+      "updated_at": "2026-03-22T07:16:42.304Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -51,7 +51,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T07:05:52.298Z"
+      "updated_at": "2026-03-22T07:16:42.305Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -64,7 +64,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T07:05:52.299Z"
+      "updated_at": "2026-03-22T07:16:42.306Z"
     },
     "3d1b0d00": {
       "id": "3d1b0d00",
@@ -77,7 +77,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T07:05:52.301Z"
+      "updated_at": "2026-03-22T07:16:42.308Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -90,7 +90,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T07:05:52.302Z"
+      "updated_at": "2026-03-22T07:16:42.309Z"
     }
   },
   "details": {
@@ -98,19 +98,19 @@
       "id": "13cf3392",
       "name": "claudecode",
       "cfgType": "app",
-      "chartName": "claudecode-1.1.0.tgz",
+      "chartName": "claudecode-1.1.1.tgz",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/claudecode.png",
       "description": "Claude Code terminal for Olares. Claude starts on launch and manages its own auth.",
       "appID": "13cf3392",
       "title": "Claude Code",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "categories": [
         "Developer Tools",
         "Productivity"
       ],
-      "versionName": "1.1.0",
+      "versionName": "1.1.1",
       "fullDescription": "Claude Code running directly in a web terminal on your Olares device.\n\nClaude starts on launch and handles its own authentication interactively —\nexactly as it would in a local terminal. No file tree, no settings panel,\nno pre-configured credentials required.\n\nOptional: set ANTHROPIC_API_KEY in Studio's Environment Variables configuration\nto skip the interactive login flow entirely. Without it, Claude will prompt you\nto authenticate on first launch; credentials are saved and not required again.\n\nFeatures:\n- Instant Claude Code terminal on open — no extra clicks\n- Claude-managed authentication (Anthropic account or API key, your choice)\n- Optional ANTHROPIC_API_KEY for zero-prompt startup\n- Persistent home directory: auth and session history survive restarts\n",
-      "upgradeDescription": "Version bump to 1.1.0. No functional changes from 0.2.0.\n",
+      "upgradeDescription": "Version bump to 1.1.1. No functional changes from 0.2.0.\n",
       "promoteImage": null,
       "promoteVideo": "",
       "subCategory": "",
@@ -119,7 +119,7 @@
         "zh-CN"
       ],
       "developer": "trevestforvor",
-      "requiredMemory": "268435456",
+      "requiredMemory": "1073741824",
       "requiredDisk": "134217728",
       "supportClient": {},
       "supportArch": [
@@ -207,16 +207,16 @@
       "versionHistory": [
         {
           "appName": "claudecode",
-          "version": "1.1.0",
-          "versionName": "1.1.0",
-          "mergedAt": "2026-03-22T07:05:52.293Z",
+          "version": "1.1.1",
+          "versionName": "1.1.1",
+          "mergedAt": "2026-03-22T07:16:42.301Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T07:05:52.293Z"
+      "updated_at": "2026-03-22T07:16:42.301Z"
     },
     "6e3681ab": {
       "id": "6e3681ab",
@@ -325,14 +325,14 @@
           "appName": "llamacppgemma312b",
           "version": "1.1.0",
           "versionName": "unsloth/gemma-3-12b-it-GGUF",
-          "mergedAt": "2026-03-22T07:05:52.295Z",
+          "mergedAt": "2026-03-22T07:16:42.303Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T07:05:52.295Z"
+      "updated_at": "2026-03-22T07:16:42.303Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -441,14 +441,14 @@
           "appName": "llamacppqwen314b",
           "version": "1.1.0",
           "versionName": "lm-kit/qwen-3-14b-instruct-gguf",
-          "mergedAt": "2026-03-22T07:05:52.296Z",
+          "mergedAt": "2026-03-22T07:16:42.304Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T07:05:52.296Z"
+      "updated_at": "2026-03-22T07:16:42.304Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -557,14 +557,14 @@
           "appName": "llamacppqwen35a3buncensored",
           "version": "1.1.0",
           "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-          "mergedAt": "2026-03-22T07:05:52.298Z",
+          "mergedAt": "2026-03-22T07:16:42.305Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T07:05:52.298Z"
+      "updated_at": "2026-03-22T07:16:42.305Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -673,14 +673,14 @@
           "appName": "llamacppqwen3coder30ba3b",
           "version": "1.1.0",
           "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-          "mergedAt": "2026-03-22T07:05:52.299Z",
+          "mergedAt": "2026-03-22T07:16:42.306Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T07:05:52.299Z"
+      "updated_at": "2026-03-22T07:16:42.306Z"
     },
     "3d1b0d00": {
       "id": "3d1b0d00",
@@ -793,14 +793,14 @@
           "appName": "obsidisync",
           "version": "1.1.0",
           "versionName": "0.1.3",
-          "mergedAt": "2026-03-22T07:05:52.301Z",
+          "mergedAt": "2026-03-22T07:16:42.308Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T07:05:52.301Z"
+      "updated_at": "2026-03-22T07:16:42.308Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -909,14 +909,14 @@
           "appName": "vllmqwen3coder30ba3bfp4",
           "version": "1.1.1",
           "versionName": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
-          "mergedAt": "2026-03-22T07:05:52.302Z",
+          "mergedAt": "2026-03-22T07:16:42.309Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T07:05:52.302Z"
+      "updated_at": "2026-03-22T07:16:42.309Z"
     }
   },
   "latest": [

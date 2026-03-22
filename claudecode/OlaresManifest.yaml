@@ -6,8 +6,8 @@ metadata:
   title: Claude Code
   icon: https://crochet-market.crochetme.workers.dev/icons/claudecode.png
   description: Claude Code terminal for Olares. Claude starts on launch and manages its own auth.
-  version: 1.1.0
-  versionName: '1.1.0'
+  version: 1.1.1
+  versionName: '1.1.1'
   categories:
     - Developer Tools
     - Productivity
@@ -20,7 +20,7 @@ entrances:
     openMethod: window
     authLevel: internal
 spec:
-  versionName: '1.1.0'
+  versionName: '1.1.1'
   fullDescription: |
     Claude Code running directly in a web terminal on your Olares device.
 
@@ -38,7 +38,7 @@ spec:
     - Optional ANTHROPIC_API_KEY for zero-prompt startup
     - Persistent home directory: auth and session history survive restarts
   upgradeDescription: |
-    Version bump to 1.1.0. No functional changes from 0.2.0.
+    Version bump to 1.1.1. No functional changes from 0.2.0.
   developer: trevestforvor
   website: https://claude.ai/code
   sourceCode: https://docs.anthropic.com/en/docs/claude-code
@@ -50,10 +50,10 @@ spec:
   license:
     - text: Proprietary
       url: https://www.anthropic.com/legal/commercial-terms
-  requiredMemory: 256Mi
+  requiredMemory: 1Gi
   limitedMemory: 4Gi
   requiredCpu: 250m
-  limitedCpu: '2'
+  limitedCpu: 2000m
   requiredDisk: 128Mi
   limitedDisk: 4Gi
   supportArch:
