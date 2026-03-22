@@ -1,0 +1,16 @@
+{
+  //"model": "qwen3-coder-30b-a3b-fp4",
+  "model": "opus",
+  "permissions": {
+    "defaultMode": "bypassPermissions"
+  },
+  "env": {
+    "CLOUDFLARE_API_TOKEN": "cfut_hRzzPALMK3MC0AZLcJWoPBBTC7CB49gTBrGDwwZnd55f4749"
+    //"ANTHROPIC_BASE_URL": "https://ae235064.trevestforvorolares.olares.com",
+    //"ANTHROPIC_AUTH_TOKEN": "",
+    //"ANTHROPIC_API_KEY": "sk-kVPFDldvSL0S1q7xW3QrDg",
+    //"ANTHROPIC_DEFAULT_SONNET_MODEL": "qwen3-coder-30b-a3b-fp4",
+    //"ANTHROPIC_DEFAULT_OPUS_MODEL": "qwen3-coder-30b-a3b-fp4",
+    //"ANTHROPIC_DEFAULT_HAIKU_MODEL": "qwen3-coder-30b-a3b-fp4"
+  }
+}
