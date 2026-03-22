@@ -6,8 +6,8 @@ metadata:
   title: Qwen3 Coder 30B-A3B
   icon: https://crochet-market.crochetme.workers.dev/icons/llamacppqwen3coder30ba3b.png
   description: Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One
-  version: 1.0.10
-  versionName: '1.0.10'
+  version: 1.1.0
+  versionName: '1.1.0'
   categories:
     - AI
 entrances:
@@ -17,7 +17,7 @@ entrances:
     title: Qwen3 Coder 30B-A3B
     authLevel: private
 spec:
-  versionName: '1.0.10'
+  versionName: '1.1.0'
   fullDescription: |
     Qwen3-Coder-30B-A3B-Instruct served via llama.cpp, optimized for Olares One hardware.
 

@@ -6,8 +6,8 @@ metadata:
   title: Obsidisync
   icon: https://raw.githubusercontent.com/trevestforvor/obsidisync/main/icon.png
   description: WebDAV bridge for Obsidian vault sync
-  version: 0.1.4
-  versionName: '0.1.4'
+  version: 1.1.0
+  versionName: '1.1.0'
   categories:
     - Productivity
 entrances:
@@ -17,7 +17,7 @@ entrances:
     title: Obsidisync
     authLevel: public
 spec:
-  versionName: '0.1.4'
+  versionName: '1.1.0'
   fullDescription: |
     Obsidisync exposes your Olares Obsidian vaults over WebDAV so you can sync
     them with Obsidian's Remotely Save plugin across desktop, mobile, and

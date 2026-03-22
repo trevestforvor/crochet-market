@@ -1,10 +1,10 @@
 {
-  "hash": "750abcd4c0efbe5ad504c8770dd0c165",
+  "hash": "28e4497c8a0cad95be5ae6b41aa0a0bd",
   "summaries": {
     "6e3681ab": {
       "id": "6e3681ab",
       "name": "llamacppgemma312b",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "category": "AI",
       "description": "Gemma 3 12B IT Q8_0 dense model via llama.cpp — optimized for Olares One",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/llamacppgemma312b.png",
@@ -12,12 +12,12 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T03:11:27.874Z"
+      "updated_at": "2026-03-22T05:09:27.552Z"
     },
     "dfd72114": {
       "id": "dfd72114",
       "name": "llamacppqwen314b",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "category": "AI",
       "description": "Qwen3 14B Instruct Q6_K dense model via llama.cpp — optimized for Olares One",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/llamacppqwen314b.png",
@@ -25,12 +25,12 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T03:11:27.877Z"
+      "updated_at": "2026-03-22T05:09:27.555Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
       "name": "llamacppqwen35a3buncensored",
-      "version": "1.0.15",
+      "version": "1.1.0",
       "category": "AI",
       "description": "Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/llamacppqwen35a3buncensored.png",
@@ -38,12 +38,12 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T03:11:27.878Z"
+      "updated_at": "2026-03-22T05:09:27.556Z"
     },
     "8c63f603": {
       "id": "8c63f603",
       "name": "llamacppqwen3coder30ba3b",
-      "version": "1.0.10",
+      "version": "1.1.0",
       "category": "AI",
       "description": "Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/llamacppqwen3coder30ba3b.png",
@@ -51,12 +51,12 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T03:11:27.879Z"
+      "updated_at": "2026-03-22T05:09:27.557Z"
     },
     "3d1b0d00": {
       "id": "3d1b0d00",
       "name": "obsidisync",
-      "version": "0.1.4",
+      "version": "1.1.0",
       "category": "Productivity",
       "description": "WebDAV bridge for Obsidian vault sync",
       "icon": "https://raw.githubusercontent.com/trevestforvor/obsidisync/main/icon.png",
@@ -64,12 +64,12 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T03:11:27.881Z"
+      "updated_at": "2026-03-22T05:09:27.558Z"
     },
     "ae235064": {
       "id": "ae235064",
       "name": "vllmqwen3coder30ba3bfp4",
-      "version": "1.0.6",
+      "version": "1.1.0",
       "category": "AI",
       "description": "Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/vllmqwen3coder30ba3bfp4.png",
@@ -77,7 +77,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-22T03:11:27.882Z"
+      "updated_at": "2026-03-22T05:09:27.560Z"
     }
   },
   "details": {
@@ -85,16 +85,16 @@
       "id": "6e3681ab",
       "name": "llamacppgemma312b",
       "cfgType": "app",
-      "chartName": "llamacppgemma312b-1.0.2.tgz",
+      "chartName": "llamacppgemma312b-1.1.0.tgz",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/llamacppgemma312b.png",
       "description": "Gemma 3 12B IT Q8_0 dense model via llama.cpp — optimized for Olares One",
       "appID": "6e3681ab",
       "title": "Gemma 3 12B IT Q8",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "categories": [
         "AI"
       ],
-      "versionName": "1.0.2",
+      "versionName": "1.1.0",
       "fullDescription": "Google Gemma 3 12B IT served via llama.cpp, optimized for Olares One hardware.\n\nDense 12B parameter multimodal model with strong reasoning and multilingual capabilities.\nQ8_0 quantization (12.5GB). Full GPU offload on RTX 5090M (24GB VRAM).\n128K native context window with quantized KV cache. OpenAI-compatible API on port 8080.\n\nExpected performance: ~80-130 tokens/sec. Model downloads automatically on first launch (~12.5GB).\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -186,31 +186,31 @@
       "versionHistory": [
         {
           "appName": "llamacppgemma312b",
-          "version": "1.0.2",
+          "version": "1.1.0",
           "versionName": "unsloth/gemma-3-12b-it-GGUF",
-          "mergedAt": "2026-03-22T03:11:27.875Z",
+          "mergedAt": "2026-03-22T05:09:27.553Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T03:11:27.875Z"
+      "updated_at": "2026-03-22T05:09:27.553Z"
     },
     "dfd72114": {
       "id": "dfd72114",
       "name": "llamacppqwen314b",
       "cfgType": "app",
-      "chartName": "llamacppqwen314b-1.0.2.tgz",
+      "chartName": "llamacppqwen314b-1.1.0.tgz",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/llamacppqwen314b.png",
       "description": "Qwen3 14B Instruct Q6_K dense model via llama.cpp — optimized for Olares One",
       "appID": "dfd72114",
       "title": "Qwen3 14B Instruct Q6K",
-      "version": "1.0.2",
+      "version": "1.1.0",
       "categories": [
         "AI"
       ],
-      "versionName": "1.0.2",
+      "versionName": "1.1.0",
       "fullDescription": "Qwen3-14B-Instruct served via llama.cpp, optimized for Olares One hardware.\n\nDense 14B parameter model with strong reasoning and instruction-following capabilities.\nQ6_K quantization (12.1GB). Full GPU offload on RTX 5090M (24GB VRAM).\n32K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~80-130 tokens/sec. Model downloads automatically on first launch (~12.1GB).\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -302,31 +302,31 @@
       "versionHistory": [
         {
           "appName": "llamacppqwen314b",
-          "version": "1.0.2",
+          "version": "1.1.0",
           "versionName": "lm-kit/qwen-3-14b-instruct-gguf",
-          "mergedAt": "2026-03-22T03:11:27.877Z",
+          "mergedAt": "2026-03-22T05:09:27.555Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T03:11:27.877Z"
+      "updated_at": "2026-03-22T05:09:27.555Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
       "name": "llamacppqwen35a3buncensored",
       "cfgType": "app",
-      "chartName": "llamacppqwen35a3buncensored-1.0.15.tgz",
+      "chartName": "llamacppqwen35a3buncensored-1.1.0.tgz",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/llamacppqwen35a3buncensored.png",
       "description": "Qwen3.5 35B MoE (3B active) uncensored model via llama.cpp — optimized for Olares One",
       "appID": "dbc88bc8",
       "title": "Qwen35 35B-A3B Uncensored",
-      "version": "1.0.15",
+      "version": "1.1.0",
       "categories": [
         "AI"
       ],
-      "versionName": "1.0.15",
+      "versionName": "1.1.0",
       "fullDescription": "Qwen3.5-35B-A3B Uncensored (HauhauCS Aggressive) served via llama.cpp, optimized for Olares One hardware.\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nQ4_K_M quantization (21.2GB). Full GPU offload on RTX 5090M (24GB VRAM).\n16K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~200 tokens/sec. Model downloads automatically on first launch (~21.2GB).\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -418,31 +418,31 @@
       "versionHistory": [
         {
           "appName": "llamacppqwen35a3buncensored",
-          "version": "1.0.15",
+          "version": "1.1.0",
           "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-          "mergedAt": "2026-03-22T03:11:27.878Z",
+          "mergedAt": "2026-03-22T05:09:27.556Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T03:11:27.878Z"
+      "updated_at": "2026-03-22T05:09:27.556Z"
     },
     "8c63f603": {
       "id": "8c63f603",
       "name": "llamacppqwen3coder30ba3b",
       "cfgType": "app",
-      "chartName": "llamacppqwen3coder30ba3b-1.0.10.tgz",
+      "chartName": "llamacppqwen3coder30ba3b-1.1.0.tgz",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/llamacppqwen3coder30ba3b.png",
       "description": "Qwen3 Coder 30B-A3B Instruct agentic coding model via llama.cpp — optimized for Olares One",
       "appID": "8c63f603",
       "title": "Qwen3 Coder 30B-A3B",
-      "version": "1.0.10",
+      "version": "1.1.0",
       "categories": [
         "AI"
       ],
-      "versionName": "1.0.10",
+      "versionName": "1.1.0",
       "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via llama.cpp, optimized for Olares One hardware.\n\nAgentic coding model with superior code generation, tool-calling, and repository-scale understanding.\nMoE architecture with 128 experts, 8 active per token (~3.3B active parameters).\nQ4_K_M quantization (18.6GB). Full GPU offload on RTX 5090M (24GB VRAM).\n64K context window. OpenAI-compatible API on port 8080.\n\nExpected performance: ~200 tokens/sec. Model downloads automatically on first launch (~18.6GB).\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -534,31 +534,31 @@
       "versionHistory": [
         {
           "appName": "llamacppqwen3coder30ba3b",
-          "version": "1.0.10",
+          "version": "1.1.0",
           "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-          "mergedAt": "2026-03-22T03:11:27.879Z",
+          "mergedAt": "2026-03-22T05:09:27.557Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T03:11:27.879Z"
+      "updated_at": "2026-03-22T05:09:27.557Z"
     },
     "3d1b0d00": {
       "id": "3d1b0d00",
       "name": "obsidisync",
       "cfgType": "app",
-      "chartName": "obsidisync-0.1.4.tgz",
+      "chartName": "obsidisync-1.1.0.tgz",
       "icon": "https://raw.githubusercontent.com/trevestforvor/obsidisync/main/icon.png",
       "description": "WebDAV bridge for Obsidian vault sync",
       "appID": "3d1b0d00",
       "title": "Obsidisync",
-      "version": "0.1.4",
+      "version": "1.1.0",
       "categories": [
         "Productivity"
       ],
-      "versionName": "0.1.4",
+      "versionName": "1.1.0",
       "fullDescription": "Obsidisync exposes your Olares Obsidian vaults over WebDAV so you can sync\nthem with Obsidian's Remotely Save plugin across desktop, mobile, and\nautomation tools like Claude.\n\nFeatures:\n- Serves all vaults under Home/Obsidian/ as WebDAV directories\n- Bearer token authentication for secure access\n- Works with Obsidian Remotely Save plugin\n- Compatible with any WebDAV client or curl\n- Lightweight Go server (~20MB container image)\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -654,31 +654,31 @@
       "versionHistory": [
         {
           "appName": "obsidisync",
-          "version": "0.1.4",
+          "version": "1.1.0",
           "versionName": "0.1.3",
-          "mergedAt": "2026-03-22T03:11:27.881Z",
+          "mergedAt": "2026-03-22T05:09:27.558Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T03:11:27.881Z"
+      "updated_at": "2026-03-22T05:09:27.558Z"
     },
     "ae235064": {
       "id": "ae235064",
       "name": "vllmqwen3coder30ba3bfp4",
       "cfgType": "app",
-      "chartName": "vllmqwen3coder30ba3bfp4-1.0.6.tgz",
+      "chartName": "vllmqwen3coder30ba3bfp4-1.1.0.tgz",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/vllmqwen3coder30ba3bfp4.png",
       "description": "Qwen3 Coder 30B-A3B Instruct NVFP4 quantized model via vLLM — optimized for Olares One",
       "appID": "ae235064",
       "title": "Qwen3 Coder 30B-A3B FP4 vLLM",
-      "version": "1.0.6",
+      "version": "1.1.0",
       "categories": [
         "AI"
       ],
-      "versionName": "1.0.6",
+      "versionName": "1.1.0",
       "fullDescription": "Qwen3-Coder-30B-A3B-Instruct served via vLLM with NVFP4 quantization (4-bit weights and activations),\noptimized for Olares One hardware (RTX 5090M 24GB VRAM).\n\nMoE architecture with 128 experts, 8 active per token (~3B active parameters).\nNVFP4 quantization (18.1GB). 2GB CPU offload for MoE workspace headroom.\n16K context window. OpenAI-compatible API on port 8000.\n\nExpected performance: ~200+ tokens/sec. Model downloads automatically on first launch (~18.1GB).\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -770,16 +770,16 @@
       "versionHistory": [
         {
           "appName": "vllmqwen3coder30ba3bfp4",
-          "version": "1.0.6",
+          "version": "1.1.0",
           "versionName": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
-          "mergedAt": "2026-03-22T03:11:27.882Z",
+          "mergedAt": "2026-03-22T05:09:27.560Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-22T03:11:27.882Z"
+      "updated_at": "2026-03-22T05:09:27.560Z"
     }
   },
   "latest": [
