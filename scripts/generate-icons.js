@@ -39,6 +39,12 @@ const models = {
     badgeColor: '#7c3aed',
     badgeText: '#ffffff',
   },
+  simpleterm: {
+    avatarUrl: 'https://github.com/coder.png',
+    backend: 'VS Code',
+    badgeColor: '#007ACC',
+    badgeText: '#ffffff',
+  },
 };
 
 function fetchBuffer(url) {

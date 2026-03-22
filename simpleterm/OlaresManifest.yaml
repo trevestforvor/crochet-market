@@ -1,0 +1,69 @@
+olaresManifest.version: '0.11.0'
+olaresManifest.type: app
+metadata:
+  name: simpleterm
+  appid: simpleterm
+  title: Simple Terminal
+  icon: https://crochet-market.crochetme.workers.dev/icons/simpleterm.png
+  description: VS Code in the browser — full IDE with integrated terminal, extensions, and file explorer
+  version: 1.0.0
+  versionName: '1.0.0'
+  categories:
+    - Developer Tools
+    - Productivity
+entrances:
+  - name: simpleterm
+    host: simpleterm
+    port: 8080
+    title: Simple Terminal
+    icon: https://crochet-market.crochetme.workers.dev/icons/simpleterm.png
+    openMethod: window
+    authLevel: internal
+spec:
+  versionName: '1.0.0'
+  fullDescription: |
+    VS Code running in your browser on Olares, powered by code-server.
+
+    A full-featured development environment accessible from any device.
+    Includes integrated terminal, file explorer, extensions support,
+    and everything you expect from VS Code.
+
+    Features:
+    - Full VS Code IDE in the browser
+    - Integrated terminal with shell access
+    - Extension support via OpenVSX registry
+    - File explorer and editor
+    - Persistent workspace — settings and files survive restarts
+    - No authentication required — Olares entrance handles access control
+  developer: Coder
+  website: https://coder.com/
+  sourceCode: https://github.com/coder/code-server
+  submitter: trevestforvor
+  locale:
+    - en-US
+    - zh-CN
+  doc: https://coder.com/docs/code-server
+  license:
+    - text: MIT
+      url: https://github.com/coder/code-server/blob/main/LICENSE
+  requiredMemory: 512Mi
+  limitedMemory: 4Gi
+  requiredCpu: 500m
+  limitedCpu: 4000m
+  requiredDisk: 512Mi
+  limitedDisk: 10Gi
+  supportArch:
+    - amd64
+    - arm64
+permission:
+  appData: true
+  appCache: true
+  userData:
+    - Home
+options:
+  allowMultipleInstall: false
+  apiTimeout: 0
+  dependencies:
+    - name: olares
+      type: system
+      version: '>=1.12.3-0'

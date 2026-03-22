@@ -1,0 +1,18 @@
+metadata:
+  title: Simple Terminal
+  description: VS Code in the browser — full IDE with integrated terminal, extensions, and file explorer
+spec:
+  fullDescription: |
+    VS Code running in your browser on Olares, powered by code-server.
+
+    A full-featured development environment accessible from any device.
+    Includes integrated terminal, file explorer, extensions support,
+    and everything you expect from VS Code.
+
+    Features:
+    - Full VS Code IDE in the browser
+    - Integrated terminal with shell access
+    - Extension support via OpenVSX registry
+    - File explorer and editor
+    - Persistent workspace — settings and files survive restarts
+    - No authentication required — Olares entrance handles access control

@@ -7,14 +7,14 @@ userspace:
   userData: ""
 
 image:
-  repository: ghcr.io/trevestforvor/claudecode-olares
-  tag: stable
+  repository: codercom/code-server
+  tag: latest
   pullPolicy: IfNotPresent
 
 resources:
   requests:
-    cpu: 250m
-    memory: 1Gi
+    cpu: 500m
+    memory: 512Mi
   limits:
-    cpu: '2'
+    cpu: '4'
     memory: 4Gi

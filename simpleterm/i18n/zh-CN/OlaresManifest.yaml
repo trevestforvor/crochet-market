@@ -1,0 +1,18 @@
+metadata:
+  title: Simple Terminal
+  description: 浏览器中的 VS Code — 完整 IDE，集成终端、扩展和文件浏览器
+spec:
+  fullDescription: |
+    在 Olares 上通过浏览器运行的 VS Code，由 code-server 提供支持。
+
+    从任何设备访问的全功能开发环境。
+    包括集成终端、文件浏览器、扩展支持，
+    以及 VS Code 的所有功能。
+
+    特性：
+    - 浏览器中的完整 VS Code IDE
+    - 集成终端，支持 Shell 访问
+    - 通过 OpenVSX 注册表支持扩展
+    - 文件浏览器和编辑器
+    - 持久化工作空间 — 设置和文件在重启后保留
+    - 无需身份验证 — Olares 入口处理访问控制

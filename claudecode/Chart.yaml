@@ -1,6 +1,0 @@
-apiVersion: v2
-name: claudecode
-description: Claude Code terminal for Olares
-type: application
-version: '1.1.1'
-appVersion: '1.1.1'
