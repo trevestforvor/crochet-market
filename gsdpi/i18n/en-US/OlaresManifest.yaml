@@ -1,0 +1,15 @@
+metadata:
+  title: GSD Agent
+  description: Meta-prompting, context engineering and spec-driven development system
+spec:
+  fullDescription: |
+    GSD (Get Shit Done) is a powerful meta-prompting, context engineering
+    and spec-driven development system that enables AI coding agents to work
+    autonomously for long periods without losing track of the big picture.
+
+    Features:
+    - Web-based UI for managing AI coding sessions
+    - Spec-driven development with persistent project context
+    - Multi-provider AI support (Anthropic, OpenAI, and more)
+    - Persistent workspace — projects survive pod restarts
+    - No extra authentication — Olares entrance handles access control

@@ -1,0 +1,111 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gsdpi
+  namespace: "{{ .Release.Namespace }}"
+  labels:
+    io.kompose.service: gsdpi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: gsdpi
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        io.kompose.network/chrome-default: "true"
+        io.kompose.service: gsdpi
+    spec:
+      initContainers:
+        - name: init-workspace
+          image: "docker.io/beclab/aboveos-busybox:1.37.0"
+          command:
+            - sh
+            - '-c'
+            - |
+              mkdir -p /workspace/.gsd/sessions
+              chmod 777 /workspace
+          securityContext:
+            runAsUser: 0
+          volumeMounts:
+            - name: app-data
+              mountPath: /workspace
+      containers:
+        - name: gsdpi
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - node
+            - "{{ .Values.serverPath }}"
+          ports:
+            - name: http
+              containerPort: 3000
+              protocol: TCP
+          env:
+            - name: HOSTNAME
+              value: "0.0.0.0"
+            - name: PORT
+              value: "3000"
+            - name: GSD_WEB_HOST
+              value: "0.0.0.0"
+            - name: GSD_WEB_PORT
+              value: "3000"
+            - name: GSD_WEB_PROJECT_CWD
+              value: "/workspace"
+            - name: GSD_WEB_PROJECT_SESSIONS_DIR
+              value: "/workspace/.gsd/sessions"
+            - name: GSD_WEB_PACKAGE_ROOT
+              value: "{{ .Values.packageRoot }}"
+            - name: GSD_WEB_HOST_KIND
+              value: "packaged-standalone"
+          resources:
+            requests:
+              cpu: {{ .Values.resources.requests.cpu | quote }}
+              memory: {{ .Values.resources.requests.memory | quote }}
+            limits:
+              cpu: {{ .Values.resources.limits.cpu | quote }}
+              memory: {{ .Values.resources.limits.memory | quote }}
+          readinessProbe:
+            httpGet:
+              path: /api/boot
+              port: 3000
+            initialDelaySeconds: 30
+            periodSeconds: 15
+            failureThreshold: 6
+          livenessProbe:
+            httpGet:
+              path: /api/boot
+              port: 3000
+            initialDelaySeconds: 60
+            periodSeconds: 30
+            failureThreshold: 5
+          volumeMounts:
+            - name: app-data
+              mountPath: /workspace
+      restartPolicy: Always
+      volumes:
+        - name: app-data
+          hostPath:
+            path: "{{ .Values.userspace.appData }}"
+            type: DirectoryOrCreate
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gsdpi
+  namespace: "{{ .Release.Namespace }}"
+  labels:
+    io.kompose.service: gsdpi
+spec:
+  type: ClusterIP
+  selector:
+    io.kompose.service: gsdpi
+  ports:
+    - name: http
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

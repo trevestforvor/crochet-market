@@ -1,0 +1,14 @@
+metadata:
+  title: GSD Agent
+  description: 元提示词、上下文工程与规格驱动开发系统
+spec:
+  fullDescription: |
+    GSD（Get Shit Done）是一套强大的元提示词、上下文工程与规格驱动开发系统，
+    让 AI 编程助手能够长时间自主工作，同时不丢失对整体目标的掌控。
+
+    功能特性：
+    - 基于网页的 AI 编程会话管理界面
+    - 规格驱动开发，持久化项目上下文
+    - 多 AI 提供商支持（Anthropic、OpenAI 等）
+    - 持久化工作空间 — 项目文件在重启后保留
+    - 无需额外身份验证 — Olares 入口处理访问控制

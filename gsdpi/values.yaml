@@ -1,0 +1,26 @@
+admin: ""
+bfl:
+  username: ""
+userspace:
+  appData: ""
+  appCache: ""
+  userData: ""
+
+image:
+  repository: ghcr.io/gsd-build/gsd-pi
+  tag: latest
+  pullPolicy: IfNotPresent
+
+# Path to the Next.js standalone server bundled inside the gsd-pi npm package.
+# Stable because `npm install -g gsd-pi` on node:slim always installs to this path.
+# Update here if gsd-build restructures the package layout.
+serverPath: /usr/local/lib/node_modules/gsd-pi/dist/web/standalone/server.js
+packageRoot: /usr/local/lib/node_modules/gsd-pi
+
+resources:
+  requests:
+    cpu: 500m
+    memory: 512Mi
+  limits:
+    cpu: '4'
+    memory: 4Gi

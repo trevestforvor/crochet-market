@@ -1,0 +1,63 @@
+olaresManifest.version: '0.11.0'
+olaresManifest.type: app
+metadata:
+  name: gsdpi
+  appid: gsdpi
+  title: GSD Agent
+  icon: https://crochet-market.crochetme.workers.dev/icons/gsdpi.png
+  description: Meta-prompting, context engineering and spec-driven development system
+  version: 1.0.0
+  versionName: '1.0.0'
+  categories:
+    - All
+    - Developer Tools
+    - Productivity
+entrances:
+  - name: gsdpi
+    host: gsdpi
+    port: 3000
+    title: GSD Agent
+    icon: https://crochet-market.crochetme.workers.dev/icons/gsdpi.png
+    openMethod: window
+    authLevel: internal
+spec:
+  versionName: '1.0.0'
+  fullDescription: |
+    GSD (Get Shit Done) is a powerful meta-prompting, context engineering
+    and spec-driven development system that enables AI coding agents to work
+    autonomously for long periods without losing track of the big picture.
+
+    Features:
+    - Web-based UI for managing AI coding sessions
+    - Spec-driven development with persistent project context
+    - Multi-provider AI support (Anthropic, OpenAI, and more)
+    - Persistent workspace — projects survive pod restarts
+    - No extra authentication — Olares entrance handles access control
+  developer: gsd-build
+  website: https://github.com/gsd-build/GSD-2
+  sourceCode: https://github.com/gsd-build/GSD-2
+  submitter: trevestforvor
+  locale:
+    - en-US
+    - zh-CN
+  doc: https://github.com/gsd-build/GSD-2
+  license:
+    - text: MIT
+      url: https://github.com/gsd-build/GSD-2/blob/main/LICENSE
+  requiredMemory: 512Mi
+  limitedMemory: 4Gi
+  requiredCpu: 500m
+  limitedCpu: 4000m
+  requiredDisk: 512Mi
+  limitedDisk: 10Gi
+  supportArch:
+    - amd64
+permission:
+  appData: true
+options:
+  allowMultipleInstall: false
+  apiTimeout: 0
+  dependencies:
+    - name: olares
+      type: system
+      version: '>=1.12.3-0'
