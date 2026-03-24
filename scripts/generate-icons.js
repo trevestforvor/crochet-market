@@ -45,6 +45,12 @@ const models = {
     badgeColor: '#007ACC',
     badgeText: '#ffffff',
   },
+  gsdpi: {
+    avatarUrl: 'https://github.com/gsd-build.png',
+    backend: 'GSD',
+    badgeColor: '#000000',
+    badgeText: '#ffffff',
+  },
 };
 
 function fetchBuffer(url) {
