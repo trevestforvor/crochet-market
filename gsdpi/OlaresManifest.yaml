@@ -6,8 +6,8 @@ metadata:
   title: GSD Agent
   icon: https://crochet-market.crochetme.workers.dev/icons/gsdpi.png
   description: Meta-prompting, context engineering and spec-driven development system
-  version: 1.0.0
-  versionName: '1.0.0'
+  version: 1.0.1
+  versionName: '1.0.1'
   categories:
     - All
     - Developer Tools
@@ -21,7 +21,7 @@ entrances:
     openMethod: window
     authLevel: internal
 spec:
-  versionName: '1.0.0'
+  versionName: '1.0.1'
   fullDescription: |
     GSD (Get Shit Done) is a powerful meta-prompting, context engineering
     and spec-driven development system that enables AI coding agents to work

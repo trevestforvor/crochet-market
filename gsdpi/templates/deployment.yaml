@@ -38,8 +38,13 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command:
-            - node
-            - "{{ .Values.serverPath }}"
+            - sh
+            - -c
+            - |
+              while true; do
+                node {{ .Values.serverPath }}
+                echo "[gsdpi] server exited, restarting..."
+              done
           ports:
             - name: http
               containerPort: 3000

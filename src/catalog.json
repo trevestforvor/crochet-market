@@ -1,10 +1,10 @@
 {
-  "hash": "9e70f5e4d5b77ef99bd4cd62ec388fef",
+  "hash": "1fc3efc8b11b9dc4f257f778af568ce6",
   "summaries": {
     "e757a542": {
       "id": "e757a542",
       "name": "gsdpi",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "All",
       "description": "Meta-prompting, context engineering and spec-driven development system",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/gsdpi.png",
@@ -12,7 +12,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-24T10:24:33.944Z"
+      "updated_at": "2026-03-24T18:25:36.351Z"
     },
     "6e3681ab": {
       "id": "6e3681ab",
@@ -25,7 +25,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-24T10:24:33.947Z"
+      "updated_at": "2026-03-24T18:25:36.353Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -38,7 +38,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-24T10:24:33.948Z"
+      "updated_at": "2026-03-24T18:25:36.355Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -51,7 +51,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-24T10:24:33.949Z"
+      "updated_at": "2026-03-24T18:25:36.356Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -64,7 +64,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-24T10:24:33.951Z"
+      "updated_at": "2026-03-24T18:25:36.358Z"
     },
     "3d1b0d00": {
       "id": "3d1b0d00",
@@ -77,7 +77,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-24T10:24:33.952Z"
+      "updated_at": "2026-03-24T18:25:36.359Z"
     },
     "6eef1e18": {
       "id": "6eef1e18",
@@ -90,7 +90,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-24T10:24:33.953Z"
+      "updated_at": "2026-03-24T18:25:36.361Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -103,7 +103,7 @@
       "tags": null,
       "metadata": null,
       "source": 1,
-      "updated_at": "2026-03-24T10:24:33.955Z"
+      "updated_at": "2026-03-24T18:25:36.363Z"
     }
   },
   "details": {
@@ -111,18 +111,18 @@
       "id": "e757a542",
       "name": "gsdpi",
       "cfgType": "app",
-      "chartName": "gsdpi-1.0.0.tgz",
+      "chartName": "gsdpi-1.0.1.tgz",
       "icon": "https://crochet-market.crochetme.workers.dev/icons/gsdpi.png",
       "description": "Meta-prompting, context engineering and spec-driven development system",
       "appID": "e757a542",
       "title": "GSD Agent",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "categories": [
         "All",
         "Developer Tools",
         "Productivity"
       ],
-      "versionName": "1.0.0",
+      "versionName": "1.0.1",
       "fullDescription": "GSD (Get Shit Done) is a powerful meta-prompting, context engineering\nand spec-driven development system that enables AI coding agents to work\nautonomously for long periods without losing track of the big picture.\n\nFeatures:\n- Web-based UI for managing AI coding sessions\n- Spec-driven development with persistent project context\n- Multi-provider AI support (Anthropic, OpenAI, and more)\n- Persistent workspace — projects survive pod restarts\n- No extra authentication — Olares entrance handles access control\n",
       "upgradeDescription": "",
       "promoteImage": null,
@@ -216,16 +216,16 @@
       "versionHistory": [
         {
           "appName": "gsdpi",
-          "version": "1.0.0",
+          "version": "1.0.1",
           "versionName": "latest",
-          "mergedAt": "2026-03-24T10:24:33.945Z",
+          "mergedAt": "2026-03-24T18:25:36.352Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-24T10:24:33.945Z"
+      "updated_at": "2026-03-24T18:25:36.352Z"
     },
     "6e3681ab": {
       "id": "6e3681ab",
@@ -335,14 +335,14 @@
           "appName": "llamacppgemma312b",
           "version": "1.1.0",
           "versionName": "unsloth/gemma-3-12b-it-GGUF",
-          "mergedAt": "2026-03-24T10:24:33.947Z",
+          "mergedAt": "2026-03-24T18:25:36.353Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-24T10:24:33.947Z"
+      "updated_at": "2026-03-24T18:25:36.353Z"
     },
     "dfd72114": {
       "id": "dfd72114",
@@ -452,14 +452,14 @@
           "appName": "llamacppqwen314b",
           "version": "1.1.0",
           "versionName": "lm-kit/qwen-3-14b-instruct-gguf",
-          "mergedAt": "2026-03-24T10:24:33.948Z",
+          "mergedAt": "2026-03-24T18:25:36.355Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-24T10:24:33.948Z"
+      "updated_at": "2026-03-24T18:25:36.355Z"
     },
     "dbc88bc8": {
       "id": "dbc88bc8",
@@ -569,14 +569,14 @@
           "appName": "llamacppqwen35a3buncensored",
           "version": "1.1.0",
           "versionName": "HauhauCS/Qwen3.5-35B-A3B-Uncensored-HauhauCS-Aggressive",
-          "mergedAt": "2026-03-24T10:24:33.949Z",
+          "mergedAt": "2026-03-24T18:25:36.356Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-24T10:24:33.949Z"
+      "updated_at": "2026-03-24T18:25:36.356Z"
     },
     "8c63f603": {
       "id": "8c63f603",
@@ -686,14 +686,14 @@
           "appName": "llamacppqwen3coder30ba3b",
           "version": "1.1.0",
           "versionName": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
-          "mergedAt": "2026-03-24T10:24:33.951Z",
+          "mergedAt": "2026-03-24T18:25:36.358Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-24T10:24:33.951Z"
+      "updated_at": "2026-03-24T18:25:36.358Z"
     },
     "3d1b0d00": {
       "id": "3d1b0d00",
@@ -807,14 +807,14 @@
           "appName": "obsidisync",
           "version": "0.1.4",
           "versionName": "0.1.4",
-          "mergedAt": "2026-03-24T10:24:33.952Z",
+          "mergedAt": "2026-03-24T18:25:36.359Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-24T10:24:33.952Z"
+      "updated_at": "2026-03-24T18:25:36.359Z"
     },
     "6eef1e18": {
       "id": "6eef1e18",
@@ -932,14 +932,14 @@
           "appName": "simpleterm",
           "version": "1.0.1",
           "versionName": "4.99.4",
-          "mergedAt": "2026-03-24T10:24:33.953Z",
+          "mergedAt": "2026-03-24T18:25:36.361Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-24T10:24:33.953Z"
+      "updated_at": "2026-03-24T18:25:36.361Z"
     },
     "ae235064": {
       "id": "ae235064",
@@ -1049,14 +1049,14 @@
           "appName": "vllmqwen3coder30ba3bfp4",
           "version": "1.1.4",
           "versionName": "NVFP4/Qwen3-Coder-30B-A3B-Instruct-FP4",
-          "mergedAt": "2026-03-24T10:24:33.955Z",
+          "mergedAt": "2026-03-24T18:25:36.363Z",
           "upgradeDescription": ""
         }
       ],
       "screenshots": null,
       "tags": null,
       "metadata": null,
-      "updated_at": "2026-03-24T10:24:33.955Z"
+      "updated_at": "2026-03-24T18:25:36.363Z"
     }
   },
   "latest": [
